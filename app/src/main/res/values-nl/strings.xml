@@ -35,4 +35,7 @@
     <string name="podeli">App delen</string>
     <string name="podeli_naslov">Delen via</string>
     <string name="podeli_poruka">Bekijk Benelux Road Info – verzorgingsplaatsen, tankstations, afritten en parkeerplaatsen op de snelwegen in Nederland, België en Luxemburg: %s</string>
+    <string name="zemlja_nl">Nederland</string>
+    <string name="zemlja_be">België</string>
+    <string name="zemlja_lu">Luxemburg</string>
 </resources>

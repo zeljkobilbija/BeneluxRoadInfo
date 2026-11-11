@@ -36,4 +36,7 @@
     <string name="podeli">Share the app</string>
     <string name="podeli_naslov">Share via</string>
     <string name="podeli_poruka">Check out Benelux Road Info – service areas, fuel, exits and parking on motorways in the Netherlands, Belgium and Luxembourg: %s</string>
+    <string name="zemlja_nl">Netherlands</string>
+    <string name="zemlja_be">Belgium</string>
+    <string name="zemlja_lu">Luxembourg</string>
 </resources>

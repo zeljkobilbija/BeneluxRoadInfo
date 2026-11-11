@@ -27,6 +27,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ZemljaActivity"
+            android:exported="false" />
+        <activity
             android:name=".AutoputActivity"
             android:exported="false" />
     </application>

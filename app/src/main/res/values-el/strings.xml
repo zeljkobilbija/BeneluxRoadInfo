@@ -35,4 +35,7 @@
     <string name="podeli">Κοινοποίηση εφαρμογής</string>
     <string name="podeli_naslov">Κοινοποίηση μέσω</string>
     <string name="podeli_poruka">Δες το Benelux Road Info – σταθμούς εξυπηρέτησης, πρατήρια, εξόδους και χώρους στάθμευσης στους αυτοκινητόδρομους της Ολλανδίας, του Βελγίου και του Λουξεμβούργου: %s</string>
+    <string name="zemlja_nl">Ολλανδία</string>
+    <string name="zemlja_be">Βέλγιο</string>
+    <string name="zemlja_lu">Λουξεμβούργο</string>
 </resources>

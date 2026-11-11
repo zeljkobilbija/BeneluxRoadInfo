@@ -35,4 +35,7 @@
     <string name="podeli">Podeli aplikaciju</string>
     <string name="podeli_naslov">Podeli preko</string>
     <string name="podeli_poruka">Isprobaj Benelux Road Info – odmorišta, pumpe, izlazi i parkinzi na autoputevima Holandije, Belgije i Luksemburga: %s</string>
+    <string name="zemlja_nl">Holandija</string>
+    <string name="zemlja_be">Belgija</string>
+    <string name="zemlja_lu">Luksemburg</string>
 </resources>

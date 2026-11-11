@@ -35,4 +35,7 @@
     <string name="podeli">Поделиться приложением</string>
     <string name="podeli_naslov">Поделиться через</string>
     <string name="podeli_poruka">Попробуй Benelux Road Info – зоны отдыха, заправки, съезды и парковки на автомагистралях Нидерландов, Бельгии и Люксембурга: %s</string>
+    <string name="zemlja_nl">Нидерланды</string>
+    <string name="zemlja_be">Бельгия</string>
+    <string name="zemlja_lu">Люксембург</string>
 </resources>

@@ -35,4 +35,7 @@
     <string name="podeli">Uygulamayı paylaş</string>
     <string name="podeli_naslov">Şununla paylaş</string>
     <string name="podeli_poruka">Benelux Road Info\'ya göz at – Hollanda, Belçika ve Lüksemburg otoyollarında dinlenme tesisleri, akaryakıt istasyonları, çıkışlar ve otoparklar: %s</string>
+    <string name="zemlja_nl">Hollanda</string>
+    <string name="zemlja_be">Belçika</string>
+    <string name="zemlja_lu">Lüksemburg</string>
 </resources>

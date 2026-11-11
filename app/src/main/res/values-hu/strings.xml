@@ -35,4 +35,7 @@
     <string name="podeli">Alkalmazás megosztása</string>
     <string name="podeli_naslov">Megosztás ezzel</string>
     <string name="podeli_poruka">Próbáld ki a Benelux Road Infót – pihenőhelyek, benzinkutak, kijáratok és parkolók Hollandia, Belgium és Luxemburg autópályáin: %s</string>
+    <string name="zemlja_nl">Hollandia</string>
+    <string name="zemlja_be">Belgium</string>
+    <string name="zemlja_lu">Luxemburg</string>
 </resources>

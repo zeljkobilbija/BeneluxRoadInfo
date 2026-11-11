@@ -35,4 +35,7 @@
     <string name="podeli">Zdieľať aplikáciu</string>
     <string name="podeli_naslov">Zdieľať cez</string>
     <string name="podeli_poruka">Vyskúšaj Benelux Road Info – odpočívadlá, čerpacie stanice, výjazdy a parkoviská na diaľniciach v Holandsku, Belgicku a Luxembursku: %s</string>
+    <string name="zemlja_nl">Holandsko</string>
+    <string name="zemlja_be">Belgicko</string>
+    <string name="zemlja_lu">Luxembursko</string>
 </resources>

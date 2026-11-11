@@ -40,7 +40,6 @@ public class AutoputAdapter extends RecyclerView.Adapter<AutoputAdapter.Drzac> {
 
         d.stit.setText(a.oznaka());
         d.stit.setBackgroundResource(ima ? a.stit() : R.drawable.bg_stit_sivi);
-        d.zemlja.setText(a.zemlja);
         d.ruta.setText(a.ruta);
 
         if (ima) {
@@ -52,7 +51,7 @@ public class AutoputAdapter extends RecyclerView.Adapter<AutoputAdapter.Drzac> {
             d.status.setText(R.string.uskoro);
             d.status.setTextColor(Izgled.boja(v.getContext(), R.color.tekst_sekundarni));
         }
-        v.setContentDescription(a.zemlja + " " + a.oznaka() + ", " + a.ruta + ", " + d.status.getText());
+        v.setContentDescription(a.oznaka() + ", " + a.ruta + ", " + d.status.getText());
         v.setOnClickListener(x -> klik.otvori(a, x));
     }
 
@@ -62,12 +61,11 @@ public class AutoputAdapter extends RecyclerView.Adapter<AutoputAdapter.Drzac> {
     }
 
     static class Drzac extends RecyclerView.ViewHolder {
-        final TextView stit, zemlja, ruta, status;
+        final TextView stit, ruta, status;
 
         Drzac(View v) {
             super(v);
             stit = v.findViewById(R.id.stit);
-            zemlja = v.findViewById(R.id.zemlja);
             ruta = v.findViewById(R.id.ruta);
             status = v.findViewById(R.id.status);
         }

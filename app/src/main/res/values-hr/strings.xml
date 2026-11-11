@@ -35,4 +35,7 @@
     <string name="podeli">Podijeli aplikaciju</string>
     <string name="podeli_naslov">Podijeli putem</string>
     <string name="podeli_poruka">Isprobaj Benelux Road Info – odmorišta, benzinske postaje, izlazi i parkirališta na autocestama Nizozemske, Belgije i Luksemburga: %s</string>
+    <string name="zemlja_nl">Nizozemska</string>
+    <string name="zemlja_be">Belgija</string>
+    <string name="zemlja_lu">Luksemburg</string>
 </resources>

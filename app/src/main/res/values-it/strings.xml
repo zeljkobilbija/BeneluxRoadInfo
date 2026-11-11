@@ -35,4 +35,7 @@
     <string name="podeli">Condividi l\'app</string>
     <string name="podeli_naslov">Condividi con</string>
     <string name="podeli_poruka">Scopri Benelux Road Info – aree di servizio, distributori, uscite e parcheggi sulle autostrade di Paesi Bassi, Belgio e Lussemburgo: %s</string>
+    <string name="zemlja_nl">Paesi Bassi</string>
+    <string name="zemlja_be">Belgio</string>
+    <string name="zemlja_lu">Lussemburgo</string>
 </resources>

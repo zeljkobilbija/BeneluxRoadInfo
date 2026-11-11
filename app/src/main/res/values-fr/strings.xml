@@ -35,4 +35,7 @@
     <string name="podeli">Partager l\'appli</string>
     <string name="podeli_naslov">Partager via</string>
     <string name="podeli_poruka">Découvre Benelux Road Info – aires, stations, sorties et parkings sur les autoroutes des Pays-Bas, de Belgique et du Luxembourg : %s</string>
+    <string name="zemlja_nl">Pays-Bas</string>
+    <string name="zemlja_be">Belgique</string>
+    <string name="zemlja_lu">Luxembourg</string>
 </resources>

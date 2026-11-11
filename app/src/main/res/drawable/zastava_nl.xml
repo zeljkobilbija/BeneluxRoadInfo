@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Zastava (nl): tri vodoravne pruge -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:width="60dp" android:height="42dp">
+        <shape><solid android:color="#FFFFFF" /><corners android:radius="5dp" /></shape>
+    </item>
+    <item android:width="60dp" android:height="14dp" android:gravity="top">
+        <shape><solid android:color="#AE1C28" /><corners android:topLeftRadius="5dp" android:topRightRadius="5dp" /></shape>
+    </item>
+    <item android:width="60dp" android:height="14dp" android:gravity="bottom">
+        <shape><solid android:color="#21468B" /><corners android:bottomLeftRadius="5dp" android:bottomRightRadius="5dp" /></shape>
+    </item>
+    <item android:width="60dp" android:height="42dp">
+        <shape><stroke android:width="1dp" android:color="#33000000" /><corners android:radius="5dp" /></shape>
+    </item>
+</layer-list>

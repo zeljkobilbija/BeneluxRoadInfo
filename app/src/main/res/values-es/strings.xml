@@ -35,4 +35,7 @@
     <string name="podeli">Compartir la app</string>
     <string name="podeli_naslov">Compartir con</string>
     <string name="podeli_poruka">Descubre Benelux Road Info – áreas de servicio, gasolineras, salidas y aparcamientos en las autopistas de los Países Bajos, Bélgica y Luxemburgo: %s</string>
+    <string name="zemlja_nl">Países Bajos</string>
+    <string name="zemlja_be">Bélgica</string>
+    <string name="zemlja_lu">Luxemburgo</string>
 </resources>

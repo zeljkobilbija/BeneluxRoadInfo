@@ -1,5 +1,6 @@
 package com.zeljkobilbija001.beneluxroadinfo;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -72,6 +73,16 @@ public final class Autoputevi {
             new Autoput("LU", "A7", "Luxembourg – Mersch – Ettelbruck", null),
             new Autoput("LU", "A13", "Pétange – Esch – Schengen", null)
     );
+
+    /** Redosled zemalja na početnom ekranu. */
+    public static final String[] ZEMLJE = {"NL", "BE", "LU"};
+
+    /** Autoputevi jedne zemlje ("NL", "BE" ili "LU"), redom kao u spisku. */
+    public static List<Autoput> zaZemlju(String zemlja) {
+        List<Autoput> l = new ArrayList<>();
+        for (Autoput a : SVE) if (a.zemlja.equals(zemlja)) l.add(a);
+        return l;
+    }
 
     public static Autoput poId(String id) {
         for (Autoput a : SVE) if (a.id.equals(id)) return a;

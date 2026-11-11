@@ -35,4 +35,7 @@
     <string name="podeli">Deli aplikacijo</string>
     <string name="podeli_naslov">Deli prek</string>
     <string name="podeli_poruka">Preizkusi Benelux Road Info – počivališča, bencinske črpalke, izvoze in parkirišča na avtocestah Nizozemske, Belgije in Luksemburga: %s</string>
+    <string name="zemlja_nl">Nizozemska</string>
+    <string name="zemlja_be">Belgija</string>
+    <string name="zemlja_lu">Luksemburg</string>
 </resources>
