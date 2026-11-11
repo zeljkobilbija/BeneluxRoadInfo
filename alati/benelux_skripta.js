@@ -23,7 +23,7 @@
 globalThis.AB = (() => {
   const NODE = typeof window === 'undefined';
   // glavni server ponekad tiho vrati samo deo podataka (izlazi bez odmorišta) → prelazi se na sledeći
-  const SERVERI = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter'];
+  const SERVERI = ['https://overpass.kumi.systems/api/interpreter', 'https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter'];
   let server = 0;
   const api = () => SERVERI[server % SERVERI.length];
   const sledeciServer = () => { server++; zapisi('prelazim na ' + api()); };
