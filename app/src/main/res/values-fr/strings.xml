@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Autoroutes</string>
+    <string name="podnaslov">Aires de service, stations, sorties et parkings – classés par kilomètre</string>
+    <string name="uskoro">Bientôt</string>
+    <string name="uskoro_poruka">%s arrive bientôt</string>
+    <string name="broj_tacaka">%1$d lieux · %2$d km</string>
+    <string name="nazad">Retour</string>
+    <string name="smer_voznje">Sens de circulation</string>
+    <string name="filter_sve">Tout</string>
+    <string name="filter_pumpe">Carburant</string>
+    <string name="filter_hrana">Repas</string>
+    <string name="filter_parking">Parkings</string>
+    <string name="filter_izlazi">Sorties</string>
+    <string name="filter_punjaci">Recharge</string>
+    <string name="tip_izlaz">Sortie</string>
+    <string name="tip_cvoriste">Échangeur</string>
+    <string name="tip_odmoriste">Aire de service</string>
+    <string name="tip_autohof">Autohof · petit détour</string>
+    <string name="tip_parking">Parking</string>
+    <string name="cip_restoran">Restaurant</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Douche</string>
+    <string name="cip_punjac">Recharge : %s</string>
+    <string name="cip_hotel">Hôtel</string>
+    <string name="cip_prodavnica">Boutique</string>
+    <string name="cip_kamioni">Camions : %s places</string>
+    <string name="cip_0_24">24 h/24</string>
+    <string name="podnaslov_lista">%1$d sorties · %2$d stations dans ce sens</string>
+    <string name="nema_stavki">Rien ne correspond à ce filtre sur ce tronçon.</string>
+    <string name="izvor">Données : © contributeurs OpenStreetMap (ODbL). Kilomètres comptés depuis le début du tronçon.</string>
+    <string name="privatnost">Paramètres de confidentialité</string>
+    <string name="greska_podaci">Impossible de charger les données.</string>
+    <string name="km">km</string>
+    <string name="podeli">Partager l\'appli</string>
+    <string name="podeli_naslov">Partager via</string>
+    <string name="podeli_poruka">Découvre Benelux Road Info – aires, stations, sorties et parkings sur les autoroutes des Pays-Bas, de Belgique et du Luxembourg : %s</string>
+</resources>

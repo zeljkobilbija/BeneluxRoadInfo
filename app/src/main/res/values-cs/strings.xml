@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Dálnice</string>
+    <string name="podnaslov">Odpočívadla, čerpací stanice, sjezdy a parkoviště – podle kilometru</string>
+    <string name="uskoro">Již brzy</string>
+    <string name="uskoro_poruka">%s bude již brzy</string>
+    <string name="broj_tacaka">Míst: %1$d · %2$d km</string>
+    <string name="nazad">Zpět</string>
+    <string name="smer_voznje">Směr jízdy</string>
+    <string name="filter_sve">Vše</string>
+    <string name="filter_pumpe">Palivo</string>
+    <string name="filter_hrana">Jídlo</string>
+    <string name="filter_parking">Parkování</string>
+    <string name="filter_izlazi">Sjezdy</string>
+    <string name="filter_punjaci">Nabíjení</string>
+    <string name="tip_izlaz">Sjezd</string>
+    <string name="tip_cvoriste">Křižovatka</string>
+    <string name="tip_odmoriste">Odpočívka se službami</string>
+    <string name="tip_autohof">Autohof · krátká zajížďka</string>
+    <string name="tip_parking">Parkoviště</string>
+    <string name="cip_restoran">Restaurace</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Sprcha</string>
+    <string name="cip_punjac">Nabíjení: %s</string>
+    <string name="cip_hotel">Hotel</string>
+    <string name="cip_prodavnica">Obchod</string>
+    <string name="cip_kamioni">Kamiony: %s míst</string>
+    <string name="cip_0_24">Nonstop</string>
+    <string name="podnaslov_lista">Sjezdy: %1$d · čerpací stanice v tomto směru: %2$d</string>
+    <string name="nema_stavki">Pro tento filtr na tomto úseku nic není.</string>
+    <string name="izvor">Data: © přispěvatelé OpenStreetMap (ODbL). Kilometry se počítají od začátku úseku.</string>
+    <string name="privatnost">Nastavení soukromí</string>
+    <string name="greska_podaci">Data se nepodařilo načíst.</string>
+    <string name="km">km</string>
+    <string name="podeli">Sdílet aplikaci</string>
+    <string name="podeli_naslov">Sdílet přes</string>
+    <string name="podeli_poruka">Vyzkoušej Benelux Road Info – odpočívadla, čerpací stanice, výjezdy a parkoviště na dálnicích v Nizozemsku, Belgii a Lucembursku: %s</string>
+</resources>

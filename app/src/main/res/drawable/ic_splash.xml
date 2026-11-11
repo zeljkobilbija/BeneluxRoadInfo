@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Simbol autoputa: nadvožnjak iznad dve kolovozne trake -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="288dp"
+    android:height="288dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:fillColor="#FFFFFF" android:pathData="M27,34h54v7h-54z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M31,41h5v10h-5z M72,41h5v10h-5z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M30,84 L48,84 L51.5,50 L46.5,50 Z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M60,84 L78,84 L61.5,50 L56.5,50 Z" />
+</vector>

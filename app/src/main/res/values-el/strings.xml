@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Αυτοκινητόδρομοι</string>
+    <string name="podnaslov">Χώροι στάθμευσης και ανάπαυσης, πρατήρια, έξοδοι – ανά χιλιόμετρο</string>
+    <string name="uskoro">Σύντομα</string>
+    <string name="uskoro_poruka">%s: σύντομα</string>
+    <string name="broj_tacaka">Σημεία: %1$d · %2$d χλμ.</string>
+    <string name="nazad">Πίσω</string>
+    <string name="smer_voznje">Κατεύθυνση</string>
+    <string name="filter_sve">Όλα</string>
+    <string name="filter_pumpe">Καύσιμα</string>
+    <string name="filter_hrana">Φαγητό</string>
+    <string name="filter_parking">Στάθμευση</string>
+    <string name="filter_izlazi">Έξοδοι</string>
+    <string name="filter_punjaci">Φόρτιση</string>
+    <string name="tip_izlaz">Έξοδος</string>
+    <string name="tip_cvoriste">Κόμβος</string>
+    <string name="tip_odmoriste">Σταθμός εξυπηρέτησης</string>
+    <string name="tip_autohof">Autohof · μικρή παράκαμψη</string>
+    <string name="tip_parking">Στάθμευση</string>
+    <string name="cip_restoran">Εστιατόριο</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Ντους</string>
+    <string name="cip_punjac">Φόρτιση: %s</string>
+    <string name="cip_hotel">Ξενοδοχείο</string>
+    <string name="cip_prodavnica">Κατάστημα</string>
+    <string name="cip_kamioni">Φορτηγά: %s θέσεις</string>
+    <string name="cip_0_24">24/7</string>
+    <string name="podnaslov_lista">Έξοδοι: %1$d · πρατήρια σε αυτή την κατεύθυνση: %2$d</string>
+    <string name="nema_stavki">Τίποτα για αυτό το φίλτρο σε αυτό το τμήμα.</string>
+    <string name="izvor">Δεδομένα: © συντελεστές OpenStreetMap (ODbL). Τα χιλιόμετρα μετρώνται από την αρχή του τμήματος.</string>
+    <string name="privatnost">Ρυθμίσεις απορρήτου</string>
+    <string name="greska_podaci">Δεν ήταν δυνατή η φόρτωση των δεδομένων.</string>
+    <string name="km">χλμ.</string>
+    <string name="podeli">Κοινοποίηση εφαρμογής</string>
+    <string name="podeli_naslov">Κοινοποίηση μέσω</string>
+    <string name="podeli_poruka">Δες το Benelux Road Info – σταθμούς εξυπηρέτησης, πρατήρια, εξόδους και χώρους στάθμευσης στους αυτοκινητόδρομους της Ολλανδίας, του Βελγίου και του Λουξεμβούργου: %s</string>
+</resources>

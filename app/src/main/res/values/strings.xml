@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Benelux Road Info</string>
+    <string name="naslov">Motorways</string>
+    <string name="podnaslov">Rest areas, fuel, exits and parking – sorted by kilometre</string>
+    <string name="uskoro">Coming soon</string>
+    <string name="uskoro_poruka">%s is coming soon</string>
+    <string name="broj_tacaka">%1$d places · %2$d km</string>
+    <string name="nazad">Back</string>
+    <string name="smer_voznje">Driving direction</string>
+    <string name="filter_sve">All</string>
+    <string name="filter_pumpe">Fuel</string>
+    <string name="filter_hrana">Food</string>
+    <string name="filter_parking">Parking</string>
+    <string name="filter_izlazi">Exits</string>
+    <string name="filter_punjaci">Charging</string>
+    <string name="tip_izlaz">Exit</string>
+    <string name="tip_cvoriste">Interchange</string>
+    <string name="tip_odmoriste">Service area</string>
+    <string name="tip_autohof">Truck stop · short detour</string>
+    <string name="tip_parking">Parking</string>
+    <string name="cip_restoran">Restaurant</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Shower</string>
+    <string name="cip_punjac">Charging: %s</string>
+    <string name="cip_hotel">Hotel</string>
+    <string name="cip_prodavnica">Shop</string>
+    <string name="cip_kamioni">Trucks: %s spaces</string>
+    <string name="cip_0_24">24/7</string>
+    <string name="podnaslov_lista">%1$d exits · %2$d fuel stations in this direction</string>
+    <string name="nema_stavki">Nothing matches this filter on this section.</string>
+    <string name="izvor">Data: © OpenStreetMap contributors (ODbL). Kilometres are counted from the start of each section.</string>
+    <string name="privatnost">Privacy settings</string>
+    <string name="greska_podaci">The data could not be loaded.</string>
+    <string name="km">km</string>
+    <string name="podeli">Share the app</string>
+    <string name="podeli_naslov">Share via</string>
+    <string name="podeli_poruka">Check out Benelux Road Info – service areas, fuel, exits and parking on motorways in the Netherlands, Belgium and Luxembourg: %s</string>
+</resources>

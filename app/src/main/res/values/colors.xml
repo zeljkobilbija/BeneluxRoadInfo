@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tamnoplava tema; "stit" = crveni holandski štit, "stit_plavi" = belgijski i luksemburški -->
+    <color name="plava">#1B3F73</color>
+    <color name="plava_tamna">#122C52</color>
+    <color name="plava_svetla">#D6E0EE</color>
+    <color name="siva_stit">#6B7588</color>
+    <color name="stit">#C8102E</color>
+    <color name="stit_plavi">#2A64B8</color>
+    <!-- Plava za tekst na svetloj/tamnoj podlozi -->
+    <color name="plava_tekst">#1B3F73</color>
+
+    <color name="pozadina">#EEF1F6</color>
+    <color name="pozadina_liste">#F6F8FB</color>
+    <color name="povrsina">#FFFFFF</color>
+    <color name="tekst">#12161F</color>
+    <color name="tekst_sekundarni">#4B5566</color>
+    <color name="linija">#E1E6EE</color>
+    <color name="sina">#CBD3E0</color>
+    <color name="ivica_filtera">#C5CEDC</color>
+
+    <!-- Oznake (čipovi) -->
+    <color name="cip_gorivo">#FFE3A3</color>
+    <color name="cip_gorivo_tekst">#4A3200</color>
+    <color name="cip_hrana">#FBE0DC</color>
+    <color name="cip_hrana_tekst">#7A1E14</color>
+    <color name="cip_struja">#DAF0E2</color>
+    <color name="cip_struja_tekst">#14532D</color>
+    <color name="cip_obicno">#E6EBF3</color>
+    <color name="cip_obicno_tekst">#22324F</color>
+
+    <color name="pumpa">#F2A900</color>
+    <color name="pumpa_tekst">#1B1300</color>
+    <color name="hrana">#7A1E14</color>
+
+    <color name="splash_pozadina">#1B3F73</color>
+    <color name="ic_launcher_background">#1B3F73</color>
+</resources>

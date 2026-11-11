@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Autópályák</string>
+    <string name="podnaslov">Pihenőhelyek, benzinkutak, lehajtók és parkolók – kilométer szerint</string>
+    <string name="uskoro">Hamarosan</string>
+    <string name="uskoro_poruka">%s hamarosan érkezik</string>
+    <string name="broj_tacaka">%1$d hely · %2$d km</string>
+    <string name="nazad">Vissza</string>
+    <string name="smer_voznje">Haladási irány</string>
+    <string name="filter_sve">Mind</string>
+    <string name="filter_pumpe">Üzemanyag</string>
+    <string name="filter_hrana">Étel</string>
+    <string name="filter_parking">Parkoló</string>
+    <string name="filter_izlazi">Lehajtók</string>
+    <string name="filter_punjaci">Töltés</string>
+    <string name="tip_izlaz">Lehajtó</string>
+    <string name="tip_cvoriste">Csomópont</string>
+    <string name="tip_odmoriste">Pihenőhely szolgáltatásokkal</string>
+    <string name="tip_autohof">Autohof · rövid kitérő</string>
+    <string name="tip_parking">Parkoló</string>
+    <string name="cip_restoran">Étterem</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Zuhany</string>
+    <string name="cip_punjac">Töltés: %s</string>
+    <string name="cip_hotel">Szálloda</string>
+    <string name="cip_prodavnica">Bolt</string>
+    <string name="cip_kamioni">Kamionok: %s hely</string>
+    <string name="cip_0_24">0–24</string>
+    <string name="podnaslov_lista">%1$d lehajtó · %2$d benzinkút ebben az irányban</string>
+    <string name="nema_stavki">Ezen a szakaszon nincs találat erre a szűrőre.</string>
+    <string name="izvor">Adatok: © OpenStreetMap közreműködők (ODbL). A kilométereket a szakasz elejétől számoljuk.</string>
+    <string name="privatnost">Adatvédelmi beállítások</string>
+    <string name="greska_podaci">Az adatokat nem sikerült betölteni.</string>
+    <string name="km">km</string>
+    <string name="podeli">Alkalmazás megosztása</string>
+    <string name="podeli_naslov">Megosztás ezzel</string>
+    <string name="podeli_poruka">Próbáld ki a Benelux Road Infót – pihenőhelyek, benzinkutak, kijáratok és parkolók Hollandia, Belgium és Luxemburg autópályáin: %s</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Autostrăzi</string>
+    <string name="podnaslov">Parcări de servicii, benzinării, ieșiri și parcări – după kilometru</string>
+    <string name="uskoro">În curând</string>
+    <string name="uskoro_poruka">%s vine în curând</string>
+    <string name="broj_tacaka">Puncte: %1$d · %2$d km</string>
+    <string name="nazad">Înapoi</string>
+    <string name="smer_voznje">Sensul de mers</string>
+    <string name="filter_sve">Toate</string>
+    <string name="filter_pumpe">Carburant</string>
+    <string name="filter_hrana">Mâncare</string>
+    <string name="filter_parking">Parcare</string>
+    <string name="filter_izlazi">Ieșiri</string>
+    <string name="filter_punjaci">Încărcare</string>
+    <string name="tip_izlaz">Ieșirea</string>
+    <string name="tip_cvoriste">Nod rutier</string>
+    <string name="tip_odmoriste">Zonă de servicii</string>
+    <string name="tip_autohof">Autohof · mic ocol</string>
+    <string name="tip_parking">Parcare</string>
+    <string name="cip_restoran">Restaurant</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Duș</string>
+    <string name="cip_punjac">Încărcare: %s</string>
+    <string name="cip_hotel">Hotel</string>
+    <string name="cip_prodavnica">Magazin</string>
+    <string name="cip_kamioni">Camioane: %s locuri</string>
+    <string name="cip_0_24">Non-stop</string>
+    <string name="podnaslov_lista">Ieșiri: %1$d · benzinării în acest sens: %2$d</string>
+    <string name="nema_stavki">Nimic pentru acest filtru pe acest tronson.</string>
+    <string name="izvor">Date: © contribuitorii OpenStreetMap (ODbL). Kilometrii se numără de la începutul tronsonului.</string>
+    <string name="privatnost">Setări de confidențialitate</string>
+    <string name="greska_podaci">Datele nu au putut fi încărcate.</string>
+    <string name="km">km</string>
+    <string name="podeli">Distribuie aplicația</string>
+    <string name="podeli_naslov">Distribuie prin</string>
+    <string name="podeli_poruka">Încearcă Benelux Road Info – zone de servicii, benzinării, ieșiri și parcări pe autostrăzile din Țările de Jos, Belgia și Luxemburg: %s</string>
+</resources>

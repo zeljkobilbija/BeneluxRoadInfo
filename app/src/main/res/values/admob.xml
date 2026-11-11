@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      TODO: pre objave napravi aplikaciju u AdMob konzoli (BeneluxRoadInfo) i ovde upiši PRAVE ID-jeve.
+      Dok toga nema, i release verzija koristi Google-ove probne ID-jeve.
+    -->
+    <string name="admob_app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_banner_id" translatable="false">ca-app-pub-3940256099942544/9214589741</string>
+</resources>

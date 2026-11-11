@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Autostrady</string>
+    <string name="podnaslov">Miejsca obsługi podróżnych, stacje paliw, zjazdy i parkingi – według kilometra</string>
+    <string name="uskoro">Wkrótce</string>
+    <string name="uskoro_poruka">%s już wkrótce</string>
+    <string name="broj_tacaka">Punkty: %1$d · %2$d km</string>
+    <string name="nazad">Wstecz</string>
+    <string name="smer_voznje">Kierunek jazdy</string>
+    <string name="filter_sve">Wszystko</string>
+    <string name="filter_pumpe">Paliwo</string>
+    <string name="filter_hrana">Jedzenie</string>
+    <string name="filter_parking">Parkingi</string>
+    <string name="filter_izlazi">Zjazdy</string>
+    <string name="filter_punjaci">Ładowanie</string>
+    <string name="tip_izlaz">Zjazd</string>
+    <string name="tip_cvoriste">Węzeł</string>
+    <string name="tip_odmoriste">MOP z usługami</string>
+    <string name="tip_autohof">Autohof · krótki zjazd</string>
+    <string name="tip_parking">Parking</string>
+    <string name="cip_restoran">Restauracja</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Prysznic</string>
+    <string name="cip_punjac">Ładowanie: %s</string>
+    <string name="cip_hotel">Hotel</string>
+    <string name="cip_prodavnica">Sklep</string>
+    <string name="cip_kamioni">Ciężarówki: %s miejsc</string>
+    <string name="cip_0_24">24/7</string>
+    <string name="podnaslov_lista">Zjazdy: %1$d · stacje paliw w tym kierunku: %2$d</string>
+    <string name="nema_stavki">Brak wyników dla tego filtra na tym odcinku.</string>
+    <string name="izvor">Dane: © współtwórcy OpenStreetMap (ODbL). Kilometry liczone od początku odcinka.</string>
+    <string name="privatnost">Ustawienia prywatności</string>
+    <string name="greska_podaci">Nie udało się wczytać danych.</string>
+    <string name="km">km</string>
+    <string name="podeli">Udostępnij aplikację</string>
+    <string name="podeli_naslov">Udostępnij przez</string>
+    <string name="podeli_poruka">Sprawdź Benelux Road Info – MOP-y, stacje paliw, zjazdy i parkingi na autostradach w Holandii, Belgii i Luksemburgu: %s</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Autosnelwegen</string>
+    <string name="podnaslov">Verzorgingsplaatsen, tankstations, afritten en parkeerplaatsen – per kilometer</string>
+    <string name="uskoro">Binnenkort</string>
+    <string name="uskoro_poruka">%s komt binnenkort</string>
+    <string name="broj_tacaka">%1$d plaatsen · %2$d km</string>
+    <string name="nazad">Terug</string>
+    <string name="smer_voznje">Rijrichting</string>
+    <string name="filter_sve">Alles</string>
+    <string name="filter_pumpe">Tanken</string>
+    <string name="filter_hrana">Eten</string>
+    <string name="filter_parking">Parkeren</string>
+    <string name="filter_izlazi">Afritten</string>
+    <string name="filter_punjaci">Laden</string>
+    <string name="tip_izlaz">Afrit</string>
+    <string name="tip_cvoriste">Knooppunt</string>
+    <string name="tip_odmoriste">Verzorgingsplaats</string>
+    <string name="tip_autohof">Autohof · kleine omweg</string>
+    <string name="tip_parking">Parkeerplaats</string>
+    <string name="cip_restoran">Restaurant</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Douche</string>
+    <string name="cip_punjac">Laden: %s</string>
+    <string name="cip_hotel">Hotel</string>
+    <string name="cip_prodavnica">Winkel</string>
+    <string name="cip_kamioni">Vrachtwagens: %s plaatsen</string>
+    <string name="cip_0_24">24/7</string>
+    <string name="podnaslov_lista">%1$d afritten · %2$d tankstations in deze richting</string>
+    <string name="nema_stavki">Niets gevonden voor dit filter op dit traject.</string>
+    <string name="izvor">Gegevens: © OpenStreetMap-bijdragers (ODbL). Kilometers worden geteld vanaf het begin van het traject.</string>
+    <string name="privatnost">Privacyinstellingen</string>
+    <string name="greska_podaci">De gegevens konden niet worden geladen.</string>
+    <string name="km">km</string>
+    <string name="podeli">App delen</string>
+    <string name="podeli_naslov">Delen via</string>
+    <string name="podeli_poruka">Bekijk Benelux Road Info – verzorgingsplaatsen, tankstations, afritten en parkeerplaatsen op de snelwegen in Nederland, België en Luxemburg: %s</string>
+</resources>

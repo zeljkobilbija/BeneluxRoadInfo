@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Samo za debug verziju: Google-ovi PROBNI ID-jevi (oznaka "Test Ad").
+      Zamenjuju prave ID-jeve iz src/main/res/values/admob.xml,
+      pa se tokom razvoja ne prikazuju prave reklame.
+      Release verzija (Play prodavnica) uvek koristi prave ID-jeve.
+    -->
+    <string name="admob_app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_banner_id" translatable="false">ca-app-pub-3940256099942544/9214589741</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tamni režim: plava traka ostaje ista, površine su tamne -->
+    <color name="pozadina">#121317</color>
+    <color name="pozadina_liste">#16181D</color>
+    <color name="povrsina">#1E2026</color>
+    <color name="tekst">#EEF0F4</color>
+    <color name="tekst_sekundarni">#B4BAC5</color>
+    <color name="linija">#2C3038</color>
+    <color name="sina">#3A404B</color>
+    <color name="ivica_filtera">#454B57</color>
+    <color name="siva_stit">#5A6476</color>
+
+    <color name="cip_gorivo">#4A3A10</color>
+    <color name="cip_gorivo_tekst">#FFE3A3</color>
+    <color name="cip_hrana">#4A211C</color>
+    <color name="cip_hrana_tekst">#FBD2CC</color>
+    <color name="cip_struja">#173A26</color>
+    <color name="cip_struja_tekst">#C7EBD4</color>
+    <color name="cip_obicno">#2A303B</color>
+    <color name="cip_obicno_tekst">#DCE3EE</color>
+
+    <color name="plava_tekst">#A9C4F5</color>
+    <color name="hrana">#F2A39A</color>
+</resources>

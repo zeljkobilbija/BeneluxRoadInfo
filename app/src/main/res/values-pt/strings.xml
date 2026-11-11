@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Autoestradas</string>
+    <string name="podnaslov">Áreas de serviço, postos, saídas e estacionamentos – por quilómetro</string>
+    <string name="uskoro">Em breve</string>
+    <string name="uskoro_poruka">%s chega em breve</string>
+    <string name="broj_tacaka">%1$d locais · %2$d km</string>
+    <string name="nazad">Voltar</string>
+    <string name="smer_voznje">Sentido de marcha</string>
+    <string name="filter_sve">Tudo</string>
+    <string name="filter_pumpe">Combustível</string>
+    <string name="filter_hrana">Comida</string>
+    <string name="filter_parking">Estacionamento</string>
+    <string name="filter_izlazi">Saídas</string>
+    <string name="filter_punjaci">Carregamento</string>
+    <string name="tip_izlaz">Saída</string>
+    <string name="tip_cvoriste">Nó</string>
+    <string name="tip_odmoriste">Área de serviço</string>
+    <string name="tip_autohof">Autohof · pequeno desvio</string>
+    <string name="tip_parking">Estacionamento</string>
+    <string name="cip_restoran">Restaurante</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Duche</string>
+    <string name="cip_punjac">Carregamento: %s</string>
+    <string name="cip_hotel">Hotel</string>
+    <string name="cip_prodavnica">Loja</string>
+    <string name="cip_kamioni">Camiões: %s lugares</string>
+    <string name="cip_0_24">24 h</string>
+    <string name="podnaslov_lista">%1$d saídas · %2$d postos neste sentido</string>
+    <string name="nema_stavki">Nada corresponde a este filtro neste troço.</string>
+    <string name="izvor">Dados: © contribuidores do OpenStreetMap (ODbL). Os quilómetros contam desde o início do troço.</string>
+    <string name="privatnost">Definições de privacidade</string>
+    <string name="greska_podaci">Não foi possível carregar os dados.</string>
+    <string name="km">km</string>
+    <string name="podeli">Partilhar a app</string>
+    <string name="podeli_naslov">Partilhar via</string>
+    <string name="podeli_poruka">Conhece o Benelux Road Info – áreas de serviço, postos de combustível, saídas e estacionamentos nas autoestradas dos Países Baixos, Bélgica e Luxemburgo: %s</string>
+</resources>

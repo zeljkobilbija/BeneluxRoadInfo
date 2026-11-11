@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Otoyollar</string>
+    <string name="podnaslov">Dinlenme tesisleri, akaryakıt istasyonları, çıkışlar ve otoparklar – kilometreye göre</string>
+    <string name="uskoro">Yakında</string>
+    <string name="uskoro_poruka">%s yakında geliyor</string>
+    <string name="broj_tacaka">%1$d nokta · %2$d km</string>
+    <string name="nazad">Geri</string>
+    <string name="smer_voznje">Gidiş yönü</string>
+    <string name="filter_sve">Tümü</string>
+    <string name="filter_pumpe">Akaryakıt</string>
+    <string name="filter_hrana">Yemek</string>
+    <string name="filter_parking">Otopark</string>
+    <string name="filter_izlazi">Çıkışlar</string>
+    <string name="filter_punjaci">Şarj</string>
+    <string name="tip_izlaz">Çıkış</string>
+    <string name="tip_cvoriste">Kavşak</string>
+    <string name="tip_odmoriste">Hizmet tesisi</string>
+    <string name="tip_autohof">Autohof · kısa sapma</string>
+    <string name="tip_parking">Otopark</string>
+    <string name="cip_restoran">Restoran</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Duş</string>
+    <string name="cip_punjac">Şarj: %s</string>
+    <string name="cip_hotel">Otel</string>
+    <string name="cip_prodavnica">Market</string>
+    <string name="cip_kamioni">Tır: %s yer</string>
+    <string name="cip_0_24">7/24</string>
+    <string name="podnaslov_lista">Çıkış: %1$d · bu yönde akaryakıt: %2$d</string>
+    <string name="nema_stavki">Bu kesimde bu filtre için sonuç yok.</string>
+    <string name="izvor">Veriler: © OpenStreetMap katkıcıları (ODbL). Kilometreler kesimin başından sayılır.</string>
+    <string name="privatnost">Gizlilik ayarları</string>
+    <string name="greska_podaci">Veriler yüklenemedi.</string>
+    <string name="km">km</string>
+    <string name="podeli">Uygulamayı paylaş</string>
+    <string name="podeli_naslov">Şununla paylaş</string>
+    <string name="podeli_poruka">Benelux Road Info\'ya göz at – Hollanda, Belçika ve Lüksemburg otoyollarında dinlenme tesisleri, akaryakıt istasyonları, çıkışlar ve otoparklar: %s</string>
+</resources>

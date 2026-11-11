@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Autostrade</string>
+    <string name="podnaslov">Aree di servizio, distributori, uscite e parcheggi – in ordine di chilometro</string>
+    <string name="uskoro">Prossimamente</string>
+    <string name="uskoro_poruka">%s arriverà presto</string>
+    <string name="broj_tacaka">%1$d punti · %2$d km</string>
+    <string name="nazad">Indietro</string>
+    <string name="smer_voznje">Direzione di marcia</string>
+    <string name="filter_sve">Tutti</string>
+    <string name="filter_pumpe">Carburante</string>
+    <string name="filter_hrana">Cibo</string>
+    <string name="filter_parking">Parcheggi</string>
+    <string name="filter_izlazi">Uscite</string>
+    <string name="filter_punjaci">Ricarica</string>
+    <string name="tip_izlaz">Uscita</string>
+    <string name="tip_cvoriste">Svincolo</string>
+    <string name="tip_odmoriste">Area di servizio</string>
+    <string name="tip_autohof">Autohof · breve deviazione</string>
+    <string name="tip_parking">Parcheggio</string>
+    <string name="cip_restoran">Ristorante</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Doccia</string>
+    <string name="cip_punjac">Ricarica: %s</string>
+    <string name="cip_hotel">Hotel</string>
+    <string name="cip_prodavnica">Negozio</string>
+    <string name="cip_kamioni">Camion: %s posti</string>
+    <string name="cip_0_24">24 ore</string>
+    <string name="podnaslov_lista">%1$d uscite · %2$d distributori in questa direzione</string>
+    <string name="nema_stavki">Nessun risultato per questo filtro su questo tratto.</string>
+    <string name="izvor">Dati: © contributori di OpenStreetMap (ODbL). I chilometri partono dall\'inizio del tratto.</string>
+    <string name="privatnost">Impostazioni privacy</string>
+    <string name="greska_podaci">Impossibile caricare i dati.</string>
+    <string name="km">km</string>
+    <string name="podeli">Condividi l\'app</string>
+    <string name="podeli_naslov">Condividi con</string>
+    <string name="podeli_poruka">Scopri Benelux Road Info – aree di servizio, distributori, uscite e parcheggi sulle autostrade di Paesi Bassi, Belgio e Lussemburgo: %s</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Autobahnen</string>
+    <string name="podnaslov">Rastanlagen, Tankstellen, Ausfahrten und Parkplätze – nach Kilometer sortiert</string>
+    <string name="uskoro">Demnächst</string>
+    <string name="uskoro_poruka">%s kommt demnächst</string>
+    <string name="broj_tacaka">%1$d Orte · %2$d km</string>
+    <string name="nazad">Zurück</string>
+    <string name="smer_voznje">Fahrtrichtung</string>
+    <string name="filter_sve">Alle</string>
+    <string name="filter_pumpe">Tanken</string>
+    <string name="filter_hrana">Essen</string>
+    <string name="filter_parking">Parken</string>
+    <string name="filter_izlazi">Ausfahrten</string>
+    <string name="filter_punjaci">Laden</string>
+    <string name="tip_izlaz">Ausfahrt</string>
+    <string name="tip_cvoriste">Autobahnkreuz</string>
+    <string name="tip_odmoriste">Rastanlage</string>
+    <string name="tip_autohof">Autohof · kurzer Abstecher</string>
+    <string name="tip_parking">Parkplatz</string>
+    <string name="cip_restoran">Restaurant</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Dusche</string>
+    <string name="cip_punjac">Laden: %s</string>
+    <string name="cip_hotel">Hotel</string>
+    <string name="cip_prodavnica">Shop</string>
+    <string name="cip_kamioni">Lkw: %s Plätze</string>
+    <string name="cip_0_24">24 h</string>
+    <string name="podnaslov_lista">%1$d Ausfahrten · %2$d Tankstellen in dieser Richtung</string>
+    <string name="nema_stavki">Für diesen Filter gibt es auf diesem Abschnitt nichts.</string>
+    <string name="izvor">Daten: © OpenStreetMap-Mitwirkende (ODbL). Kilometer ab Beginn des Abschnitts.</string>
+    <string name="privatnost">Datenschutz-Einstellungen</string>
+    <string name="greska_podaci">Die Daten konnten nicht geladen werden.</string>
+    <string name="km">km</string>
+    <string name="podeli">App teilen</string>
+    <string name="podeli_naslov">Teilen über</string>
+    <string name="podeli_poruka">Schau dir Benelux Road Info an – Raststätten, Tankstellen, Ausfahrten und Parkplätze auf den Autobahnen in den Niederlanden, Belgien und Luxemburg: %s</string>
+</resources>

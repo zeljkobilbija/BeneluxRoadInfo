@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Autopistas</string>
+    <string name="podnaslov">Áreas de servicio, gasolineras, salidas y aparcamientos – por kilómetro</string>
+    <string name="uskoro">Próximamente</string>
+    <string name="uskoro_poruka">%s llegará pronto</string>
+    <string name="broj_tacaka">%1$d puntos · %2$d km</string>
+    <string name="nazad">Atrás</string>
+    <string name="smer_voznje">Sentido de la marcha</string>
+    <string name="filter_sve">Todo</string>
+    <string name="filter_pumpe">Gasolina</string>
+    <string name="filter_hrana">Comida</string>
+    <string name="filter_parking">Aparcamiento</string>
+    <string name="filter_izlazi">Salidas</string>
+    <string name="filter_punjaci">Carga</string>
+    <string name="tip_izlaz">Salida</string>
+    <string name="tip_cvoriste">Enlace</string>
+    <string name="tip_odmoriste">Área de servicio</string>
+    <string name="tip_autohof">Autohof · pequeño desvío</string>
+    <string name="tip_parking">Aparcamiento</string>
+    <string name="cip_restoran">Restaurante</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Ducha</string>
+    <string name="cip_punjac">Carga: %s</string>
+    <string name="cip_hotel">Hotel</string>
+    <string name="cip_prodavnica">Tienda</string>
+    <string name="cip_kamioni">Camiones: %s plazas</string>
+    <string name="cip_0_24">24 h</string>
+    <string name="podnaslov_lista">%1$d salidas · %2$d gasolineras en este sentido</string>
+    <string name="nema_stavki">No hay nada con este filtro en este tramo.</string>
+    <string name="izvor">Datos: © colaboradores de OpenStreetMap (ODbL). Los kilómetros se cuentan desde el inicio del tramo.</string>
+    <string name="privatnost">Ajustes de privacidad</string>
+    <string name="greska_podaci">No se pudieron cargar los datos.</string>
+    <string name="km">km</string>
+    <string name="podeli">Compartir la app</string>
+    <string name="podeli_naslov">Compartir con</string>
+    <string name="podeli_poruka">Descubre Benelux Road Info – áreas de servicio, gasolineras, salidas y aparcamientos en las autopistas de los Países Bajos, Bélgica y Luxemburgo: %s</string>
+</resources>

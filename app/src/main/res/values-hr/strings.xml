@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Autoceste</string>
+    <string name="podnaslov">Odmorišta, benzinske postaje, izlazi i parkirališta – po kilometru</string>
+    <string name="uskoro">Uskoro</string>
+    <string name="uskoro_poruka">%s stiže uskoro</string>
+    <string name="broj_tacaka">Mjesta: %1$d · %2$d km</string>
+    <string name="nazad">Natrag</string>
+    <string name="smer_voznje">Smjer vožnje</string>
+    <string name="filter_sve">Sve</string>
+    <string name="filter_pumpe">Gorivo</string>
+    <string name="filter_hrana">Hrana</string>
+    <string name="filter_parking">Parking</string>
+    <string name="filter_izlazi">Izlazi</string>
+    <string name="filter_punjaci">Punjači</string>
+    <string name="tip_izlaz">Izlaz</string>
+    <string name="tip_cvoriste">Čvor</string>
+    <string name="tip_odmoriste">Odmorište s uslugama</string>
+    <string name="tip_autohof">Autohof · kratko skretanje</string>
+    <string name="tip_parking">Parkiralište</string>
+    <string name="cip_restoran">Restoran</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Tuš</string>
+    <string name="cip_punjac">Punjač: %s</string>
+    <string name="cip_hotel">Hotel</string>
+    <string name="cip_prodavnica">Trgovina</string>
+    <string name="cip_kamioni">Kamioni: %s mjesta</string>
+    <string name="cip_0_24">0–24</string>
+    <string name="podnaslov_lista">Izlazi: %1$d · benzinske u ovom smjeru: %2$d</string>
+    <string name="nema_stavki">Nema stavki za ovaj filtar na ovoj dionici.</string>
+    <string name="izvor">Podaci: © OpenStreetMap suradnici (ODbL). Kilometri se računaju od početka dionice.</string>
+    <string name="privatnost">Postavke privatnosti</string>
+    <string name="greska_podaci">Podaci se nisu mogli učitati.</string>
+    <string name="km">km</string>
+    <string name="podeli">Podijeli aplikaciju</string>
+    <string name="podeli_naslov">Podijeli putem</string>
+    <string name="podeli_poruka">Isprobaj Benelux Road Info – odmorišta, benzinske postaje, izlazi i parkirališta na autocestama Nizozemske, Belgije i Luksemburga: %s</string>
+</resources>

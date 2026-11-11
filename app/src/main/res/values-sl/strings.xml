@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Avtoceste</string>
+    <string name="podnaslov">Počivališča, bencinski servisi, izvozi in parkirišča – po kilometrih</string>
+    <string name="uskoro">Kmalu</string>
+    <string name="uskoro_poruka">%s bo kmalu na voljo</string>
+    <string name="broj_tacaka">Točke: %1$d · %2$d km</string>
+    <string name="nazad">Nazaj</string>
+    <string name="smer_voznje">Smer vožnje</string>
+    <string name="filter_sve">Vse</string>
+    <string name="filter_pumpe">Gorivo</string>
+    <string name="filter_hrana">Hrana</string>
+    <string name="filter_parking">Parkiranje</string>
+    <string name="filter_izlazi">Izvozi</string>
+    <string name="filter_punjaci">Polnjenje</string>
+    <string name="tip_izlaz">Izvoz</string>
+    <string name="tip_cvoriste">Razcep</string>
+    <string name="tip_odmoriste">Počivališče s storitvami</string>
+    <string name="tip_autohof">Autohof · kratek ovinek</string>
+    <string name="tip_parking">Parkirišče</string>
+    <string name="cip_restoran">Restavracija</string>
+    <string name="cip_wc">WC</string>
+    <string name="cip_tus">Prha</string>
+    <string name="cip_punjac">Polnjenje: %s</string>
+    <string name="cip_hotel">Hotel</string>
+    <string name="cip_prodavnica">Trgovina</string>
+    <string name="cip_kamioni">Tovornjaki: %s mest</string>
+    <string name="cip_0_24">0–24</string>
+    <string name="podnaslov_lista">Izvozi: %1$d · bencinski servisi v tej smeri: %2$d</string>
+    <string name="nema_stavki">Za ta filter na tem odseku ni ničesar.</string>
+    <string name="izvor">Podatki: © sodelavci OpenStreetMap (ODbL). Kilometri se štejejo od začetka odseka.</string>
+    <string name="privatnost">Nastavitve zasebnosti</string>
+    <string name="greska_podaci">Podatkov ni bilo mogoče naložiti.</string>
+    <string name="km">km</string>
+    <string name="podeli">Deli aplikacijo</string>
+    <string name="podeli_naslov">Deli prek</string>
+    <string name="podeli_poruka">Preizkusi Benelux Road Info – počivališča, bencinske črpalke, izvoze in parkirišča na avtocestah Nizozemske, Belgije in Luksemburga: %s</string>
+</resources>

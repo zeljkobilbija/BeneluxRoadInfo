@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="naslov">Автобаны</string>
+    <string name="podnaslov">Площадки отдыха, АЗС, съезды и парковки – по километрам</string>
+    <string name="uskoro">Скоро</string>
+    <string name="uskoro_poruka">%s скоро появится</string>
+    <string name="broj_tacaka">%1$d объектов · %2$d км</string>
+    <string name="nazad">Назад</string>
+    <string name="smer_voznje">Направление движения</string>
+    <string name="filter_sve">Все</string>
+    <string name="filter_pumpe">АЗС</string>
+    <string name="filter_hrana">Еда</string>
+    <string name="filter_parking">Парковки</string>
+    <string name="filter_izlazi">Съезды</string>
+    <string name="filter_punjaci">Зарядка</string>
+    <string name="tip_izlaz">Съезд</string>
+    <string name="tip_cvoriste">Развязка · съезд %s</string>
+    <string name="tip_odmoriste">Площадка с сервисом</string>
+    <string name="tip_autohof">Autohof · недалеко от трассы</string>
+    <string name="tip_parking">Парковка</string>
+    <string name="cip_restoran">Ресторан</string>
+    <string name="cip_wc">Туалет</string>
+    <string name="cip_tus">Душ</string>
+    <string name="cip_punjac">Зарядка: %s</string>
+    <string name="cip_hotel">Отель</string>
+    <string name="cip_prodavnica">Магазин</string>
+    <string name="cip_kamioni">Грузовики: %s мест</string>
+    <string name="cip_0_24">24/7</string>
+    <string name="podnaslov_lista">%1$d съездов · %2$d АЗС в этом направлении</string>
+    <string name="nema_stavki">На этом участке ничего не найдено по фильтру.</string>
+    <string name="izvor">Данные: © участники OpenStreetMap (ODbL). Километры считаются от начала участка.</string>
+    <string name="privatnost">Настройки конфиденциальности</string>
+    <string name="greska_podaci">Не удалось загрузить данные.</string>
+    <string name="km">км</string>
+    <string name="podeli">Поделиться приложением</string>
+    <string name="podeli_naslov">Поделиться через</string>
+    <string name="podeli_poruka">Попробуй Benelux Road Info – зоны отдыха, заправки, съезды и парковки на автомагистралях Нидерландов, Бельгии и Люксембурга: %s</string>
+</resources>

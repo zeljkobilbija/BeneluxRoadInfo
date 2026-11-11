@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tamna varijanta glavne teme -->
+    <style name="Base.Theme.BeneluxRoadInfo" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#8FB0F0</item>
+        <item name="colorOnPrimary">#0B1B3D</item>
+        <item name="android:colorBackground">@color/pozadina</item>
+        <item name="android:windowBackground">@color/pozadina</item>
+        <item name="android:textColorPrimary">@color/tekst</item>
+        <item name="android:textColorSecondary">@color/tekst_sekundarni</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+    </style>
+</resources>
