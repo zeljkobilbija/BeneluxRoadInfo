@@ -353,13 +353,22 @@ globalThis.AB = (() => {
       if (m) odQ = xy(m.lat, m.lon); else zapisi('polazni grad "' + od + '" nije nađen, km po brojevima');
     }
 
+    // Pravougaonik oko autoputa: "around" oko hiljadu puteva preopterećen server tiho vrati prazno
+    // (NL A2: 0 odmorišta), pa se odmorišta traže u pravougaoniku, a udaljenost proverava ovde.
+    let ju = 90, za = 180, se = -90, is = -180;
+    for (const dd of linija.deonice) for (const q of dd.p) {
+      const [la, lo] = nazad(q);
+      ju = Math.min(ju, la); se = Math.max(se, la); za = Math.min(za, lo); is = Math.max(is, lo);
+    }
+    const okvir = `(${(ju - 0.01).toFixed(4)},${(za - 0.015).toFixed(4)},${(se + 0.01).toFixed(4)},${(is + 0.015).toFixed(4)})`;
+
     zapisi('2/3 izlazi i odmorišta…');
     // preopterećen server ponekad vrati prazan odgovor bez napomene (A1 bez ijednog odmorišta) → ponovi
     let osnova;
     for (let i = 0; ; i++) {
       osnova = await upit(`[out:json][timeout:240];${putevi}
       node(w.w)[highway=motorway_junction];out qt;
-      nwr[highway~"^(services|rest_area)$"](around.w:400);out center qt;`);
+      nwr[highway~"^(services|rest_area)$"]${okvir};out center qt;`);
       const ima = tip => osnova.elements.some(e => (e.tags || {}).highway === tip);
       if (ima('motorway_junction') && ima('services')) break;
       if (i >= 4) throw new Error('server vraća prazne odgovore (nema izlaza ili odmorišta), probaj kasnije');
@@ -373,13 +382,6 @@ globalThis.AB = (() => {
     const rampe = await upit(`[out:json][timeout:180];${putevi}
       node(w.w)[highway=motorway_junction]->.j;way(bn.j)[highway=motorway_link];out body qt;`);
 
-    zapisi('3/3 pumpe, hrana, punjači…');
-    const usluge = await upit(`[out:json][timeout:240];${putevi}
-      nwr[highway~"^(services|rest_area)$"](around.w:400)->.s;
-      (nwr(around.s:350)[amenity~"^(fuel|fast_food|restaurant|cafe|toilets|charging_station|shower|parking)$"];
-       nwr(around.s:350)[tourism~"^(hotel|motel)$"];
-       nwr(around.s:350)[shop~"^(convenience|kiosk)$"];);out center qt;`);
-
     zapisi('obrada…');
     // Odmorišta
     const sv = [];
@@ -387,11 +389,33 @@ globalThis.AB = (() => {
       const t = e.tags || {}, p = tacka(e);
       if (!p || !/^(services|rest_area)$/.test(t.highway || '')) continue;
       const q = xy(p[0], p[1]), pr = projekcija(linija, q);
-      if (pr.d > 1500) continue;
-      sv.push({ q, p, pr, tag: t, t: t.highway === 'services' ? 'R' : 'P', s: strana(linija, q, pr),
+      if (pr.d > 600) continue; // pravougaonik hvata i odmorišta drugih puteva
+      sv.push({ el: e, q, p, pr, tag: t, t: t.highway === 'services' ? 'R' : 'P', s: strana(linija, q, pr),
         f: new Set(), h: new Set(), e: new Set(), re: /yes/.test(t.restaurant || ''), wc: /yes|designated/.test(t.toilets || ''),
         du: /yes/.test(t.shower || ''), ho: false, sh: /yes/.test(t.shop || ''), lkw: t['capacity:truck'] || t['capacity:hgv'] || '' });
     }
+    zapisi('3/3 pumpe, hrana, punjači…');
+    // samo odmorišta uz ovaj autoput, po ID-u (krug oko svih iz pravougaonika server tiho vrati prazno)
+    const skup = [['node', 'node'], ['way', 'way'], ['relation', 'rel']].map(([tip, q]) => {
+      const l = sv.filter(x => x.el.type === tip).map(x => x.el.id);
+      return l.length ? `${q}(id:${l.join(',')});` : '';
+    }).join('');
+    // površine idu zajedno sa svojim tačkama, inače "around" za njih ne nalazi ništa
+    const upitUsluga = `[out:json][timeout:240];(${skup})->.o;(.o;.o >;)->.s;
+      (nwr(around.s:350)[amenity~"^(fuel|fast_food|restaurant|cafe|toilets|charging_station|shower|parking)$"];
+       nwr(around.s:350)[tourism~"^(hotel|motel)$"];
+       nwr(around.s:350)[shop~"^(convenience|kiosk)$"];);out center qt;`;
+    let usluge = { elements: [] };
+    // preopterećen server ume da vrati prazan odgovor bez greške → ponovi
+    for (let i = 0; sv.length && i < 4; i++) {
+      usluge = await upit(upitUsluga);
+      if (usluge.elements.length) break;
+      zapisi('sadržaji: prazan odgovor, ponavljam…');
+      sledeciServer();
+      await pauza(20000 * (i + 1));
+    }
+    zapisi('sadržaji: ' + usluge.elements.length + ' (odmorišta: ' + sv.length + ')');
+
     // Sadržaji → najbliže odmorište (po mogućstvu na istoj strani)
     for (const e of usluge.elements) {
       const t = e.tags || {}, p = tacka(e);
@@ -402,7 +426,7 @@ globalThis.AB = (() => {
       const st = strana(linija, q, projekcija(linija, q));
       const s = blizu.find(x => x.s === st && Math.abs(x.pr.km - blizu[0].pr.km) < 1.5) || blizu[0];
       const ime = (t.brand || t.name || '').trim();
-      if (t.amenity === 'fuel') s.f.add(/^total/i.test(ime) ? 'TotalEnergies' : GORIVO[ime] || ime || 'Station-service');
+      if (t.amenity === 'fuel') s.f.add(/^total/i.test(ime) ? 'TotalEnergies' : GORIVO[ime] || ime || 'Tankstation');
       else if (/^(fast_food|restaurant|cafe)$/.test(t.amenity)) {
         const lanac = /serways/i.test(ime) ? 'Serways' : /^axxe/i.test(ime) ? 'Axxe' : ime;
         if (LANCI.includes(lanac)) s.h.add(lanac); else s.re = true;
@@ -467,7 +491,7 @@ globalThis.AB = (() => {
     const prefiks = /^(Aire de [Ss]ervices? de |Aire de [Rr]epos de |Aire de [Ss]ervices? |Aire de [Rr]epos |Aire de )/;
     for (const s of sv) {
       let n = (s.tag.name || '').trim(), t = s.t;
-      if (!n) n = s.f.size ? 'Station-service' : 'Aire de repos';
+      if (!n) n = s.f.size ? 'Tankstation' : 'Verzorgingsplaats';
       for (let i = 0; i < 2; i++) n = n.replace(prefiks, '') || n;
       const o = { t, si: s.pr.si, km: +s.pr.km.toFixed(1), s: s.s, n };
       if (s.f.size > 1) s.f.delete('Station-service'); // opšti naziv samo kad nema marke
