@@ -16,7 +16,7 @@ public final class Autoputevi {
     public static final List<Autoput> SVE = Arrays.asList(
             // Holandija
             new Autoput("NL", "A1", "Amsterdam – Amersfoort – Deventer – Oldenzaal", null),
-            new Autoput("NL", "A2", "Amsterdam – Utrecht – Eindhoven – Maastricht", null),
+            new Autoput("NL", "A2", "Amsterdam – Utrecht – Eindhoven – Maastricht", "autoputevi/nl-a2.json"),
             new Autoput("NL", "A4", "Amsterdam – Den Haag – Rotterdam – Bergen op Zoom", null),
             new Autoput("NL", "A5", "Hoofddorp – Amsterdam-Westpoort", null),
             new Autoput("NL", "A6", "Muiderberg – Almere – Lelystad – Joure", null),
