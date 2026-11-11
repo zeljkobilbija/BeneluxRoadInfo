@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Zastava (be): tri uspravne pruge -->
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:width="60dp" android:height="42dp">
-        <shape><solid android:color="#FDDA24" /><corners android:radius="5dp" /></shape>
-    </item>
-    <item android:width="20dp" android:height="42dp" android:gravity="left">
-        <shape><solid android:color="#000000" /><corners android:topLeftRadius="5dp" android:bottomLeftRadius="5dp" /></shape>
-    </item>
-    <item android:width="20dp" android:height="42dp" android:gravity="right">
-        <shape><solid android:color="#EF3340" /><corners android:topRightRadius="5dp" android:bottomRightRadius="5dp" /></shape>
-    </item>
-    <item android:width="60dp" android:height="42dp">
-        <shape><stroke android:width="1dp" android:color="#33000000" /><corners android:radius="5dp" /></shape>
-    </item>
-</layer-list>
+<!-- Zastava (be): tri uspravne pruge; vektor, pa se uvek vidi cela u bilo kojoj veličini -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="60dp" android:height="42dp"
+    android:viewportWidth="60" android:viewportHeight="42">
+    <clip-path android:pathData="M5,0H55A5,5 0,0 1,60,5V37A5,5 0,0 1,55,42H5A5,5 0,0 1,0,37V5A5,5 0,0 1,5,0Z" />
+    <path android:fillColor="#000000" android:pathData="M0,0H20V42H0Z" />
+    <path android:fillColor="#FDDA24" android:pathData="M20,0H40V42H20Z" />
+    <path android:fillColor="#EF3340" android:pathData="M40,0H60V42H40Z" />
+    <path android:strokeColor="#33000000" android:strokeWidth="1" android:pathData="M5,0.5H55A4.5,4.5 0,0 1,59.5,5V37A4.5,4.5 0,0 1,55,41.5H5A4.5,4.5 0,0 1,0.5,37V5A4.5,4.5 0,0 1,5,0.5Z" />
+</vector>
