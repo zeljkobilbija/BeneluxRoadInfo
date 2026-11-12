@@ -38,4 +38,32 @@
     <string name="zemlja_nl">Hollandia</string>
     <string name="zemlja_be">Belgium</string>
     <string name="zemlja_lu">Luxemburg</string>
+
+    <!-- Ekran jednog mesta -->
+    <string name="det_lokacija">Helyszín</string>
+    <string name="det_autoput">Autópálya</string>
+    <string name="det_deonica">Szakasz</string>
+    <string name="det_kilometar">Kilométer</string>
+    <string name="det_broj_izlaza">Kijárat száma</string>
+    <string name="det_ka">Irány</string>
+    <string name="det_gorivo">Üzemanyag</string>
+    <string name="det_hrana">Étel</string>
+    <string name="det_punjaci">Elektromos töltők</string>
+    <string name="det_usluge">Szolgáltatások</string>
+    <string name="det_radno_vreme">Nyitvatartás</string>
+    <string name="det_navigacija">Navigáció</string>
+    <string name="det_podeli">Megosztás</string>
+    <string name="det_nema_podataka">Az OpenStreetMap nem tartalmaz adatot erről a helyről.</string>
+    <string name="det_izvor">Adatok: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_cene_ucitavanje">Árak betöltése…</string>
+    <string name="det_cene_greska">Az árak most nem érhetők el.</string>
+    <string name="det_cene_be">Hivatalos maximális ár Belgiumban (FOD Economie), érvényes: %s óta. A kutak olcsóbban is árulhatnak.</string>
+    <string name="det_cene_nl">Átlagár Hollandiában, %s (CBS). Az autópályán általában drágább.</string>
+    <string name="det_cene_lu">Átlagár Luxemburgban, %s heti (EU olajjelentés, fuel-prices.eu).</string>
+    <string name="cena_punjenje">Elektromos töltés</string>
+    <string name="cena_punjenje_ac">Töltés AC</string>
+    <string name="cena_punjenje_dc">Gyorstöltés DC</string>
+    <string name="cena_vodonik">Hidrogén</string>
+    <string name="det_cene_nl_kv">Átlag Hollandiában, %s (CBS).</string>
+    <string name="det_cene_lu_mes">Hivatalos havi átlag Luxemburgban, %s (data.public.lu).</string>
 </resources>

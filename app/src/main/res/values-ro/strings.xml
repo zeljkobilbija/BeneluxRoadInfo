@@ -38,4 +38,32 @@
     <string name="zemlja_nl">Țările de Jos</string>
     <string name="zemlja_be">Belgia</string>
     <string name="zemlja_lu">Luxemburg</string>
+
+    <!-- Ekran jednog mesta -->
+    <string name="det_lokacija">Locație</string>
+    <string name="det_autoput">Autostradă</string>
+    <string name="det_deonica">Tronson</string>
+    <string name="det_kilometar">Kilometru</string>
+    <string name="det_broj_izlaza">Număr ieșire</string>
+    <string name="det_ka">Spre</string>
+    <string name="det_gorivo">Carburant</string>
+    <string name="det_hrana">Mâncare</string>
+    <string name="det_punjaci">Încărcare vehicule electrice</string>
+    <string name="det_usluge">Facilități</string>
+    <string name="det_radno_vreme">Program</string>
+    <string name="det_navigacija">Navigare</string>
+    <string name="det_podeli">Distribuie</string>
+    <string name="det_nema_podataka">OpenStreetMap nu are date despre acest loc.</string>
+    <string name="det_izvor">Date: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_cene_ucitavanje">Se încarcă prețurile…</string>
+    <string name="det_cene_greska">Prețurile nu sunt disponibile acum.</string>
+    <string name="det_cene_be">Preț maxim oficial în Belgia (FOD Economie), valabil din %s. Benzinăriile pot vinde mai ieftin.</string>
+    <string name="det_cene_nl">Preț mediu în Țările de Jos la %s (CBS). Pe autostradă este de obicei mai scump.</string>
+    <string name="det_cene_lu">Preț mediu în Luxemburg, săptămâna din %s (Buletinul petrolier UE, fuel-prices.eu).</string>
+    <string name="cena_punjenje">Încărcare electrică</string>
+    <string name="cena_punjenje_ac">Încărcare AC</string>
+    <string name="cena_punjenje_dc">Încărcare rapidă DC</string>
+    <string name="cena_vodonik">Hidrogen</string>
+    <string name="det_cene_nl_kv">Medie în Țările de Jos, %s (CBS).</string>
+    <string name="det_cene_lu_mes">Medie lunară oficială în Luxemburg, %s (data.public.lu).</string>
 </resources>

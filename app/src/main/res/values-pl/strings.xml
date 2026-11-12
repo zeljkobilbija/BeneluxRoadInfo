@@ -38,4 +38,32 @@
     <string name="zemlja_nl">Holandia</string>
     <string name="zemlja_be">Belgia</string>
     <string name="zemlja_lu">Luksemburg</string>
+
+    <!-- Ekran jednog mesta -->
+    <string name="det_lokacija">Lokalizacja</string>
+    <string name="det_autoput">Autostrada</string>
+    <string name="det_deonica">Odcinek</string>
+    <string name="det_kilometar">Kilometr</string>
+    <string name="det_broj_izlaza">Numer zjazdu</string>
+    <string name="det_ka">W kierunku</string>
+    <string name="det_gorivo">Paliwo</string>
+    <string name="det_hrana">Jedzenie</string>
+    <string name="det_punjaci">Ładowarki EV</string>
+    <string name="det_usluge">Udogodnienia</string>
+    <string name="det_radno_vreme">Godziny otwarcia</string>
+    <string name="det_navigacija">Nawiguj</string>
+    <string name="det_podeli">Udostępnij</string>
+    <string name="det_nema_podataka">OpenStreetMap nie ma danych o tym miejscu.</string>
+    <string name="det_izvor">Dane: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_cene_ucitavanje">Wczytywanie cen…</string>
+    <string name="det_cene_greska">Ceny są teraz niedostępne.</string>
+    <string name="det_cene_be">Oficjalna cena maksymalna w Belgii (FOD Economie), obowiązuje od %s. Stacje mogą sprzedawać taniej.</string>
+    <string name="det_cene_nl">Średnia cena w Holandii w dniu %s (CBS). Na autostradzie zwykle jest drożej.</string>
+    <string name="det_cene_lu">Średnia cena w Luksemburgu, tydzień od %s (Biuletyn naftowy UE, fuel-prices.eu).</string>
+    <string name="cena_punjenje">Ładowanie EV</string>
+    <string name="cena_punjenje_ac">Ładowanie AC</string>
+    <string name="cena_punjenje_dc">Szybkie ładowanie DC</string>
+    <string name="cena_vodonik">Wodór</string>
+    <string name="det_cene_nl_kv">Średnia w Holandii, %s (CBS).</string>
+    <string name="det_cene_lu_mes">Oficjalna średnia miesięczna w Luksemburgu, %s (data.public.lu).</string>
 </resources>

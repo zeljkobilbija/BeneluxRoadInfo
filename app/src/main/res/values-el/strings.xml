@@ -38,4 +38,32 @@
     <string name="zemlja_nl">Ολλανδία</string>
     <string name="zemlja_be">Βέλγιο</string>
     <string name="zemlja_lu">Λουξεμβούργο</string>
+
+    <!-- Ekran jednog mesta -->
+    <string name="det_lokacija">Τοποθεσία</string>
+    <string name="det_autoput">Αυτοκινητόδρομος</string>
+    <string name="det_deonica">Τμήμα</string>
+    <string name="det_kilometar">Χιλιόμετρο</string>
+    <string name="det_broj_izlaza">Αριθμός εξόδου</string>
+    <string name="det_ka">Προς</string>
+    <string name="det_gorivo">Καύσιμα</string>
+    <string name="det_hrana">Φαγητό</string>
+    <string name="det_punjaci">Φόρτιση ηλεκτρικών</string>
+    <string name="det_usluge">Παροχές</string>
+    <string name="det_radno_vreme">Ωράριο</string>
+    <string name="det_navigacija">Πλοήγηση</string>
+    <string name="det_podeli">Κοινοποίηση</string>
+    <string name="det_nema_podataka">Το OpenStreetMap δεν έχει στοιχεία για αυτό το σημείο.</string>
+    <string name="det_izvor">Δεδομένα: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_cene_ucitavanje">Φόρτωση τιμών…</string>
+    <string name="det_cene_greska">Οι τιμές δεν είναι διαθέσιμες τώρα.</string>
+    <string name="det_cene_be">Επίσημη ανώτατη τιμή στο Βέλγιο (FOD Economie), ισχύει από %s. Τα πρατήρια μπορούν να πωλούν φθηνότερα.</string>
+    <string name="det_cene_nl">Μέση τιμή στην Ολλανδία στις %s (CBS). Στον αυτοκινητόδρομο είναι συνήθως ακριβότερα.</string>
+    <string name="det_cene_lu">Μέση τιμή στο Λουξεμβούργο, εβδομάδα από %s (Δελτίο πετρελαίου ΕΕ, fuel-prices.eu).</string>
+    <string name="cena_punjenje">Φόρτιση ηλεκτρικών</string>
+    <string name="cena_punjenje_ac">Φόρτιση AC</string>
+    <string name="cena_punjenje_dc">Ταχεία φόρτιση DC</string>
+    <string name="cena_vodonik">Υδρογόνο</string>
+    <string name="det_cene_nl_kv">Μέσος όρος στην Ολλανδία, %s (CBS).</string>
+    <string name="det_cene_lu_mes">Επίσημος μηνιαίος μέσος όρος στο Λουξεμβούργο, %s (data.public.lu).</string>
 </resources>

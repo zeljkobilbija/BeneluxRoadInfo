@@ -38,4 +38,32 @@
     <string name="zemlja_nl">Nizozemska</string>
     <string name="zemlja_be">Belgija</string>
     <string name="zemlja_lu">Luksemburg</string>
+
+    <!-- Ekran jednog mesta -->
+    <string name="det_lokacija">Lokacija</string>
+    <string name="det_autoput">Autocesta</string>
+    <string name="det_deonica">Dionica</string>
+    <string name="det_kilometar">Kilometar</string>
+    <string name="det_broj_izlaza">Broj izlaza</string>
+    <string name="det_ka">Prema</string>
+    <string name="det_gorivo">Gorivo</string>
+    <string name="det_hrana">Hrana</string>
+    <string name="det_punjaci">Punionice za električna vozila</string>
+    <string name="det_usluge">Sadržaji</string>
+    <string name="det_radno_vreme">Radno vrijeme</string>
+    <string name="det_navigacija">Navigacija</string>
+    <string name="det_podeli">Podijeli</string>
+    <string name="det_nema_podataka">OpenStreetMap nema podatke o ovom mjestu.</string>
+    <string name="det_izvor">Podaci: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_cene_ucitavanje">Učitavam cijene…</string>
+    <string name="det_cene_greska">Cijene trenutačno nisu dostupne.</string>
+    <string name="det_cene_be">Službena najviša cijena u Belgiji (FOD Economie), vrijedi od %s. Postaje mogu prodavati i jeftinije.</string>
+    <string name="det_cene_nl">Prosječna cijena u Nizozemskoj za %s (CBS). Na autocesti je gorivo obično skuplje.</string>
+    <string name="det_cene_lu">Prosječna cijena u Luksemburgu, tjedan od %s (Bilten EU o nafti, fuel-prices.eu).</string>
+    <string name="cena_punjenje">Punjenje el. vozila</string>
+    <string name="cena_punjenje_ac">Punjenje AC</string>
+    <string name="cena_punjenje_dc">Brzo punjenje DC</string>
+    <string name="cena_vodonik">Vodik</string>
+    <string name="det_cene_nl_kv">Prosjek u Nizozemskoj, %s (CBS).</string>
+    <string name="det_cene_lu_mes">Službeni mjesečni prosjek u Luksemburgu, %s (data.public.lu).</string>
 </resources>

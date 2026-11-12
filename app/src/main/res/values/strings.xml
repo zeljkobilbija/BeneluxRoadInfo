@@ -39,4 +39,32 @@
     <string name="zemlja_nl">Netherlands</string>
     <string name="zemlja_be">Belgium</string>
     <string name="zemlja_lu">Luxembourg</string>
+
+    <!-- Ekran jednog mesta -->
+    <string name="det_lokacija">Location</string>
+    <string name="det_autoput">Motorway</string>
+    <string name="det_deonica">Section</string>
+    <string name="det_kilometar">Kilometre</string>
+    <string name="det_broj_izlaza">Exit number</string>
+    <string name="det_ka">Towards</string>
+    <string name="det_gorivo">Fuel</string>
+    <string name="det_hrana">Food</string>
+    <string name="det_punjaci">EV charging</string>
+    <string name="det_usluge">Facilities</string>
+    <string name="det_radno_vreme">Opening hours</string>
+    <string name="det_navigacija">Navigate</string>
+    <string name="det_podeli">Share</string>
+    <string name="det_nema_podataka">OpenStreetMap has no details about this place.</string>
+    <string name="det_izvor">Data: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_cene_ucitavanje">Loading prices…</string>
+    <string name="det_cene_greska">Prices are not available right now.</string>
+    <string name="det_cene_be">Official maximum price in Belgium (FPS Economy), valid from %s. Stations may sell below it.</string>
+    <string name="det_cene_nl">Average price in the Netherlands on %s (CBS). Motorway stations are usually more expensive.</string>
+    <string name="det_cene_lu">Average price in Luxembourg, week of %s (EU Weekly Oil Bulletin, fuel-prices.eu).</string>
+    <string name="cena_punjenje">EV charging</string>
+    <string name="cena_punjenje_ac">EV charging AC</string>
+    <string name="cena_punjenje_dc">EV fast charging DC</string>
+    <string name="cena_vodonik">Hydrogen</string>
+    <string name="det_cene_nl_kv">Average in the Netherlands, %s (CBS).</string>
+    <string name="det_cene_lu_mes">Official monthly average in Luxembourg, %s (data.public.lu).</string>
 </resources>

@@ -38,4 +38,32 @@
     <string name="zemlja_nl">Países Baixos</string>
     <string name="zemlja_be">Bélgica</string>
     <string name="zemlja_lu">Luxemburgo</string>
+
+    <!-- Ekran jednog mesta -->
+    <string name="det_lokacija">Localização</string>
+    <string name="det_autoput">Autoestrada</string>
+    <string name="det_deonica">Troço</string>
+    <string name="det_kilometar">Quilómetro</string>
+    <string name="det_broj_izlaza">Número da saída</string>
+    <string name="det_ka">Direção</string>
+    <string name="det_gorivo">Combustível</string>
+    <string name="det_hrana">Comida</string>
+    <string name="det_punjaci">Carregamento elétrico</string>
+    <string name="det_usluge">Serviços</string>
+    <string name="det_radno_vreme">Horário</string>
+    <string name="det_navigacija">Navegar</string>
+    <string name="det_podeli">Partilhar</string>
+    <string name="det_nema_podataka">O OpenStreetMap não tem dados sobre este local.</string>
+    <string name="det_izvor">Dados: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_cene_ucitavanje">A carregar preços…</string>
+    <string name="det_cene_greska">Os preços não estão disponíveis agora.</string>
+    <string name="det_cene_be">Preço máximo oficial na Bélgica (FOD Economie), em vigor desde %s. Os postos podem vender mais barato.</string>
+    <string name="det_cene_nl">Preço médio nos Países Baixos em %s (CBS). Na autoestrada costuma ser mais caro.</string>
+    <string name="det_cene_lu">Preço médio no Luxemburgo, semana de %s (Boletim petrolífero da UE, fuel-prices.eu).</string>
+    <string name="cena_punjenje">Carregamento elétrico</string>
+    <string name="cena_punjenje_ac">Carregamento AC</string>
+    <string name="cena_punjenje_dc">Carregamento rápido DC</string>
+    <string name="cena_vodonik">Hidrogénio</string>
+    <string name="det_cene_nl_kv">Média nos Países Baixos, %s (CBS).</string>
+    <string name="det_cene_lu_mes">Média mensal oficial no Luxemburgo, %s (data.public.lu).</string>
 </resources>

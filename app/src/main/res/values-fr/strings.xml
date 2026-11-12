@@ -38,4 +38,32 @@
     <string name="zemlja_nl">Pays-Bas</string>
     <string name="zemlja_be">Belgique</string>
     <string name="zemlja_lu">Luxembourg</string>
+
+    <!-- Ekran jednog mesta -->
+    <string name="det_lokacija">Emplacement</string>
+    <string name="det_autoput">Autoroute</string>
+    <string name="det_deonica">Tronçon</string>
+    <string name="det_kilometar">Kilomètre</string>
+    <string name="det_broj_izlaza">Numéro de sortie</string>
+    <string name="det_ka">Vers</string>
+    <string name="det_gorivo">Carburant</string>
+    <string name="det_hrana">Restauration</string>
+    <string name="det_punjaci">Bornes de recharge</string>
+    <string name="det_usluge">Services</string>
+    <string name="det_radno_vreme">Horaires</string>
+    <string name="det_navigacija">Itinéraire</string>
+    <string name="det_podeli">Partager</string>
+    <string name="det_nema_podataka">OpenStreetMap n\'a aucune information sur ce lieu.</string>
+    <string name="det_izvor">Données : © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_cene_ucitavanje">Chargement des prix…</string>
+    <string name="det_cene_greska">Les prix ne sont pas disponibles pour le moment.</string>
+    <string name="det_cene_be">Prix maximum officiel en Belgique (SPF Économie), en vigueur depuis le %s. Les stations peuvent vendre moins cher.</string>
+    <string name="det_cene_nl">Prix moyen aux Pays-Bas le %s (CBS). Sur autoroute, le carburant est généralement plus cher.</string>
+    <string name="det_cene_lu">Prix moyen au Luxembourg, semaine du %s (Bulletin pétrolier de l\'UE, fuel-prices.eu).</string>
+    <string name="cena_punjenje">Recharge électrique</string>
+    <string name="cena_punjenje_ac">Recharge AC</string>
+    <string name="cena_punjenje_dc">Recharge rapide DC</string>
+    <string name="cena_vodonik">Hydrogène</string>
+    <string name="det_cene_nl_kv">Moyenne aux Pays-Bas, %s (CBS).</string>
+    <string name="det_cene_lu_mes">Moyenne mensuelle officielle au Luxembourg, %s (data.public.lu).</string>
 </resources>

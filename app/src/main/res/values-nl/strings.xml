@@ -38,4 +38,32 @@
     <string name="zemlja_nl">Nederland</string>
     <string name="zemlja_be">België</string>
     <string name="zemlja_lu">Luxemburg</string>
+
+    <!-- Ekran jednog mesta -->
+    <string name="det_lokacija">Locatie</string>
+    <string name="det_autoput">Snelweg</string>
+    <string name="det_deonica">Traject</string>
+    <string name="det_kilometar">Kilometer</string>
+    <string name="det_broj_izlaza">Afritnummer</string>
+    <string name="det_ka">Richting</string>
+    <string name="det_gorivo">Brandstof</string>
+    <string name="det_hrana">Eten</string>
+    <string name="det_punjaci">Laadpalen</string>
+    <string name="det_usluge">Voorzieningen</string>
+    <string name="det_radno_vreme">Openingstijden</string>
+    <string name="det_navigacija">Navigeren</string>
+    <string name="det_podeli">Delen</string>
+    <string name="det_nema_podataka">OpenStreetMap heeft geen gegevens over deze plek.</string>
+    <string name="det_izvor">Gegevens: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_cene_ucitavanje">Prijzen laden…</string>
+    <string name="det_cene_greska">Prijzen zijn nu niet beschikbaar.</string>
+    <string name="det_cene_be">Officiële maximumprijs in België (FOD Economie), geldig vanaf %s. Stations mogen goedkoper verkopen.</string>
+    <string name="det_cene_nl">Gemiddelde prijs in Nederland op %s (CBS). Langs de snelweg is het meestal duurder.</string>
+    <string name="det_cene_lu">Gemiddelde prijs in Luxemburg, week van %s (EU Weekly Oil Bulletin, fuel-prices.eu).</string>
+    <string name="cena_punjenje">Elektrisch laden</string>
+    <string name="cena_punjenje_ac">Laden AC</string>
+    <string name="cena_punjenje_dc">Snelladen DC</string>
+    <string name="cena_vodonik">Waterstof</string>
+    <string name="det_cene_nl_kv">Gemiddelde in Nederland, %s (CBS).</string>
+    <string name="det_cene_lu_mes">Officieel maandgemiddelde in Luxemburg, %s (data.public.lu).</string>
 </resources>

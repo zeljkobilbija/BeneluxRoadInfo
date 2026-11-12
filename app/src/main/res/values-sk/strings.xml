@@ -38,4 +38,32 @@
     <string name="zemlja_nl">Holandsko</string>
     <string name="zemlja_be">Belgicko</string>
     <string name="zemlja_lu">Luxembursko</string>
+
+    <!-- Ekran jednog mesta -->
+    <string name="det_lokacija">Poloha</string>
+    <string name="det_autoput">Diaľnica</string>
+    <string name="det_deonica">Úsek</string>
+    <string name="det_kilometar">Kilometer</string>
+    <string name="det_broj_izlaza">Číslo výjazdu</string>
+    <string name="det_ka">Smer</string>
+    <string name="det_gorivo">Palivo</string>
+    <string name="det_hrana">Jedlo</string>
+    <string name="det_punjaci">Nabíjanie elektromobilov</string>
+    <string name="det_usluge">Služby</string>
+    <string name="det_radno_vreme">Otváracie hodiny</string>
+    <string name="det_navigacija">Navigovať</string>
+    <string name="det_podeli">Zdieľať</string>
+    <string name="det_nema_podataka">OpenStreetMap o tomto mieste nemá údaje.</string>
+    <string name="det_izvor">Údaje: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_cene_ucitavanje">Načítavam ceny…</string>
+    <string name="det_cene_greska">Ceny teraz nie sú dostupné.</string>
+    <string name="det_cene_be">Oficiálna maximálna cena v Belgicku (FOD Economie), platí od %s. Čerpacie stanice môžu predávať lacnejšie.</string>
+    <string name="det_cene_nl">Priemerná cena v Holandsku dňa %s (CBS). Na diaľnici býva drahšia.</string>
+    <string name="det_cene_lu">Priemerná cena v Luxembursku, týždeň od %s (Ropný bulletin EÚ, fuel-prices.eu).</string>
+    <string name="cena_punjenje">Nabíjanie elektromobilov</string>
+    <string name="cena_punjenje_ac">Nabíjanie AC</string>
+    <string name="cena_punjenje_dc">Rýchlonabíjanie DC</string>
+    <string name="cena_vodonik">Vodík</string>
+    <string name="det_cene_nl_kv">Priemer v Holandsku, %s (CBS).</string>
+    <string name="det_cene_lu_mes">Oficiálny mesačný priemer v Luxembursku, %s (data.public.lu).</string>
 </resources>

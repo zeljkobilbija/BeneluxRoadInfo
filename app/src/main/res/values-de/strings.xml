@@ -38,4 +38,32 @@
     <string name="zemlja_nl">Niederlande</string>
     <string name="zemlja_be">Belgien</string>
     <string name="zemlja_lu">Luxemburg</string>
+
+    <!-- Ekran jednog mesta -->
+    <string name="det_lokacija">Standort</string>
+    <string name="det_autoput">Autobahn</string>
+    <string name="det_deonica">Abschnitt</string>
+    <string name="det_kilometar">Kilometer</string>
+    <string name="det_broj_izlaza">Ausfahrtnummer</string>
+    <string name="det_ka">Richtung</string>
+    <string name="det_gorivo">Kraftstoff</string>
+    <string name="det_hrana">Essen</string>
+    <string name="det_punjaci">E-Ladestationen</string>
+    <string name="det_usluge">Ausstattung</string>
+    <string name="det_radno_vreme">Öffnungszeiten</string>
+    <string name="det_navigacija">Navigation</string>
+    <string name="det_podeli">Teilen</string>
+    <string name="det_nema_podataka">OpenStreetMap hat keine Angaben zu diesem Ort.</string>
+    <string name="det_izvor">Daten: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_cene_ucitavanje">Preise werden geladen…</string>
+    <string name="det_cene_greska">Preise sind derzeit nicht verfügbar.</string>
+    <string name="det_cene_be">Offizieller Höchstpreis in Belgien (FÖD Wirtschaft), gültig ab %s. Tankstellen dürfen günstiger verkaufen.</string>
+    <string name="det_cene_nl">Durchschnittspreis in den Niederlanden am %s (CBS). An der Autobahn ist es meist teurer.</string>
+    <string name="det_cene_lu">Durchschnittspreis in Luxemburg, Woche ab %s (EU Weekly Oil Bulletin, fuel-prices.eu).</string>
+    <string name="cena_punjenje">E-Laden</string>
+    <string name="cena_punjenje_ac">Laden AC</string>
+    <string name="cena_punjenje_dc">Schnellladen DC</string>
+    <string name="cena_vodonik">Wasserstoff</string>
+    <string name="det_cene_nl_kv">Durchschnitt in den Niederlanden, %s (CBS).</string>
+    <string name="det_cene_lu_mes">Offizieller Monatsdurchschnitt in Luxemburg, %s (data.public.lu).</string>
 </resources>

@@ -38,4 +38,32 @@
     <string name="zemlja_nl">Hollanda</string>
     <string name="zemlja_be">Belçika</string>
     <string name="zemlja_lu">Lüksemburg</string>
+
+    <!-- Ekran jednog mesta -->
+    <string name="det_lokacija">Konum</string>
+    <string name="det_autoput">Otoyol</string>
+    <string name="det_deonica">Kesim</string>
+    <string name="det_kilometar">Kilometre</string>
+    <string name="det_broj_izlaza">Çıkış numarası</string>
+    <string name="det_ka">Yönü</string>
+    <string name="det_gorivo">Yakıt</string>
+    <string name="det_hrana">Yemek</string>
+    <string name="det_punjaci">Elektrikli araç şarjı</string>
+    <string name="det_usluge">Olanaklar</string>
+    <string name="det_radno_vreme">Çalışma saatleri</string>
+    <string name="det_navigacija">Yol tarifi</string>
+    <string name="det_podeli">Paylaş</string>
+    <string name="det_nema_podataka">OpenStreetMap\'te bu yer hakkında bilgi yok.</string>
+    <string name="det_izvor">Veriler: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_cene_ucitavanje">Fiyatlar yükleniyor…</string>
+    <string name="det_cene_greska">Fiyatlar şu anda kullanılamıyor.</string>
+    <string name="det_cene_be">Belçika resmi azami fiyatı (FOD Economie), %s tarihinden itibaren geçerli. İstasyonlar daha ucuza satabilir.</string>
+    <string name="det_cene_nl">Hollanda ortalama fiyatı, %s (CBS). Otoyolda genellikle daha pahalıdır.</string>
+    <string name="det_cene_lu">Lüksemburg ortalama fiyatı, %s haftası (AB Petrol Bülteni, fuel-prices.eu).</string>
+    <string name="cena_punjenje">Elektrikli şarj</string>
+    <string name="cena_punjenje_ac">AC şarj</string>
+    <string name="cena_punjenje_dc">DC hızlı şarj</string>
+    <string name="cena_vodonik">Hidrojen</string>
+    <string name="det_cene_nl_kv">Hollanda ortalaması, %s (CBS).</string>
+    <string name="det_cene_lu_mes">Lüksemburg resmi aylık ortalaması, %s (data.public.lu).</string>
 </resources>

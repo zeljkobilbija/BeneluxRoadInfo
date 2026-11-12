@@ -38,4 +38,32 @@
     <string name="zemlja_nl">Нидерланды</string>
     <string name="zemlja_be">Бельгия</string>
     <string name="zemlja_lu">Люксембург</string>
+
+    <!-- Ekran jednog mesta -->
+    <string name="det_lokacija">Местоположение</string>
+    <string name="det_autoput">Автомагистраль</string>
+    <string name="det_deonica">Участок</string>
+    <string name="det_kilometar">Километр</string>
+    <string name="det_broj_izlaza">Номер съезда</string>
+    <string name="det_ka">В сторону</string>
+    <string name="det_gorivo">Топливо</string>
+    <string name="det_hrana">Еда</string>
+    <string name="det_punjaci">Зарядка электромобилей</string>
+    <string name="det_usluge">Удобства</string>
+    <string name="det_radno_vreme">Часы работы</string>
+    <string name="det_navigacija">Навигация</string>
+    <string name="det_podeli">Поделиться</string>
+    <string name="det_nema_podataka">В OpenStreetMap нет данных об этом месте.</string>
+    <string name="det_izvor">Данные: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_cene_ucitavanje">Загрузка цен…</string>
+    <string name="det_cene_greska">Цены сейчас недоступны.</string>
+    <string name="det_cene_be">Официальная максимальная цена в Бельгии (FOD Economie), действует с %s. АЗС могут продавать дешевле.</string>
+    <string name="det_cene_nl">Средняя цена в Нидерландах на %s (CBS). На автомагистрали обычно дороже.</string>
+    <string name="det_cene_lu">Средняя цена в Люксембурге, неделя с %s (нефтяной бюллетень ЕС, fuel-prices.eu).</string>
+    <string name="cena_punjenje">Зарядка электромобиля</string>
+    <string name="cena_punjenje_ac">Зарядка AC</string>
+    <string name="cena_punjenje_dc">Быстрая зарядка DC</string>
+    <string name="cena_vodonik">Водород</string>
+    <string name="det_cene_nl_kv">Среднее в Нидерландах, %s (CBS).</string>
+    <string name="det_cene_lu_mes">Официальное среднее за месяц в Люксембурге, %s (data.public.lu).</string>
 </resources>
