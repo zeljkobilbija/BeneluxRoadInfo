@@ -48,9 +48,9 @@ public final class Autoputevi {
             // Belgija
             new Autoput("BE", "A1", "E19 · Brussel – Antwerpen – Breda", "autoputevi/be-a1.json"),
             new Autoput("BE", "A2", "E314 · Leuven – Genk – Maastricht", "autoputevi/be-a2.json"),
-            new Autoput("BE", "A3", "E40 · Brussel – Leuven – Liège – Aachen", null),
+            new Autoput("BE", "A3", "E40 · Brussel – Leuven – Liège – Aachen", "autoputevi/be-a3.json"),
             new Autoput("BE", "A4", "E411 · Bruxelles – Namur – Arlon – Luxembourg", "autoputevi/be-a4.json"),
-            new Autoput("BE", "A7", "E19 · Nivelles – Mons – Paris", null),
+            new Autoput("BE", "A7", "E19 · Nivelles – Mons – Paris", "autoputevi/be-a7.json"),
             new Autoput("BE", "A8", "E429 · Halle – Tournai – Lille", "autoputevi/be-a8.json"),
             new Autoput("BE", "A10", "E40 · Brussel – Gent – Brugge – Oostende", "autoputevi/be-a10.json"),
             new Autoput("BE", "A11", "Antwerpen – Brugge – Knokke", "autoputevi/be-a11.json"),
@@ -58,20 +58,21 @@ public final class Autoputevi {
             new Autoput("BE", "A13", "E313 · Antwerpen – Hasselt – Liège", "autoputevi/be-a13.json"),
             new Autoput("BE", "A14", "E17 · Antwerpen – Gent – Kortrijk – Lille", "autoputevi/be-a14.json"),
             new Autoput("BE", "A15", "E42 · Mons – Charleroi – Namur – Liège", null),
-            new Autoput("BE", "A17", "E403 · Brugge – Kortrijk – Tournai", null),
-            new Autoput("BE", "A18", "E40 · Brugge – Veurne – Dunkerque", null),
+            new Autoput("BE", "A17", "E403 · Brugge – Kortrijk – Tournai", "autoputevi/be-a17.json"),
+            new Autoput("BE", "A18", "E40 · Brugge – Veurne – Dunkerque", "autoputevi/be-a18.json"),
             new Autoput("BE", "A19", "Kortrijk – Ieper", null),
-            new Autoput("BE", "A25", "E25 · Liège – Maastricht", null),
-            new Autoput("BE", "A26", "E25 · Liège – Bastogne – Luxembourg", null),
-            new Autoput("BE", "A27", "E42 · Verviers – Sankt Vith", null),
+            new Autoput("BE", "A21", "E34 · Antwerpen – Turnhout – Eindhoven", "autoputevi/be-a21.json"),
+            new Autoput("BE", "A25", "E25 · Liège – Maastricht", "autoputevi/be-a25.json"),
+            new Autoput("BE", "A26", "E25 · Liège – Bastogne – Luxembourg", "autoputevi/be-a26.json"),
+            new Autoput("BE", "A27", "E42 · Verviers – Sankt Vith", "autoputevi/be-a27.json"),
             new Autoput("BE", "A54", "E420 · Nivelles – Charleroi", null),
             // Luksemburg
             new Autoput("LU", "A1", "Luxembourg – Grevenmacher – Trier", null),
-            new Autoput("LU", "A3", "Luxembourg – Dudelange – Thionville", null),
+            new Autoput("LU", "A3", "Luxembourg – Dudelange – Thionville", "autoputevi/lu-a3.json"),
             new Autoput("LU", "A4", "Luxembourg – Esch-sur-Alzette", null),
-            new Autoput("LU", "A6", "Luxembourg – Arlon", null),
+            new Autoput("LU", "A6", "Luxembourg – Arlon", "autoputevi/lu-a6.json"),
             new Autoput("LU", "A7", "Luxembourg – Mersch – Ettelbruck", null),
-            new Autoput("LU", "A13", "Pétange – Esch – Schengen", null)
+            new Autoput("LU", "A13", "Pétange – Esch – Schengen", "autoputevi/lu-a13.json")
     );
 
     /** Redosled zemalja na početnom ekranu. */
