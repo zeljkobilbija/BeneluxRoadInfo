@@ -57,21 +57,21 @@ public final class Autoputevi {
             new Autoput("BE", "A12", "Brussel – Boom – Antwerpen", "autoputevi/be-a12.json"),
             new Autoput("BE", "A13", "E313 · Antwerpen – Hasselt – Liège", "autoputevi/be-a13.json"),
             new Autoput("BE", "A14", "E17 · Antwerpen – Gent – Kortrijk – Lille", "autoputevi/be-a14.json"),
-            new Autoput("BE", "A15", "E42 · Mons – Charleroi – Namur – Liège", null),
+            new Autoput("BE", "A15", "E42 · Mons – Charleroi – Namur – Liège", "autoputevi/be-a15.json"),
             new Autoput("BE", "A17", "E403 · Brugge – Kortrijk – Tournai", "autoputevi/be-a17.json"),
             new Autoput("BE", "A18", "E40 · Brugge – Veurne – Dunkerque", "autoputevi/be-a18.json"),
-            new Autoput("BE", "A19", "Kortrijk – Ieper", null),
+            new Autoput("BE", "A19", "Kortrijk – Ieper", "autoputevi/be-a19.json"),
             new Autoput("BE", "A21", "E34 · Antwerpen – Turnhout – Eindhoven", "autoputevi/be-a21.json"),
             new Autoput("BE", "A25", "E25 · Liège – Maastricht", "autoputevi/be-a25.json"),
             new Autoput("BE", "A26", "E25 · Liège – Bastogne – Luxembourg", "autoputevi/be-a26.json"),
             new Autoput("BE", "A27", "E42 · Verviers – Sankt Vith", "autoputevi/be-a27.json"),
-            new Autoput("BE", "A54", "E420 · Nivelles – Charleroi", null),
+            new Autoput("BE", "A54", "E420 · Nivelles – Charleroi", "autoputevi/be-a54.json"),
             // Luksemburg
             new Autoput("LU", "A1", "Luxembourg – Grevenmacher – Trier", "autoputevi/lu-a1.json"),
             new Autoput("LU", "A3", "Luxembourg – Dudelange – Thionville", "autoputevi/lu-a3.json"),
-            new Autoput("LU", "A4", "Luxembourg – Esch-sur-Alzette", null),
+            new Autoput("LU", "A4", "Luxembourg – Esch-sur-Alzette", "autoputevi/lu-a4.json"),
             new Autoput("LU", "A6", "Luxembourg – Arlon", "autoputevi/lu-a6.json"),
-            new Autoput("LU", "A7", "Luxembourg – Mersch – Ettelbruck", null),
+            new Autoput("LU", "A7", "Luxembourg – Mersch – Ettelbruck", "autoputevi/lu-a7.json"),
             new Autoput("LU", "A13", "Pétange – Esch – Schengen", "autoputevi/lu-a13.json")
     );
 

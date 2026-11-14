@@ -320,9 +320,20 @@ globalThis.AB = (() => {
     const id = delovi[delovi.length - 1]; ref = id; // OSM u Beneluksu: "A2", bez razmaka
     const oblast = `area["ISO3166-1"="${zemlja}"][admin_level=2]->.z;`;
     const rel = `rel[route=road][network="${MREZA[zemlja]}"][ref="${ref}"]`;
+    // lokalni Geofabrik izvod (alati/osm_lokalno.js) umesto Overpass-a: relacija + putevi po oznaci (ref "A2")
+    const L = ab.lokalno ? ab.lokalno(zemlja) : null;
+    const sjedini = (a, b) => { const ids = new Set(a.map(w => w.id)); return a.concat(b.filter(w => !ids.has(w.id))); };
+    const kaoRelacija = w => [{ type: 'relation', tags: { type: 'route' }, members: w.map(x => ({ type: 'way', role: '', geometry: x.geometry })) }];
+    let wL = [];
 
     zapisi('1/3 linija autoputa…');
-    const geo = await upit(`[out:json][timeout:240];${rel}->.r;(.r;rel(r.r););out geom;`);
+    // Izuzeci: BE A15 je u OSM-u samo kao E42 (zbirna relacija A7/A8/A15/A16) → putevi E42 između Monsa i Liègea
+    const POSEBNO = { 'BE-A15': { ref: 'E42', lon: [3.85, 5.52] } };
+    const pos = L && POSEBNO[zemlja + '-' + ref];
+    const geo = L ? { elements: kaoRelacija(wL = pos
+        ? L.poOznaci(pos.ref).filter(w => w.geometry.every(p => p.lon >= pos.lon[0] && p.lon <= pos.lon[1]))
+        : sjedini(L.putevi(MREZA[zemlja], ref), L.poOznaci(ref))) }
+      : await upit(`[out:json][timeout:240];${rel}->.r;(.r;rel(r.r););out geom;`);
     const postaviCos = elementi => { let s = 0, n = 0; for (const el of elementi) for (const m of el.members || [])
       if (m.geometry) for (const p of m.geometry) { s += p.lat; n++; } cosLat = Math.cos((n ? s / n : 50) * RAD); };
     postaviCos(geo.elements);
@@ -332,7 +343,7 @@ globalThis.AB = (() => {
     if (!linija.deonice.length) {
       zapisi('1/3 relacija bez puteva, uzimam puteve po oznaci…');
       putevi = `${oblast}way[highway=motorway][ref~"(^|;)${ref}(;|$)"](area.z)->.w;`;
-      const poOznaci = await upit(`[out:json][timeout:240];${putevi}.w out geom;`);
+      const poOznaci = L ? { elements: wL = L.poOznaci(ref) } : await upit(`[out:json][timeout:240];${putevi}.w out geom;`);
       const kao = [{ type: 'relation', tags: { type: 'route' },
         members: poOznaci.elements.map(w => ({ type: 'way', role: '', geometry: w.geometry })) }];
       postaviCos(kao);
@@ -347,7 +358,7 @@ globalThis.AB = (() => {
     // Smer po brojevima izlaza; polazni grad samo ako je ručno upisan u OD
     const od = glavna && OD[id];
     if (od) {
-      const mesto = await upit(`[out:json][timeout:60];area["ISO3166-1"="${zemlja}"][admin_level=2]->.it;
+      const mesto = L ? { elements: L.mesto(od) } : await upit(`[out:json][timeout:60];area["ISO3166-1"="${zemlja}"][admin_level=2]->.it;
         node[place~"^(city|town|village)$"][name="${od}"](area.it);out 1;`);
       const m = mesto.elements[0];
       if (m) odQ = xy(m.lat, m.lon); else zapisi('polazni grad "' + od + '" nije nađen, km po brojevima');
@@ -365,7 +376,8 @@ globalThis.AB = (() => {
     zapisi('2/3 izlazi i odmorišta…');
     // preopterećen server ponekad vrati prazan odgovor bez napomene (A1 bez ijednog odmorišta) → ponovi
     let osnova;
-    for (let i = 0; ; i++) {
+    if (L) osnova = { elements: [...L.izlazi(wL), ...L.odmorista(ju - 0.01, za - 0.015, se + 0.01, is + 0.015)] };
+    else for (let i = 0; ; i++) {
       osnova = await upit(`[out:json][timeout:240];${putevi}
       node(w.w)[highway=motorway_junction];out qt;
       nwr[highway~"^(services|rest_area)$"]${okvir};out center qt;`);
@@ -379,7 +391,7 @@ globalThis.AB = (() => {
 
     zapisi('2/3 rampe izlaza (odredišta)…');
     // poseban upit: zajedno sa odmorištima server često pada (502)
-    const rampe = await upit(`[out:json][timeout:180];${putevi}
+    const rampe = L ? { elements: L.rampe(osnova.elements.filter(e => (e.tags || {}).highway === 'motorway_junction')) } : await upit(`[out:json][timeout:180];${putevi}
       node(w.w)[highway=motorway_junction]->.j;way(bn.j)[highway=motorway_link];out body qt;`);
 
     zapisi('obrada…');
@@ -407,7 +419,8 @@ globalThis.AB = (() => {
        nwr(around.s:350)[shop~"^(convenience|kiosk)$"];);out center qt;`;
     let usluge = { elements: [] };
     // preopterećen server ume da vrati prazan odgovor bez greške → ponovi
-    for (let i = 0; sv.length && i < 4; i++) {
+    if (L) usluge = { elements: L.usluge(sv.map(x => x.el)) };
+    else for (let i = 0; sv.length && i < 4; i++) {
       usluge = await upit(upitUsluga);
       if (usluge.elements.length) break;
       zapisi('sadržaji: prazan odgovor, ponavljam…');
@@ -598,10 +611,16 @@ globalThis.AB = (() => {
 if (typeof window === 'undefined' && typeof require !== 'undefined' && require.main === module) (async () => {
   const fs = require('fs'), path = require('path');
   const arg = process.argv.slice(2), suvo = arg.includes('--suvo');
+  const lokalno = !arg.includes('--overpass'), osvezi = arg.includes('--osvezi');
   const refs = arg.filter(a => !a.startsWith('--')).map(a => a.toUpperCase().replace(/\s+/g, ''));
   if (!refs.length) { console.error('Upotreba: node alati/benelux_skripta.js [--suvo] NL-A2 BE-A10 LU-A1 …'); process.exit(1); }
   const cilj = path.join(__dirname, '..', 'app', 'src', 'main', 'assets', 'autoputevi');
   let greske = 0;
+  if (lokalno) { // Geofabrik izvod zemlje, jednom preuzet i obrađen (alati/osm/)
+    const L = require('./osm_lokalno');
+    for (const z of new Set(refs.map(r => r.includes('-') ? r.split('-')[0] : 'NL'))) await L.pripremi(z, { osvezi });
+    AB.lokalno = L.ucitaj;
+  }
   for (const [i, r] of refs.entries()) {
     console.error(r + ':');
     AB.pokreni(r);
@@ -611,7 +630,7 @@ if (typeof window === 'undefined' && typeof require !== 'undefined' && require.m
       if (!suvo) fs.writeFileSync(path.join(cilj, ime), JSON.stringify(AB.rezultat));
       console.log((suvo ? '' : ime + ' ← ') + AB.sazetak + ' | van reda: ' + AB.provera());
     } else { console.log(r + ': ' + AB.stanje); greske++; }
-    if (i < refs.length - 1) await new Promise(ok => setTimeout(ok, 5000));
+    if (!lokalno && i < refs.length - 1) await new Promise(ok => setTimeout(ok, 5000));
   }
   process.exit(greske ? 1 : 0);
 })();
