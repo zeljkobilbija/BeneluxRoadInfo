@@ -18,7 +18,7 @@ public final class Autoputevi {
             new Autoput("NL", "A1", "Amsterdam – Amersfoort – Deventer – Oldenzaal", "autoputevi/nl-a1.json"),
             new Autoput("NL", "A2", "Amsterdam – Utrecht – Eindhoven – Maastricht", "autoputevi/nl-a2.json"),
             new Autoput("NL", "A4", "Amsterdam – Den Haag – Rotterdam – Bergen op Zoom", "autoputevi/nl-a4.json"),
-            new Autoput("NL", "A5", "Hoofddorp – Amsterdam-Westpoort", null),
+            new Autoput("NL", "A5", "Hoofddorp – Amsterdam-Westpoort", "autoputevi/nl-a5.json"),
             new Autoput("NL", "A6", "Muiderberg – Almere – Lelystad – Joure", "autoputevi/nl-a6.json"),
             new Autoput("NL", "A7", "Zaandam – Afsluitdijk – Groningen – Nieuweschans", "autoputevi/nl-a7.json"),
             new Autoput("NL", "A9", "Badhoevedorp – Amstelveen – Alkmaar", "autoputevi/nl-a9.json"),
