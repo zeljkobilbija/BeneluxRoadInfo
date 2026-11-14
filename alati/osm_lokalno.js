@@ -287,6 +287,8 @@ function ucitaj(drz) {
     },
     /** way[highway=motorway][ref~"(^|;)I 95(;|$)"] */
     poOznaci(oznaka) { return Object.keys(P.mw).filter(id => P.mw[id].ref.split(';').map(s => s.trim()).includes(oznaka)).map(geom); },
+    /** id-jevi puteva u relacijama čija mreža odgovara izrazu (npr. strane mreže u pograničnom delu izvoda) */
+    uMrezama(re) { const w = new Set(); for (const x of P.rel) if (re.test(x.network)) for (const id of x.w) w.add(+id); return w; },
     mesto(ime) { const m = P.mesta.find(x => x.name === ime); return m ? [m] : []; },
     /** node(w.w)[highway=motorway_junction] */
     izlazi(putevi) {
