@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Simbol autoputa: nadvožnjak iznad dve kolovozne trake -->
+<!-- Generisano: InterstateInfo/alati/ikona_evropa.py -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="108dp"
-    android:height="108dp"
-    android:viewportWidth="108"
-    android:viewportHeight="108">
-    <path android:fillColor="#FFFFFF" android:pathData="M27,34h54v7h-54z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M31,41h5v10h-5z M72,41h5v10h-5z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M30,84 L48,84 L51.5,50 L46.5,50 Z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M60,84 L78,84 L61.5,50 L56.5,50 Z" />
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#FFFFFF" android:fillType="evenOdd" android:pathData="M10.00,108.00L48.50,56.00L59.50,56.00L98.00,108.00ZM53.27,58.60L54.73,58.60L55.04,64.84L52.96,64.84ZM52.62,71.60L55.38,71.60L55.69,77.84L52.31,77.84ZM51.97,84.60L56.03,84.60L56.34,90.84L51.66,90.84ZM51.32,97.60L56.68,97.60L56.99,103.84L51.01,103.84Z" />
 </vector>

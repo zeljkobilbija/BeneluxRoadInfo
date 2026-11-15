@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generisano: InterstateInfo/alati/ikona_evropa.py -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#000000" android:pathData="M0.00,0.00L26.00,0.00L26.00,56.00L0.00,56.00Z" />
+    <path android:fillColor="#FDDA24" android:pathData="M26.00,0.00L34.00,0.00L34.00,56.00L26.00,56.00Z" />
+    <path android:fillColor="#EF3340" android:pathData="M34.00,0.00L42.00,0.00L42.00,56.00L34.00,56.00Z" />
+    <path android:fillColor="#AE1C28" android:pathData="M42.00,0.00L66.00,0.00L66.00,16.00L42.00,16.00Z" />
+    <path android:fillColor="#AE1C28" android:pathData="M42.00,16.00L66.00,16.00L66.00,29.33L42.00,29.33Z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M42.00,29.33L66.00,29.33L66.00,42.67L42.00,42.67Z" />
+    <path android:fillColor="#21468B" android:pathData="M42.00,42.67L66.00,42.67L66.00,56.00L42.00,56.00Z" />
+    <path android:fillColor="#EF3340" android:pathData="M66.00,0.00L108.00,0.00L108.00,16.00L66.00,16.00Z" />
+    <path android:fillColor="#EF3340" android:pathData="M66.00,16.00L108.00,16.00L108.00,29.33L66.00,29.33Z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M66.00,29.33L108.00,29.33L108.00,42.67L66.00,42.67Z" />
+    <path android:fillColor="#00A3E0" android:pathData="M66.00,42.67L108.00,42.67L108.00,56.00L66.00,56.00Z" />
+    <path android:fillColor="#2E3440" android:pathData="M41.20,0.00L42.80,0.00L42.80,56.00L41.20,56.00Z" />
+    <path android:fillColor="#2E3440" android:pathData="M65.20,0.00L66.80,0.00L66.80,56.00L65.20,56.00Z" />
+    <path android:fillColor="#2E3440" android:pathData="M0.00,56.00L108.00,56.00L108.00,108.00L0.00,108.00Z" />
+</vector>
