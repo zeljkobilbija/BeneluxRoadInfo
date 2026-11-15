@@ -196,7 +196,7 @@ function napraviKes(pbf, kes, log, drz) {
       if (t && iso && t[iso[0]] === iso[1] && t.boundary === 'administrative')
         granicaR = clanovi.filter(c => c[0] === 1).map(c => c[1]);
       if (!t || t.route !== 'road') return;
-      rel.push({ id, network: t.network || '', ref: t.ref || '',
+      rel.push({ id, network: t.network || '', ref: t.ref || '', ...(t.from ? { from: t.from } : {}), ...(t.name ? { name: t.name } : {}),
         w: clanovi.filter(c => c[0] === 1).map(c => c[1]), r: clanovi.filter(c => c[0] === 2).map(c => c[1]) });
     },
   });
@@ -284,12 +284,14 @@ function ucitaj(drz) {
   return ucitani[drz] = {
     datum: P.datum,
     /** way(r.r)[highway=motorway] za rel[route=road][network][ref] i njihove podrelacije */
-    putevi(mreza, br) {
-      const r = P.rel.filter(x => x.network === mreza && x.ref === br), ids = new Set(r.map(x => x.id));
+    putevi(mreza, br, bezImena) {
+      const r = P.rel.filter(x => x.network === mreza && x.ref === br && !(bezImena && bezImena.test(x.name || ''))), ids = new Set(r.map(x => x.id));
       const sve = [...r, ...P.rel.filter(x => !ids.has(x.id) && r.some(y => y.r.includes(x.id)))];
       const w = new Set(); for (const x of sve) for (const id of x.w) if (P.mw[id]) w.add(String(id));
       return [...w].map(geom);
     },
+    /** relacije mreže i oznake (from, name, broj puteva) */
+    relacije(mreza, br) { return P.rel.filter(x => x.network === mreza && x.ref === br); },
     /** svi putevi relacija jedne mreže (npr. cela BAB mreža) */
     svePutevi(mreza) { const w = new Set(); for (const x of P.rel) if (x.network === mreza) for (const id of x.w) if (P.mw[id]) w.add(String(id)); return [...w].map(geom); },
     /** way[highway=motorway][ref~"(^|;)I 95(;|$)"] */
