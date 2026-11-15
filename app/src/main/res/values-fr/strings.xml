@@ -55,6 +55,7 @@
     <string name="det_podeli">Partager</string>
     <string name="det_nema_podataka">OpenStreetMap n\'a aucune information sur ce lieu.</string>
     <string name="det_izvor">Données : © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_izvor_logo">Logos : Wikimedia Commons ; les marques appartiennent à leurs propriétaires</string>
     <string name="det_cene_ucitavanje">Chargement des prix…</string>
     <string name="det_cene_greska">Les prix ne sont pas disponibles pour le moment.</string>
     <string name="det_cene_be">Prix maximum officiel en Belgique (SPF Économie), en vigueur depuis le %s. Les stations peuvent vendre moins cher.</string>

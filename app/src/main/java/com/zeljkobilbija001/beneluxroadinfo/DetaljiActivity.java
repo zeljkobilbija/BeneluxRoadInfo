@@ -104,7 +104,13 @@ public class DetaljiActivity extends AppCompatActivity {
         // Gorivo
         if (!s.gorivo.isEmpty()) {
             LinearLayout g = kartica(R.string.det_gorivo, R.color.cip_gorivo_tekst);
-            cipovi(g, s.gorivo, R.color.cip_gorivo, R.color.cip_gorivo_tekst);
+            List<String> bezLoga = new ArrayList<>();
+            for (String marka : s.gorivo) {
+                int logo = logo(marka);
+                if (logo != 0) redSaLogom(g, marka, logo);
+                else bezLoga.add(marka);
+            }
+            if (!bezLoga.isEmpty()) cipovi(g, bezLoga, R.color.cip_gorivo, R.color.cip_gorivo_tekst);
             cene(g);
         }
 
@@ -145,7 +151,10 @@ public class DetaljiActivity extends AppCompatActivity {
             sadrzaj.addView(t);
         }
 
-        TextView izvor = tekst(getString(R.string.det_izvor), 12, R.color.tekst_sekundarni, false);
+        boolean imaLogo = false;
+        for (String marka : s.gorivo) imaLogo |= logo(marka) != 0;
+        String izv = getString(R.string.det_izvor) + (imaLogo ? "\n" + getString(R.string.det_izvor_logo) : "");
+        TextView izvor = tekst(izv, 12, R.color.tekst_sekundarni, false);
         izvor.setPadding(Izgled.dp(this, 4), Izgled.dp(this, 14), Izgled.dp(this, 4), Izgled.dp(this, 8));
         sadrzaj.addView(izvor);
     }
@@ -226,6 +235,39 @@ public class DetaljiActivity extends AppCompatActivity {
         r.setPadding(0, Izgled.dp(this, 8), 0, 0);
         r.addView(tekst(naziv, 12.5f, R.color.tekst_sekundarni, false));
         r.addView(tekst(vrednost, 16, R.color.tekst, false));
+        k.addView(r);
+    }
+
+    /**
+     * Logo marke goriva (drawable-nodpi/logo_*.webp, preuzima ih InterstateInfo/alati/logoi_evropa.js);
+     * naziv fajla pravi se isto kao slug() u tom alatu. 0 = nema logoa.
+     */
+    private int logo(String marka) {
+        String slug = marka.toLowerCase(Locale.ROOT).replace("&", " and ").replaceAll("['’.]", "")
+                .replaceAll("[^a-z0-9]+", "_").replaceAll("^_|_$", "");
+        if (slug.isEmpty()) return 0;
+        return getResources().getIdentifier("logo_" + slug, "drawable", getPackageName());
+    }
+
+    /** Red sa logoom marke (na beloj podlozi, i u tamnoj temi) i nazivom. */
+    private void redSaLogom(LinearLayout k, String marka, int logo) {
+        LinearLayout r = new LinearLayout(this);
+        r.setOrientation(LinearLayout.HORIZONTAL);
+        r.setGravity(android.view.Gravity.CENTER_VERTICAL);
+        r.setPadding(0, Izgled.dp(this, 10), 0, 0);
+
+        android.widget.ImageView slika = new android.widget.ImageView(this);
+        slika.setImageResource(logo);
+        slika.setScaleType(android.widget.ImageView.ScaleType.FIT_CENTER);
+        slika.setContentDescription(marka);
+        int p = Izgled.dp(this, 6);
+        slika.setPadding(p, p, p, p);
+        slika.setBackground(Izgled.oblik(this, 0xFFFFFFFF, 10, Izgled.boja(this, R.color.linija), 1));
+        r.addView(slika, new LinearLayout.LayoutParams(Izgled.dp(this, 72), Izgled.dp(this, 56)));
+
+        TextView t = tekst(marka, 17, R.color.tekst, true);
+        t.setPadding(Izgled.dp(this, 12), 0, 0, 0);
+        r.addView(t);
         k.addView(r);
     }
 

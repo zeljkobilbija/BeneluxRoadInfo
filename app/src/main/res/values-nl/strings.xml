@@ -55,6 +55,7 @@
     <string name="det_podeli">Delen</string>
     <string name="det_nema_podataka">OpenStreetMap heeft geen gegevens over deze plek.</string>
     <string name="det_izvor">Gegevens: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_izvor_logo">Logo\'s: Wikimedia Commons; merken zijn eigendom van hun eigenaren</string>
     <string name="det_cene_ucitavanje">Prijzen laden…</string>
     <string name="det_cene_greska">Prijzen zijn nu niet beschikbaar.</string>
     <string name="det_cene_be">Officiële maximumprijs in België (FOD Economie), geldig vanaf %s. Stations mogen goedkoper verkopen.</string>

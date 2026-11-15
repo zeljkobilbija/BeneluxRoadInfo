@@ -55,6 +55,7 @@
     <string name="det_podeli">Compartir</string>
     <string name="det_nema_podataka">OpenStreetMap no tiene datos sobre este lugar.</string>
     <string name="det_izvor">Datos: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_izvor_logo">Logotipos: Wikimedia Commons; las marcas pertenecen a sus dueños</string>
     <string name="det_cene_ucitavanje">Cargando precios…</string>
     <string name="det_cene_greska">Los precios no están disponibles ahora.</string>
     <string name="det_cene_be">Precio máximo oficial en Bélgica (FOD Economie), vigente desde el %s. Las gasolineras pueden vender más barato.</string>

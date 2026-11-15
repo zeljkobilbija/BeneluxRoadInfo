@@ -55,6 +55,7 @@
     <string name="det_podeli">Κοινοποίηση</string>
     <string name="det_nema_podataka">Το OpenStreetMap δεν έχει στοιχεία για αυτό το σημείο.</string>
     <string name="det_izvor">Δεδομένα: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_izvor_logo">Λογότυπα: Wikimedia Commons· τα σήματα ανήκουν στους κατόχους τους</string>
     <string name="det_cene_ucitavanje">Φόρτωση τιμών…</string>
     <string name="det_cene_greska">Οι τιμές δεν είναι διαθέσιμες τώρα.</string>
     <string name="det_cene_be">Επίσημη ανώτατη τιμή στο Βέλγιο (FOD Economie), ισχύει από %s. Τα πρατήρια μπορούν να πωλούν φθηνότερα.</string>

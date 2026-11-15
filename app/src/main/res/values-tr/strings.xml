@@ -55,6 +55,7 @@
     <string name="det_podeli">Paylaş</string>
     <string name="det_nema_podataka">OpenStreetMap\'te bu yer hakkında bilgi yok.</string>
     <string name="det_izvor">Veriler: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_izvor_logo">Logolar: Wikimedia Commons; markalar sahiplerine aittir</string>
     <string name="det_cene_ucitavanje">Fiyatlar yükleniyor…</string>
     <string name="det_cene_greska">Fiyatlar şu anda kullanılamıyor.</string>
     <string name="det_cene_be">Belçika resmi azami fiyatı (FOD Economie), %s tarihinden itibaren geçerli. İstasyonlar daha ucuza satabilir.</string>

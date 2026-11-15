@@ -55,6 +55,7 @@
     <string name="det_podeli">Teilen</string>
     <string name="det_nema_podataka">OpenStreetMap hat keine Angaben zu diesem Ort.</string>
     <string name="det_izvor">Daten: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_izvor_logo">Logos: Wikimedia Commons; Marken gehören ihren Inhabern</string>
     <string name="det_cene_ucitavanje">Preise werden geladen…</string>
     <string name="det_cene_greska">Preise sind derzeit nicht verfügbar.</string>
     <string name="det_cene_be">Offizieller Höchstpreis in Belgien (FÖD Wirtschaft), gültig ab %s. Tankstellen dürfen günstiger verkaufen.</string>

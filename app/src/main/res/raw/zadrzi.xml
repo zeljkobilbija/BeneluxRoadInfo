@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Logoi marki se traže po imenu (getIdentifier), pa ih R8 ne sme izbaciti -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@drawable/logo_*" />

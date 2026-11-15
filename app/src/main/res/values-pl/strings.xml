@@ -55,6 +55,7 @@
     <string name="det_podeli">Udostępnij</string>
     <string name="det_nema_podataka">OpenStreetMap nie ma danych o tym miejscu.</string>
     <string name="det_izvor">Dane: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_izvor_logo">Logotypy: Wikimedia Commons; znaki towarowe należą do ich właścicieli</string>
     <string name="det_cene_ucitavanje">Wczytywanie cen…</string>
     <string name="det_cene_greska">Ceny są teraz niedostępne.</string>
     <string name="det_cene_be">Oficjalna cena maksymalna w Belgii (FOD Economie), obowiązuje od %s. Stacje mogą sprzedawać taniej.</string>

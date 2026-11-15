@@ -55,6 +55,7 @@
     <string name="det_podeli">Podeli</string>
     <string name="det_nema_podataka">OpenStreetMap nema podatke o ovom mestu.</string>
     <string name="det_izvor">Podaci: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_izvor_logo">Logoi: Wikimedia Commons; zaštitni znakovi pripadaju vlasnicima</string>
     <string name="det_cene_ucitavanje">Učitavam cene…</string>
     <string name="det_cene_greska">Cene trenutno nisu dostupne.</string>
     <string name="det_cene_be">Zvanična maksimalna cena u Belgiji (FOD Economie), važi od %s. Pumpe mogu prodavati i jeftinije.</string>

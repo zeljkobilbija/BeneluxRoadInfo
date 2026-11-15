@@ -55,6 +55,7 @@
     <string name="det_podeli">Megosztás</string>
     <string name="det_nema_podataka">Az OpenStreetMap nem tartalmaz adatot erről a helyről.</string>
     <string name="det_izvor">Adatok: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_izvor_logo">Logók: Wikimedia Commons; a védjegyek tulajdonosaikat illetik</string>
     <string name="det_cene_ucitavanje">Árak betöltése…</string>
     <string name="det_cene_greska">Az árak most nem érhetők el.</string>
     <string name="det_cene_be">Hivatalos maximális ár Belgiumban (FOD Economie), érvényes: %s óta. A kutak olcsóbban is árulhatnak.</string>

@@ -55,6 +55,7 @@
     <string name="det_podeli">Condividi</string>
     <string name="det_nema_podataka">OpenStreetMap non ha dati su questo luogo.</string>
     <string name="det_izvor">Dati: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_izvor_logo">Loghi: Wikimedia Commons; i marchi appartengono ai rispettivi proprietari</string>
     <string name="det_cene_ucitavanje">Caricamento prezzi…</string>
     <string name="det_cene_greska">Prezzi non disponibili al momento.</string>
     <string name="det_cene_be">Prezzo massimo ufficiale in Belgio (FOD Economie), valido dal %s. I distributori possono vendere a meno.</string>

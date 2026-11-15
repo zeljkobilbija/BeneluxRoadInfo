@@ -55,6 +55,7 @@
     <string name="det_podeli">Sdílet</string>
     <string name="det_nema_podataka">OpenStreetMap o tomto místě nemá údaje.</string>
     <string name="det_izvor">Data: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_izvor_logo">Loga: Wikimedia Commons; ochranné známky patří jejich vlastníkům</string>
     <string name="det_cene_ucitavanje">Načítám ceny…</string>
     <string name="det_cene_greska">Ceny teď nejsou dostupné.</string>
     <string name="det_cene_be">Oficiální maximální cena v Belgii (FOD Economie), platí od %s. Čerpací stanice mohou prodávat levněji.</string>

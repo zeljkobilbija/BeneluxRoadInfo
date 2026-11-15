@@ -1,0 +1,15 @@
+logo_air_liquide.webp	Air Liquide	Q407448	https://commons.wikimedia.org/wiki/File:Air_Liquide_-_logo_(France%2C_1991).svg
+logo_avia.webp	AVIA	Q300147	https://commons.wikimedia.org/wiki/File:AVIA_International_logo.svg
+logo_avia_xpress.webp	AVIA XPress	Q300147	https://commons.wikimedia.org/wiki/File:AVIA_International_logo.svg
+logo_bp.webp	BP	Q152057	https://commons.wikimedia.org/wiki/File:Bp_textlogo.svg
+logo_esso.webp	Esso	Q867662	https://commons.wikimedia.org/wiki/File:Esso_textlogo.svg
+logo_gulf.webp	Gulf	Q5617505	https://commons.wikimedia.org/wiki/File:Gulf_Oil_logo.svg
+logo_lukoil.webp	Lukoil	Q329347	https://commons.wikimedia.org/wiki/File:Lukoil_company_logo.svg
+logo_ok.webp	OK	Q123472183	https://commons.wikimedia.org/wiki/File:OK_Nederland_Logo.png
+logo_q8.webp	Q8	Q4119207	https://commons.wikimedia.org/wiki/File:Q8_logo.svg
+logo_shell.webp	Shell	Q110716465	https://commons.wikimedia.org/wiki/File:Shell_wordmark_2019.svg
+logo_tamoil.webp	Tamoil	Q706793	https://commons.wikimedia.org/wiki/File:Tamoil.svg
+logo_tango.webp	Tango	Q125867683	https://commons.wikimedia.org/wiki/File:Tango_tankstations_logo.png
+logo_texaco.webp	Texaco	Q775060	https://commons.wikimedia.org/wiki/File:Texaco_logo.svg
+logo_tinq.webp	Tinq	Q2132028	https://commons.wikimedia.org/wiki/File:TinQ_logo_01.gif
+logo_totalenergies.webp	TotalEnergies	Q154037	https://commons.wikimedia.org/wiki/File:Total_wordmark_(2003-2021).svg

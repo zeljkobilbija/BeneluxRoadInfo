@@ -55,6 +55,7 @@
     <string name="det_podeli">Distribuie</string>
     <string name="det_nema_podataka">OpenStreetMap nu are date despre acest loc.</string>
     <string name="det_izvor">Date: © OpenStreetMap contributors (ODbL)</string>
+    <string name="det_izvor_logo">Logouri: Wikimedia Commons; mărcile aparțin proprietarilor lor</string>
     <string name="det_cene_ucitavanje">Se încarcă prețurile…</string>
     <string name="det_cene_greska">Prețurile nu sunt disponibile acum.</string>
     <string name="det_cene_be">Preț maxim oficial în Belgia (FOD Economie), valabil din %s. Benzinăriile pot vinde mai ieftin.</string>
