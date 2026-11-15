@@ -126,7 +126,10 @@ function citajBlok(buf, cb) {
 }
 
 // ---------- Priprema keša ----------
-const jeServis = t => /^(services|rest_area)$/.test(t.highway || '');
+// Autohof (Nemačka): kompleks kod izlaza, često ucrtan samo kao pumpa ili parking sa imenom "Autohof …"
+const jeAutohof = t => /autohof/i.test(t.name || '') && !t.highway && !t.public_transport
+  && (/^(fuel|parking)$/.test(t.amenity || '') || !(t.amenity || t.shop || t.tourism));
+const jeServis = t => /^(services|rest_area)$/.test(t.highway || '') || jeAutohof(t);
 const jePoi = t => /^(fuel|fast_food|restaurant|cafe|toilets|charging_station|shower|parking)$/.test(t.amenity || '')
   || /^(hotel|motel)$/.test(t.tourism || '') || /^(convenience|kiosk)$/.test(t.shop || '');
 const POI_K = ['amenity', 'tourism', 'shop', 'brand', 'brand:wikidata', 'name', 'operator', 'capacity:hgv', 'capacity:truck'];
@@ -176,7 +179,7 @@ function napraviKes(pbf, kes, log, drz) {
       if (!t) return;
       if (t.highway === 'motorway_junction') izlazi[id] = { lat: r7(lat), lon: r7(lon), tags: t };
       if (jeServis(t)) servis.push({ type: 'node', id, tags: t, c: [r7(lat), r7(lon)], pts: [[lat, lon]] });
-      else if (jePoi(t)) poi.push({ type: 'node', id, tags: izdvoji(t, POI_K), c: [r7(lat), r7(lon)] });
+      if (!(jeServis(t) && !jeAutohof(t)) && jePoi(t)) poi.push({ type: 'node', id, tags: izdvoji(t, POI_K), c: [r7(lat), r7(lon)] });
       if (/^(city|town|village)$/.test(t.place || '') && t.name) mesta.push({ name: t.name, lat: r7(lat), lon: r7(lon) });
     },
     put(id, refs, t) {
@@ -184,8 +187,10 @@ function napraviKes(pbf, kes, log, drz) {
       if (t.highway === 'motorway') { mw[id] = { ref: t.ref || '', n: refs }; refs.forEach(x => treba.add(x)); }
       else if (t.highway === 'motorway_link' && (t.destination || t['destination:ref']))
         linkovi.push({ n0: refs[0], tags: izdvoji(t, ['destination', 'destination:ref']) });
-      else if (jeServis(t)) { servisW.push({ id, tags: t, n: refs }); refs.forEach(x => treba.add(x)); }
-      else if (jePoi(t)) { poiW.push({ id, tags: izdvoji(t, POI_K), n: refs }); refs.forEach(x => treba.add(x)); }
+      else if (jeServis(t) || jePoi(t)) {
+        if (jeServis(t)) { servisW.push({ id, tags: t, n: refs }); refs.forEach(x => treba.add(x)); }
+        if (!(jeServis(t) && !jeAutohof(t)) && jePoi(t)) { poiW.push({ id, tags: izdvoji(t, POI_K), n: refs }); refs.forEach(x => treba.add(x)); }
+      }
     },
     rel(id, clanovi, t) {
       if (t && iso && t[iso[0]] === iso[1] && t.boundary === 'administrative')
@@ -285,6 +290,8 @@ function ucitaj(drz) {
       const w = new Set(); for (const x of sve) for (const id of x.w) if (P.mw[id]) w.add(String(id));
       return [...w].map(geom);
     },
+    /** svi putevi relacija jedne mreže (npr. cela BAB mreža) */
+    svePutevi(mreza) { const w = new Set(); for (const x of P.rel) if (x.network === mreza) for (const id of x.w) if (P.mw[id]) w.add(String(id)); return [...w].map(geom); },
     /** way[highway=motorway][ref~"(^|;)I 95(;|$)"] */
     poOznaci(oznaka) { return Object.keys(P.mw).filter(id => P.mw[id].ref.split(';').map(s => s.trim()).includes(oznaka)).map(geom); },
     /** id-jevi puteva u relacijama čija mreža odgovara izrazu (npr. strane mreže u pograničnom delu izvoda) */
