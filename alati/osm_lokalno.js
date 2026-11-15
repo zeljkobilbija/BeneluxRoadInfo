@@ -132,7 +132,8 @@ const jeAutohof = t => /autohof/i.test(t.name || '') && !t.highway && !t.publi
 const jeServis = t => /^(services|rest_area)$/.test(t.highway || '') || jeAutohof(t);
 const jePoi = t => /^(fuel|fast_food|restaurant|cafe|toilets|charging_station|shower|parking)$/.test(t.amenity || '')
   || /^(hotel|motel)$/.test(t.tourism || '') || /^(convenience|kiosk)$/.test(t.shop || '');
-const POI_K = ['amenity', 'tourism', 'shop', 'brand', 'brand:wikidata', 'name', 'operator', 'capacity:hgv', 'capacity:truck'];
+const POI_K = ['amenity', 'tourism', 'shop', 'brand', 'brand:wikidata', 'name', 'operator', 'capacity:hgv', 'capacity:truck',
+  'phone', 'contact:phone', 'email', 'contact:email', 'website', 'contact:website'];
 const izdvoji = (t, kljucevi) => { const o = {}; for (const k of kljucevi) if (t[k] != null) o[k] = t[k]; return o; };
 const r7 = x => Math.round(x * 1e7) / 1e7;
 const RAD = Math.PI / 180;

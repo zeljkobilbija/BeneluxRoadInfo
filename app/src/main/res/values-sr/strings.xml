@@ -40,6 +40,7 @@
     <string name="zemlja_lu">Luksemburg</string>
 
     <!-- Ekran jednog mesta -->
+    <string name="det_kontakt">Kontakt</string>
     <string name="det_lokacija">Lokacija</string>
     <string name="det_autoput">Autoput</string>
     <string name="det_deonica">Deonica</string>

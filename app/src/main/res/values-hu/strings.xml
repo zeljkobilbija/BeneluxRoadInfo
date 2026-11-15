@@ -40,6 +40,7 @@
     <string name="zemlja_lu">Luxemburg</string>
 
     <!-- Ekran jednog mesta -->
+    <string name="det_kontakt">Kapcsolat</string>
     <string name="det_lokacija">Helyszín</string>
     <string name="det_autoput">Autópálya</string>
     <string name="det_deonica">Szakasz</string>

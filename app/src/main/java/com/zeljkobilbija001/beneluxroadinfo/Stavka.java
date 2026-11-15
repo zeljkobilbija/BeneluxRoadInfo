@@ -20,6 +20,8 @@ public final class Stavka {
     public boolean restoran, wc, tus, hotel, prodavnica;
     public String kamioni = "";
     public String radnoVreme = "";
+    /** Kontakt iz OSM-a (odmorište, pa pumpa, pa ostalo); prazno ako ga nema. */
+    public String telefon = "", mejl = "", sajt = "";
     /** Koordinate (WGS84); NaN ako ih nema. */
     public double lat = Double.NaN, lon = Double.NaN;
 
@@ -30,6 +32,13 @@ public final class Stavka {
     public boolean jeIzlaz() {
         return tip == IZLAZ || tip == CVORISTE;
     }
+
+    public boolean imaKontakt() {
+
+        return !telefon.isEmpty() || !mejl.isEmpty() || !sajt.isEmpty();
+
+    }
+
 
     public boolean imaHranu() {
         return restoran || !hrana.isEmpty();

@@ -70,6 +70,9 @@ public final class Podaci {
             s.prodavnica = o.optInt("sh", 0) == 1;
             s.kamioni = o.optString("lkw", "");
             s.radnoVreme = o.optString("oh", "");
+            s.telefon = o.optString("tel", "");
+            s.mejl = o.optString("mail", "");
+            s.sajt = o.optString("web", "");
             s.lat = o.optDouble("la", Double.NaN);
             s.lon = o.optDouble("lo", Double.NaN);
             p.stavke.add(s);

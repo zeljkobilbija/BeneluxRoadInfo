@@ -144,8 +144,18 @@ public class DetaljiActivity extends AppCompatActivity {
             }
         }
 
+        if (s.imaKontakt()) {
+            LinearLayout kon = kartica(R.string.det_kontakt, R.color.plava_tekst);
+            if (!s.telefon.isEmpty()) link(kon, "\u260E  " + s.telefon,
+                    new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + s.telefon.replaceAll("[^+0-9]", ""))));
+            if (!s.mejl.isEmpty()) link(kon, "\u2709  " + s.mejl,
+                    new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + s.mejl)));
+            if (!s.sajt.isEmpty()) link(kon, "\uD83C\uDF10  " + domen(s.sajt),
+                    new Intent(Intent.ACTION_VIEW, Uri.parse(s.sajt)));
+        }
+
         if (!s.jeIzlaz() && s.tip != Stavka.PARKING && s.gorivo.isEmpty() && !s.imaHranu()
-                && s.punjaci.isEmpty() && usluge.isEmpty()) {
+                && s.punjaci.isEmpty() && usluge.isEmpty() && !s.imaKontakt()) {
             TextView t = tekst(getString(R.string.det_nema_podataka), 14, R.color.tekst_sekundarni, false);
             t.setPadding(Izgled.dp(this, 4), Izgled.dp(this, 12), Izgled.dp(this, 4), 0);
             sadrzaj.addView(t);
@@ -226,6 +236,24 @@ public class DetaljiActivity extends AppCompatActivity {
         n.setLetterSpacing(0.06f);
         k.addView(n);
         return k;
+    }
+
+    /** Red koji se otvara dodirom (poziv, mejl, sajt). */
+    private void link(LinearLayout k, String tekst, Intent namera) {
+        TextView t = tekst(tekst, 16, R.color.plava_tekst, false);
+        t.setPadding(0, Izgled.dp(this, 10), 0, Izgled.dp(this, 4));
+        t.setSingleLine(true);
+        t.setEllipsize(TextUtils.TruncateAt.END);
+        t.setOnClickListener(v -> {
+            try { startActivity(namera); } catch (ActivityNotFoundException ignored) { }
+        });
+        k.addView(t);
+    }
+
+    /** „https://www.shell.de/stationen/123“ → „shell.de“ */
+    private static String domen(String url) {
+        String h = Uri.parse(url).getHost();
+        return h == null ? url : h.replaceFirst("^www\\.", "");
     }
 
     /** Red „naziv: vrednost“ u kartici. */

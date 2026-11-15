@@ -40,6 +40,7 @@
     <string name="zemlja_lu">Люксембург</string>
 
     <!-- Ekran jednog mesta -->
+    <string name="det_kontakt">Контакты</string>
     <string name="det_lokacija">Местоположение</string>
     <string name="det_autoput">Автомагистраль</string>
     <string name="det_deonica">Участок</string>

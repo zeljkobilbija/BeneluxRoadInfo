@@ -40,6 +40,7 @@
     <string name="zemlja_lu">Lüksemburg</string>
 
     <!-- Ekran jednog mesta -->
+    <string name="det_kontakt">İletişim</string>
     <string name="det_lokacija">Konum</string>
     <string name="det_autoput">Otoyol</string>
     <string name="det_deonica">Kesim</string>

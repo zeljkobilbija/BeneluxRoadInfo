@@ -40,6 +40,7 @@
     <string name="zemlja_lu">Lussemburgo</string>
 
     <!-- Ekran jednog mesta -->
+    <string name="det_kontakt">Contatti</string>
     <string name="det_lokacija">Posizione</string>
     <string name="det_autoput">Autostrada</string>
     <string name="det_deonica">Tratto</string>
