@@ -23,7 +23,7 @@ const DRZAVE = { AL: 'alabama', AK: 'alaska', AZ: 'arizona', AR: 'arkansas', CA:
 
 /**
  * Oblast → [putanja na Geofabrik-u, granica za sečenje (oznaka=vrednost) ili null].
- * Isti modul se koristi u svim aplikacijama za autoputeve (InterstateInfo, BeneluxRoadInfo, AutoroutesInfo…).
+ * Isti modul se koristi u svim aplikacijama za autoputeve (InterstateInfo, EuroRoadInfo, AutoroutesInfo…).
  * U SAD se seče po granici savezne države (relacije Interstate-a idu kroz više država); u Evropi svaka zemlja
  * ima svoju mrežu (NL:A, FR:A-road…), pa sečenje ne treba. Nemačka je "DEU" (DE je Delaware).
  */
@@ -31,6 +31,8 @@ const OBLASTI = {
   NL: ['europe/netherlands', null], BE: ['europe/belgium', null], LU: ['europe/luxembourg', null],
   FR: ['europe/france', null], IT: ['europe/italy', null], DEU: ['europe/germany', null],
   AT: ['europe/austria', null], CH: ['europe/switzerland', null],
+  SI: ['europe/slovenia', null], HR: ['europe/croatia', null], CZ: ['europe/czech-republic', null],
+  PL: ['europe/poland', null], ES: ['europe/spain', null], HU: ['europe/hungary', null], SK: ['europe/slovakia', null], PT: ['europe/portugal', null], RS: ['europe/serbia', null], GR: ['europe/greece', null], BG: ['europe/bulgaria', null], RO: ['europe/romania', null], DK: ['europe/denmark', null], SE: ['europe/sweden', null], GB: ['europe/united-kingdom', null], IE: ['europe/ireland-and-northern-ireland', null], NI: ['europe/ireland-and-northern-ireland', null], TR: ['europe/turkey', null], NO: ['europe/norway', null], FI: ['europe/finland', null],
 };
 for (const [k, s] of Object.entries(DRZAVE)) OBLASTI[k] = ['north-america/us/' + s, 'ISO3166-2=US-' + k];
 
@@ -186,7 +188,9 @@ function napraviKes(pbf, kes, log, drz) {
     put(id, refs, t) {
       if (!t) return;
       if (t.highway === 'motorway') { mw[id] = { ref: t.ref || '', n: refs }; refs.forEach(x => treba.add(x)); }
-      else if (t.highway === 'motorway_link' && (t.destination || t['destination:ref']))
+      // brzi putevi (Schnellstraße, M0, R3, savezne magistrale…): samo sa oznakom, obeleženi – koriste se samo na zahtev
+      else if (t.highway === 'trunk' && t.ref) { mw[id] = { ref: t.ref, n: refs, tr: 1 }; refs.forEach(x => treba.add(x)); }
+      else if ((t.highway === 'motorway_link' || t.highway === 'trunk_link') && (t.destination || t['destination:ref']))
         linkovi.push({ n0: refs[0], tags: izdvoji(t, ['destination', 'destination:ref']) });
       else if (jeServis(t) || jePoi(t)) {
         if (jeServis(t)) { servisW.push({ id, tags: t, n: refs }); refs.forEach(x => treba.add(x)); }
@@ -262,16 +266,24 @@ function napraviKes(pbf, kes, log, drz) {
   const linkoviNaIzlazu = linkovi.filter(l => izl[l.n0]);
   servis.forEach(s => { s.pts = s.pts.map(q => [r7(q[0]), r7(q[1])]); });
 
-  const podaci = { izvor: path.basename(pbf), datum: fs.statSync(pbf).mtime.toISOString().slice(0, 10),
+  const podaci = { verzija: VERZIJA_KESA, izvor: path.basename(pbf), datum: fs.statSync(pbf).mtime.toISOString().slice(0, 10),
     mw, k: kmw, rel, izlazi: izl, linkovi: linkoviNaIzlazu, servis: servisU, poi: poiBlizu, mesta };
   fs.writeFileSync(kes, JSON.stringify(podaci));
   log(`keš: ${path.basename(kes)} ${(fs.statSync(kes).size / 1e6).toFixed(1)} MB, sadržaja uz odmorišta ${poiBlizu.length} (ukupno ${((Date.now() - t0) / 1000).toFixed(0)} s)`);
 }
 
+/** 2: i trunk putevi (tr: 1). Stariji keš se pravi ponovo iz već preuzetog .pbf-a. */
+const VERZIJA_KESA = 2;
+function verzijaKesa(kes) {
+  const fd = fs.openSync(kes, 'r'), b = Buffer.alloc(40); fs.readSync(fd, b, 0, 40, 0); fs.closeSync(fd);
+  const m = b.toString().match(/"verzija":(\d+)/); return m ? +m[1] : 1;
+}
+
 async function pripremi(drz, { osvezi = false, log = console.error } = {}) {
   const pbf = await preuzmiPbf(drz, osvezi, log);
   const kes = path.join(DIR, drz.toLowerCase() + '.json');
-  if (!fs.existsSync(kes) || fs.statSync(kes).mtimeMs < fs.statSync(pbf).mtimeMs) napraviKes(pbf, kes, log, drz);
+  if (!fs.existsSync(kes) || fs.statSync(kes).mtimeMs < fs.statSync(pbf).mtimeMs || verzijaKesa(kes) < VERZIJA_KESA)
+    napraviKes(pbf, kes, log, drz);
 }
 
 // ---------- Upiti nad kešom (vraćaju elemente u obliku Overpass odgovora) ----------
@@ -279,24 +291,27 @@ const ucitani = {};
 function ucitaj(drz) {
   if (ucitani[drz]) return ucitani[drz];
   const P = JSON.parse(fs.readFileSync(path.join(DIR, drz.toLowerCase() + '.json'), 'utf8'));
+  const ok = id => P.mw[id] && (!P.mw[id].tr || L.trunk);
   const geom = id => ({ type: 'way', id: +id, geometry: P.mw[id].n.map(n => P.k[n]).filter(Boolean).map(([lat, lon]) => ({ lat, lon })) });
   const el = s => ({ type: s.type, id: s.id, tags: s.tags,
     ...(s.type === 'node' ? { lat: s.c[0], lon: s.c[1] } : { center: { lat: s.c[0], lon: s.c[1] } }) });
-  return ucitani[drz] = {
+  const L = ucitani[drz] = {
+    /** true: i brzi putevi (trunk) u putevi(), svePutevi() i poOznaci() */
+    trunk: false,
     datum: P.datum,
     /** way(r.r)[highway=motorway] za rel[route=road][network][ref] i njihove podrelacije */
     putevi(mreza, br, bezImena) {
       const r = P.rel.filter(x => x.network === mreza && x.ref === br && !(bezImena && bezImena.test(x.name || ''))), ids = new Set(r.map(x => x.id));
       const sve = [...r, ...P.rel.filter(x => !ids.has(x.id) && r.some(y => y.r.includes(x.id)))];
-      const w = new Set(); for (const x of sve) for (const id of x.w) if (P.mw[id]) w.add(String(id));
+      const w = new Set(); for (const x of sve) for (const id of x.w) if (ok(id)) w.add(String(id));
       return [...w].map(geom);
     },
     /** relacije mreže i oznake (from, name, broj puteva) */
     relacije(mreza, br) { return P.rel.filter(x => x.network === mreza && x.ref === br); },
     /** svi putevi relacija jedne mreže (npr. cela BAB mreža) */
-    svePutevi(mreza) { const w = new Set(); for (const x of P.rel) if (x.network === mreza) for (const id of x.w) if (P.mw[id]) w.add(String(id)); return [...w].map(geom); },
+    svePutevi(mreza) { const w = new Set(); for (const x of P.rel) if (x.network === mreza) for (const id of x.w) if (ok(id)) w.add(String(id)); return [...w].map(geom); },
     /** way[highway=motorway][ref~"(^|;)I 95(;|$)"] */
-    poOznaci(oznaka) { return Object.keys(P.mw).filter(id => P.mw[id].ref.split(';').map(s => s.trim()).includes(oznaka)).map(geom); },
+    poOznaci(oznaka) { return Object.keys(P.mw).filter(id => ok(id) && P.mw[id].ref.split(';').map(s => s.trim()).includes(oznaka)).map(geom); },
     /** id-jevi puteva u relacijama čija mreža odgovara izrazu (npr. strane mreže u pograničnom delu izvoda) */
     uMrezama(re) { const w = new Set(); for (const x of P.rel) if (re.test(x.network)) for (const id of x.w) w.add(+id); return w; },
     mesto(ime) { const m = P.mesta.find(x => x.name === ime); return m ? [m] : []; },
@@ -317,6 +332,7 @@ function ucitaj(drz) {
       return P.poi.filter(x => pts.some(q => metara(x.c, q) < 350)).map(el);
     },
   };
+  return L;
 }
 
 module.exports = { blokovi, citajBlok, pripremi, ucitaj, DRZAVE, OBLASTI };
