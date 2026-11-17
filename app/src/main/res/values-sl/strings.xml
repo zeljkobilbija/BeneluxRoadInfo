@@ -28,7 +28,7 @@
     <string name="cip_0_24">0–24</string>
     <string name="podnaslov_lista">Izvozi: %1$d · bencinski servisi v tej smeri: %2$d</string>
     <string name="nema_stavki">Za ta filter na tem odseku ni ničesar.</string>
-    <string name="izvor">Podatki: © sodelavci OpenStreetMap (ODbL). Kilometri se štejejo od začetka odseka.</string>
+    <string name="izvor">Podatki: © sodelavci OpenStreetMap (ODbL). Kilometri kot na tablah ob avtocesti (kjer so vrisane), sicer od začetka odseka.</string>
     <string name="privatnost">Nastavitve zasebnosti</string>
     <string name="greska_podaci">Podatkov ni bilo mogoče naložiti.</string>
     <string name="km">km</string>
@@ -68,4 +68,25 @@
     <string name="cena_vodonik">Vodik</string>
     <string name="det_cene_nl_kv">Povprečje na Nizozemskem, %s (CBS).</string>
     <string name="det_cene_lu_mes">Uradno mesečno povprečje v Luksemburgu, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Vožnja</string>
+    <string name="voznja_opis">Avtocesta, kilometer in smer glede na vašo lokacijo – in kaj je pred vami</string>
+    <string name="voznja_pokreni">Zaženi</string>
+    <string name="voznja_zaustavi">Ustavi</string>
+    <string name="voznja_naslov">Način vožnje je vklopljen</string>
+    <string name="voznja_trazim">Iščem avtocesto…</string>
+    <string name="voznja_van">Niste na avtocesti v Beneluksu</string>
+    <string name="voznja_na">Na %s</string>
+    <string name="voznja_na_smer">%1$s proti %2$s</string>
+    <string name="voznja_dozvola">Način vožnje potrebuje natančno lokacijo.</string>
+    <string name="lokacija_dugme">Moj položaj</string>
+    <string name="lokacija_ovde">Tukaj ste: km %s</string>
+    <string name="lokacija_ovde_smer">Tukaj ste: km %1$s, proti %2$s</string>
+    <string name="lokacija_nije_na">Trenutno niste na %s</string>
+    <string name="lokacija_nema">Lokacija ni na voljo.</string>
+    <string name="lokacija_vi_ste_ovde">Tukaj ste</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Odstrani oglase</string>
+    <string name="kupovina_hvala">Hvala! Oglasi so odstranjeni.</string>
+    <string name="kupovina_nedostupna">Nakup trenutno ni na voljo. Poskusite znova pozneje.</string>
 </resources>

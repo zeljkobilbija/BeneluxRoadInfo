@@ -28,7 +28,7 @@
     <string name="cip_0_24">0–24</string>
     <string name="podnaslov_lista">%1$d lehajtó · %2$d benzinkút ebben az irányban</string>
     <string name="nema_stavki">Ezen a szakaszon nincs találat erre a szűrőre.</string>
-    <string name="izvor">Adatok: © OpenStreetMap közreműködők (ODbL). A kilométereket a szakasz elejétől számoljuk.</string>
+    <string name="izvor">Adatok: © OpenStreetMap közreműködők (ODbL). Kilométerek az út menti táblák szerint (ahol fel vannak térképezve), egyébként a szakasz elejétől.</string>
     <string name="privatnost">Adatvédelmi beállítások</string>
     <string name="greska_podaci">Az adatokat nem sikerült betölteni.</string>
     <string name="km">km</string>
@@ -68,4 +68,25 @@
     <string name="cena_vodonik">Hidrogén</string>
     <string name="det_cene_nl_kv">Átlag Hollandiában, %s (CBS).</string>
     <string name="det_cene_lu_mes">Hivatalos havi átlag Luxemburgban, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Vezetés mód</string>
+    <string name="voznja_opis">Autópálya, kilométer és irány a helyzete alapján – és ami Ön előtt van</string>
+    <string name="voznja_pokreni">Indítás</string>
+    <string name="voznja_zaustavi">Leállítás</string>
+    <string name="voznja_naslov">A vezetés mód be van kapcsolva</string>
+    <string name="voznja_trazim">Autópálya keresése…</string>
+    <string name="voznja_van">Nem Benelux-autópályán van</string>
+    <string name="voznja_na">%s</string>
+    <string name="voznja_na_smer">%1$s, %2$s felé</string>
+    <string name="voznja_dozvola">A vezetés módhoz pontos helyadat szükséges.</string>
+    <string name="lokacija_dugme">Saját pozíció</string>
+    <string name="lokacija_ovde">Itt van: %s. km</string>
+    <string name="lokacija_ovde_smer">Itt van: %1$s. km, %2$s felé</string>
+    <string name="lokacija_nije_na">Most nem a(z) %s autópályán van</string>
+    <string name="lokacija_nema">A helyadat nem érhető el.</string>
+    <string name="lokacija_vi_ste_ovde">Itt van</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Hirdetések eltávolítása</string>
+    <string name="kupovina_hvala">Köszönjük! A hirdetések eltűntek.</string>
+    <string name="kupovina_nedostupna">A vásárlás most nem érhető el. Próbálja újra később.</string>
 </resources>

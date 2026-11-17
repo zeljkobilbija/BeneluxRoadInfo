@@ -8,6 +8,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -23,6 +24,7 @@ import com.google.android.material.button.MaterialButton;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 /** Ekran jednog autoputa: deonica, smer vožnje, filteri i lista poređana po kilometru. */
 public class AutoputActivity extends AppCompatActivity {
@@ -51,6 +53,63 @@ public class AutoputActivity extends AppCompatActivity {
     private RecyclerView lista;
     private View koren;
     private boolean zatvaranje;
+    /** Stavke koje su trenutno u listi (za odmotavanje do kilometra). */
+    private List<Stavka> prikazano = new ArrayList<>();
+    /** Gde je vozač (iz lokacije): deonica, km i smer ('?' = nepoznat); mojaDeonica -1 = nepoznato. */
+    private int mojaDeonica = -1;
+    private double mojKm;
+    private char mojSmer = '?';
+    private long pozicijaVreme;
+    private static final long ZASTARELO_MS = 5 * 60_000L;
+    private final android.os.Handler glavna = new android.os.Handler(android.os.Looper.getMainLooper());
+    /**
+     * Vožnja je vozača videla na ovom autoputu. Samo tada se pri prelasku na drugi autoput ekran
+     * sam prebacuje; ako je otvoren neki drugi autoput (gleda se unapred), ostaje otvoren.
+     */
+    private boolean vozacBioOvde;
+    /** Dok je Vožnja uključena: strelica se sama pomera (svakih 5 s). */
+    private final Runnable pracenje = new Runnable() {
+        @Override
+        public void run() {
+            String sadAutoput = VoznjaService.sadAutoput;
+            if (autoput.id.equals(sadAutoput)) {
+                vozacBioOvde = true;
+            } else if (vozacBioOvde && sadAutoput != null && !zatvaranje) {
+                // vozač je sa ovog autoputa prešao na drugi: otvara se ekran novog
+                Autoput novi = Autoputevi.poId(sadAutoput);
+                if (novi != null && novi.dostupan()) {
+                    predjiNa(novi);
+                    return;
+                }
+            }
+            if (autoput.id.equals(sadAutoput)) {
+                mojaDeonica = VoznjaService.sadDeonica;
+                mojKm = VoznjaService.sadKm;
+                pozicijaVreme = System.currentTimeMillis();
+                char sadSmer = VoznjaService.sadSmer;
+                if (sadSmer != '?' && sadSmer != mojSmer) {
+                    // smer vožnje je tek saznat (ili se vozač okrenuo): lista prikazuje parkinge i pumpe
+                    // samo sa njegove strane kolovoza; redosled (dugme smera) ostaje kako ga je vozač izabrao
+                    mojSmer = sadSmer;
+                    mojaDeonica = VoznjaService.sadDeonica;
+                    deonica = mojaDeonica;
+                    osvezi(false);
+                    int poz = adapter.pozicijaOvde();
+                    if (poz > 0) ((LinearLayoutManager) lista.getLayoutManager())
+                            .scrollToPositionWithOffset(poz, Izgled.dp(AutoputActivity.this, 24));
+                } else {
+                    postaviStrelicu();
+                }
+            } else if (mojaDeonica >= 0 && (VoznjaService.radi
+                    || System.currentTimeMillis() - pozicijaVreme > ZASTARELO_MS)) {
+                // više nije na ovom autoputu (ili je pozicija stara): strelica se sklanja
+                mojaDeonica = -1;
+                mojSmer = '?';
+                postaviStrelicu();
+            }
+            glavna.postDelayed(this, 5_000);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +150,8 @@ public class AutoputActivity extends AppCompatActivity {
         podnaslov = findViewById(R.id.podnaslov);
         prazno = findViewById(R.id.prazno);
         deoniceRed = findViewById(R.id.deonice);
+        // autoput u jednom komadu: dugmad za deonice samo ako ih ima više
+        if (podaci.deonice.size() < 2) ((View) deoniceRed.getParent()).setVisibility(View.GONE);
         smeroviRed = findViewById(R.id.smerovi);
         filteriRed = findViewById(R.id.filteri);
 
@@ -111,7 +172,11 @@ public class AutoputActivity extends AppCompatActivity {
         napraviFiltere();
         osvezi(true);
 
-        if (savedInstanceState == null) ulaznaAnimacija();
+        findViewById(R.id.mojaLokacija).setOnClickListener(v -> poLokaciji(true));
+        if (savedInstanceState == null) {
+            ulaznaAnimacija();
+            poLokaciji(false);
+        }
         Reklame.prikaziBaner(this, findViewById(R.id.reklamaKontejner));
     }
 
@@ -121,6 +186,117 @@ public class AutoputActivity extends AppCompatActivity {
         out.putInt(STANJE_DEONICA, deonica);
         out.putChar(STANJE_SMER, smer);
         out.putInt(STANJE_FILTER, filter);
+    }
+
+    // ---------- Gde sam: deonica, smer i kilometar iz lokacije ----------
+
+    /**
+     * Ako je vozač na ovom autoputu: bira njegovu deonicu i smer i odmotava listu do njegovog kilometra.
+     * Režim vožnje već zna sve; inače se uzima jedna lokacija, a smer iz GPS kursa (dok se vozi).
+     *
+     * @param pitaj dugme je pritisnuto: javi i kad lokacija nije dostupna ili nije na ovom autoputu
+     */
+    @android.annotation.SuppressLint("MissingPermission")
+    private void poLokaciji(boolean pitaj) {
+        if (autoput.id.equals(VoznjaService.sadAutoput)) {
+            postaviMesto(VoznjaService.sadDeonica, VoznjaService.sadKm, VoznjaService.sadSmer);
+            return;
+        }
+        boolean ima = androidx.core.content.ContextCompat.checkSelfPermission(this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION) == android.content.pm.PackageManager.PERMISSION_GRANTED;
+        if (!ima) {
+            if (pitaj) Toast.makeText(this, R.string.voznja_dozvola, Toast.LENGTH_LONG).show();
+            return;
+        }
+        com.google.android.gms.location.LocationServices.getFusedLocationProviderClient(this)
+                .getCurrentLocation(com.google.android.gms.location.Priority.PRIORITY_HIGH_ACCURACY, null)
+                .addOnSuccessListener(l -> {
+                    // bez lokacije ili netačna (mreža, ±stotine metara): ne postavlja se ništa
+                    if (l == null || !l.hasAccuracy() || l.getAccuracy() > 100f) {
+                        if (pitaj) Toast.makeText(this, R.string.lokacija_nema, Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    Context app = getApplicationContext();
+                    String id = autoput.id;
+                    new Thread(() -> {
+                        Polozaj.Tacka t = Polozaj.nadji(app, l.getLatitude(), l.getLongitude(), id);
+                        char s = '?';
+                        if (t != null && l.hasBearing() && l.hasSpeed() && l.getSpeed() > 3f) {
+                            s = Polozaj.smerIzKursa(app, l.getLatitude(), l.getLongitude(), l.getBearing(), id);
+                        }
+                        char smerKonacno = s;
+                        runOnUiThread(() -> {
+                            if (isFinishing() || isDestroyed()) return;
+                            Geometrija.Rezultat g = Geometrija.najblizi(app, l.getLatitude(), l.getLongitude(), id);
+                            boolean naKolovozu = g != null && g.udaljenost <= 0.1 + Math.min(l.getAccuracy(), 150f) / 1000.0;
+                            if (t == null || !naKolovozu) {
+                                if (pitaj) Toast.makeText(this, getString(R.string.lokacija_nije_na,
+                                        autoput.oznaka()), Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                            postaviMesto(t.deonica, t.km, smerKonacno);
+                        });
+                    }).start();
+                })
+                .addOnFailureListener(e -> {
+                    if (pitaj) Toast.makeText(this, R.string.lokacija_nema, Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    private void postaviMesto(int novaDeonica, double km, char noviSmer) {
+        if (novaDeonica < 0 || novaDeonica >= podaci.deonice.size()) return;
+        deonica = novaDeonica;
+        mojaDeonica = novaDeonica;
+        pozicijaVreme = System.currentTimeMillis();
+        mojKm = km;
+        if (noviSmer == '+' || noviSmer == '-') {
+            smer = noviSmer;
+            mojSmer = noviSmer;
+        }
+        filter = SVE;
+        osvezi(true);
+        int poz = adapter.pozicijaOvde();
+        if (poz > 0) {
+            ((LinearLayoutManager) lista.getLayoutManager())
+                    .scrollToPositionWithOffset(poz, Izgled.dp(this, 24));
+        }
+
+        Deonica d = podaci.deonice.get(deonica);
+        String kmTekst = String.format(Locale.getDefault(), "%.1f", d.kmZaPrikaz(km));
+        String poruka = noviSmer == '+' || noviSmer == '-'
+                ? getString(R.string.lokacija_ovde_smer, kmTekst, smer == '+' ? d.plus : d.minus)
+                : getString(R.string.lokacija_ovde, kmTekst);
+        Toast.makeText(this, poruka, Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * Red "Vi ste ovde" sa strelicom smera: samo kad je izabrana deonica vozača i njegov smer
+     * (ili smer još nije poznat), između mesta iza njega i prvog mesta ispred.
+     */
+    private void postaviStrelicu() {
+        if (mojaDeonica != deonica || prikazano.isEmpty()) {
+            if (adapter.pozicijaOvde() >= 0) adapter.postaviOvde(-1, 0, "", false, false);
+            return;
+        }
+        int i = 0;
+        while (i < prikazano.size() && (smer == '+' ? prikazano.get(i).km < mojKm : prikazano.get(i).km > mojKm)) i++;
+        Deonica d = podaci.deonice.get(deonica);
+        // tekst uvek kazuje kuda vozač stvarno ide; u suprotnom smeru liste strelica gleda nagore
+        String tekst = mojSmer == '?' ? getString(R.string.lokacija_vi_ste_ovde)
+                : getString(R.string.lokacija_vi_ste_ovde) + " · " + (mojSmer == '+' ? d.plus : d.minus);
+        adapter.postaviOvde(i, d.kmZaPrikaz(mojKm), tekst, mojSmer != '?', mojSmer != '?' && mojSmer != smer);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        glavna.postDelayed(pracenje, 5_000);
+    }
+
+    @Override
+    protected void onPause() {
+        glavna.removeCallbacks(pracenje);
+        super.onPause();
     }
 
     // ---------- Animacija okretanja ----------
@@ -134,6 +310,24 @@ public class AutoputActivity extends AppCompatActivity {
                 .alpha(1f)
                 .setDuration(420)
                 .setInterpolator(new DecelerateInterpolator())
+                .start();
+    }
+
+    /** Vožnja: vozač je prešao na drugi autoput, pa se ovaj ekran okreće i otvara ekran novog. */
+    @SuppressWarnings("deprecation")
+    private void predjiNa(Autoput novi) {
+        zatvaranje = true;
+        koren.setCameraDistance(12000 * getResources().getDisplayMetrics().density);
+        koren.animate()
+                .rotationY(90f)
+                .alpha(0.4f)
+                .setDuration(240)
+                .setInterpolator(new AccelerateInterpolator())
+                .withEndAction(() -> {
+                    startActivity(namera(this, novi.id));
+                    finish();
+                    overridePendingTransition(0, 0);
+                })
                 .start();
     }
 
@@ -206,6 +400,10 @@ public class AutoputActivity extends AppCompatActivity {
         b.setOnClickListener(v -> {
             smer = smer == '+' ? '-' : '+';
             osvezi(true);
+            // u vožnji: posle okretanja liste odmah na red "Vi ste ovde"
+            int poz = adapter.pozicijaOvde();
+            if (poz > 0) ((LinearLayoutManager) lista.getLayoutManager())
+                    .scrollToPositionWithOffset(poz, Izgled.dp(this, 24));
         });
         smeroviRed.addView(b, new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -269,19 +467,23 @@ public class AutoputActivity extends AppCompatActivity {
             b.setSelected(on);
         }
 
-        // Lista: samo tačke ove deonice koje se vide u izabranom smeru, redom kojim se nailazi na njih
+        // Lista: samo tačke ove deonice sa strane kolovoza kojom se vozi. Kad se zna stvarni smer vožnje,
+        // strana je uvek njegova, a dugme smera menja samo redosled (strelica nagore ili nadole).
+        char strana = mojaDeonica == deonica && (mojSmer == '+' || mojSmer == '-') ? mojSmer : smer;
         List<Stavka> rezultat = new ArrayList<>();
         int izlaza = 0, pumpi = 0;
         for (Stavka s : podaci.stavke) {
             if (s.deonica != deonica) continue;
             if (s.jeIzlaz()) izlaza++;
-            if (!s.gorivo.isEmpty() && s.strana == smer) pumpi++;
-            if (s.uSmeru(smer) && prolazi(s)) rezultat.add(s);
+            if (!s.gorivo.isEmpty() && s.strana == strana) pumpi++;
+            if (s.uSmeru(strana) && prolazi(s)) rezultat.add(s);
         }
         Collections.sort(rezultat, (x, y) -> smer == '+' ? Double.compare(x.km, y.km) : Double.compare(y.km, x.km));
 
         podnaslov.setText(getString(R.string.podnaslov_lista, izlaza, pumpi));
         adapter.postavi(rezultat);
+        prikazano = rezultat;
+        postaviStrelicu();
         prazno.setVisibility(rezultat.isEmpty() ? View.VISIBLE : View.GONE);
         if (naVrh) lista.scrollToPosition(0);
     }

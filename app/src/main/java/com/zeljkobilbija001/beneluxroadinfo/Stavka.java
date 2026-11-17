@@ -10,6 +10,13 @@ public final class Stavka {
     public char tip;
     public int deonica;
     public double km;
+    /** Kilometar sa tabli pored autostrade (NaN ako se ne zna); km ostaje za redosled i računanje. */
+    public double kmTabla = Double.NaN;
+
+    /** Kilometar koji se prikazuje: sa table ako se zna. */
+    public double kmPrikaz() {
+        return Double.isNaN(kmTabla) ? km : kmTabla;
+    }
     /** '+' = smer rastućih kilometara, '-' = suprotan smer; izlazi važe za oba smera. */
     public char strana = '+';
     public String naziv = "";

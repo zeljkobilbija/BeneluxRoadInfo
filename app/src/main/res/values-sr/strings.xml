@@ -28,7 +28,7 @@
     <string name="cip_0_24">0–24</string>
     <string name="podnaslov_lista">%1$d izlaza · %2$d pumpi u ovom smeru</string>
     <string name="nema_stavki">Nema stavki za ovaj filter na ovoj deonici.</string>
-    <string name="izvor">Podaci: © OpenStreetMap saradnici (ODbL). Kilometri se računaju od početka deonice.</string>
+    <string name="izvor">Podaci: © OpenStreetMap saradnici (ODbL). Kilometri kao na tablama pored autoputa (gde su ucrtane), inače od početka deonice.</string>
     <string name="privatnost">Podešavanja privatnosti</string>
     <string name="greska_podaci">Podaci nisu mogli da se učitaju.</string>
     <string name="km">km</string>
@@ -68,4 +68,25 @@
     <string name="cena_vodonik">Vodonik</string>
     <string name="det_cene_nl_kv">Prosek u Holandiji, %s (CBS).</string>
     <string name="det_cene_lu_mes">Zvanični mesečni prosek u Luksemburgu, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Vožnja</string>
+    <string name="voznja_opis">Autoput, kilometar i smer iz vaše lokacije – i šta je ispred vas</string>
+    <string name="voznja_pokreni">Pokreni</string>
+    <string name="voznja_zaustavi">Zaustavi</string>
+    <string name="voznja_naslov">Režim vožnje je uključen</string>
+    <string name="voznja_trazim">Tražim autoput…</string>
+    <string name="voznja_van">Niste na autoputu u Beneluksu</string>
+    <string name="voznja_na">Na %s</string>
+    <string name="voznja_na_smer">%1$s ka %2$s</string>
+    <string name="voznja_dozvola">Za režim vožnje potrebna je precizna lokacija.</string>
+    <string name="lokacija_dugme">Moja pozicija</string>
+    <string name="lokacija_ovde">Vi ste ovde: km %s</string>
+    <string name="lokacija_ovde_smer">Vi ste ovde: km %1$s, ka %2$s</string>
+    <string name="lokacija_nije_na">Trenutno niste na %s</string>
+    <string name="lokacija_nema">Lokacija nije dostupna.</string>
+    <string name="lokacija_vi_ste_ovde">Vi ste ovde</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Ukloni reklame</string>
+    <string name="kupovina_hvala">Hvala! Reklame su uklonjene.</string>
+    <string name="kupovina_nedostupna">Kupovina trenutno nije dostupna. Pokušajte ponovo kasnije.</string>
 </resources>

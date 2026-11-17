@@ -28,7 +28,7 @@
     <string name="cip_0_24">24/7</string>
     <string name="podnaslov_lista">%1$d съездов · %2$d АЗС в этом направлении</string>
     <string name="nema_stavki">На этом участке ничего не найдено по фильтру.</string>
-    <string name="izvor">Данные: © участники OpenStreetMap (ODbL). Километры считаются от начала участка.</string>
+    <string name="izvor">Данные: © участники OpenStreetMap (ODbL). Километры как на табличках вдоль автобана (где они нанесены на карту), иначе от начала участка.</string>
     <string name="privatnost">Настройки конфиденциальности</string>
     <string name="greska_podaci">Не удалось загрузить данные.</string>
     <string name="km">км</string>
@@ -68,4 +68,25 @@
     <string name="cena_vodonik">Водород</string>
     <string name="det_cene_nl_kv">Среднее в Нидерландах, %s (CBS).</string>
     <string name="det_cene_lu_mes">Официальное среднее за месяц в Люксембурге, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Режим поездки</string>
+    <string name="voznja_opis">Автомагистраль, километр и направление по вашему местоположению – и что впереди</string>
+    <string name="voznja_pokreni">Включить</string>
+    <string name="voznja_zaustavi">Выключить</string>
+    <string name="voznja_naslov">Режим поездки включён</string>
+    <string name="voznja_trazim">Поиск автобана…</string>
+    <string name="voznja_van">Вы не на автомагистрали Бенилюкса</string>
+    <string name="voznja_na">На %s</string>
+    <string name="voznja_na_smer">%1$s в сторону %2$s</string>
+    <string name="voznja_dozvola">Для режима поездки нужно точное местоположение.</string>
+    <string name="lokacija_dugme">Моё положение</string>
+    <string name="lokacija_ovde">Вы здесь: км %s</string>
+    <string name="lokacija_ovde_smer">Вы здесь: км %1$s, в сторону %2$s</string>
+    <string name="lokacija_nije_na">Сейчас вы не на %s</string>
+    <string name="lokacija_nema">Местоположение недоступно.</string>
+    <string name="lokacija_vi_ste_ovde">Вы здесь</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Убрать рекламу</string>
+    <string name="kupovina_hvala">Спасибо! Реклама удалена.</string>
+    <string name="kupovina_nedostupna">Покупка сейчас недоступна. Попробуйте позже.</string>
 </resources>

@@ -28,7 +28,7 @@
     <string name="cip_0_24">24 h</string>
     <string name="podnaslov_lista">%1$d Ausfahrten · %2$d Tankstellen in dieser Richtung</string>
     <string name="nema_stavki">Für diesen Filter gibt es auf diesem Abschnitt nichts.</string>
-    <string name="izvor">Daten: © OpenStreetMap-Mitwirkende (ODbL). Kilometer ab Beginn des Abschnitts.</string>
+    <string name="izvor">Daten: © OpenStreetMap-Mitwirkende (ODbL). Kilometer wie auf den Kilometertafeln (wo erfasst), sonst ab Beginn des Abschnitts.</string>
     <string name="privatnost">Datenschutz-Einstellungen</string>
     <string name="greska_podaci">Die Daten konnten nicht geladen werden.</string>
     <string name="km">km</string>
@@ -68,4 +68,25 @@
     <string name="cena_vodonik">Wasserstoff</string>
     <string name="det_cene_nl_kv">Durchschnitt in den Niederlanden, %s (CBS).</string>
     <string name="det_cene_lu_mes">Offizieller Monatsdurchschnitt in Luxemburg, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Fahrmodus</string>
+    <string name="voznja_opis">Autobahn, Kilometer und Fahrtrichtung aus Ihrem Standort – und was vor Ihnen liegt</string>
+    <string name="voznja_pokreni">Starten</string>
+    <string name="voznja_zaustavi">Beenden</string>
+    <string name="voznja_naslov">Fahrmodus ist aktiv</string>
+    <string name="voznja_trazim">Autobahn wird gesucht…</string>
+    <string name="voznja_van">Nicht auf einer Autobahn in den Benelux-Ländern</string>
+    <string name="voznja_na">Auf der %s</string>
+    <string name="voznja_na_smer">%1$s Richtung %2$s</string>
+    <string name="voznja_dozvola">Der Fahrmodus benötigt Ihren genauen Standort.</string>
+    <string name="lokacija_dugme">Meine Position</string>
+    <string name="lokacija_ovde">Sie sind hier: km %s</string>
+    <string name="lokacija_ovde_smer">Sie sind hier: km %1$s, Richtung %2$s</string>
+    <string name="lokacija_nije_na">Sie sind gerade nicht auf der %s</string>
+    <string name="lokacija_nema">Standort nicht verfügbar.</string>
+    <string name="lokacija_vi_ste_ovde">Sie sind hier</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Werbung entfernen</string>
+    <string name="kupovina_hvala">Vielen Dank! Die Werbung ist entfernt.</string>
+    <string name="kupovina_nedostupna">Der Kauf ist gerade nicht verfügbar. Bitte später erneut versuchen.</string>
 </resources>

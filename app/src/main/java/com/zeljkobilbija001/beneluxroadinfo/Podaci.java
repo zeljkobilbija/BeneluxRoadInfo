@@ -45,8 +45,32 @@ public final class Podaci {
         JSONArray sek = koren.getJSONArray("sekcije");
         for (int i = 0; i < sek.length(); i++) {
             JSONObject s = sek.getJSONObject(i);
-            p.deonice.add(new Deonica(s.getString("od"), s.getString("do"),
-                    s.getString("plus"), s.getString("minus")));
+            Deonica d = new Deonica(s.getString("od"), s.getString("do"),
+                    s.getString("plus"), s.getString("minus"));
+            JSONArray kal = s.optJSONArray("kal");
+            if (kal != null) {
+                int n = kal.length();
+                d.kalNas = new double[n];
+                d.kalTabla = new double[n];
+                d.kalSmer = new int[n];
+                for (int j = 0; j < n; j++) {
+                    JSONArray q = kal.getJSONArray(j);
+                    d.kalNas[j] = q.getDouble(0);
+                    d.kalTabla[j] = q.getDouble(1);
+                    d.kalSmer[j] = q.getInt(2);
+                }
+            }
+            // autostrada u jednom komadu (alati/spoji_deonice.js): stvarni prekidi
+            JSONArray prek = s.optJSONArray("prekidi");
+            if (prek != null) {
+                d.prekidOd = new double[prek.length()];
+                d.prekidDo = new double[prek.length()];
+                for (int j = 0; j < prek.length(); j++) {
+                    d.prekidOd[j] = prek.getJSONArray(j).getDouble(0);
+                    d.prekidDo[j] = prek.getJSONArray(j).getDouble(1);
+                }
+            }
+            p.deonice.add(d);
         }
 
         JSONArray niz = koren.getJSONArray("stavke");
@@ -56,6 +80,7 @@ public final class Podaci {
             s.tip = o.getString("t").charAt(0);
             s.deonica = o.getInt("si");
             s.km = o.getDouble("km");
+            if (s.deonica >= 0 && s.deonica < p.deonice.size()) s.kmTabla = p.deonice.get(s.deonica).kmTabla(s.km);
             String strana = o.optString("s", "+");
             s.strana = strana.isEmpty() ? '+' : strana.charAt(0);
             s.naziv = o.optString("n", "");

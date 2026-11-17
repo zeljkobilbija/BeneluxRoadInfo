@@ -19,9 +19,16 @@
         android:paddingTop="20dp"
         android:paddingEnd="8dp">
 
+        <!-- naslov se smanjuje koliko treba, da stanu oznaka i tri dugmeta -->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:autoSizeMaxTextSize="34sp"
+            android:autoSizeMinTextSize="18sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="center_vertical"
+            android:maxLines="1"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/naslov"
             android:textColor="@color/tekst"
@@ -44,10 +51,16 @@
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+        <ImageButton
+            android:id="@+id/dugmeBezReklama"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/bez_reklama"
+            android:src="@drawable/ic_bez_reklama"
+            android:tooltipText="@string/bez_reklama"
+            android:visibility="gone"
+            app:tint="@color/tekst_sekundarni" />
 
         <ImageButton
             android:id="@+id/dugmePodeli"
@@ -79,6 +92,62 @@
         android:text="@string/podnaslov"
         android:textColor="@color/tekst_sekundarni"
         android:textSize="15sp" />
+
+    <!-- Režim "Vožnja": autoput, km i smer iz lokacije -->
+    <LinearLayout
+        android:id="@+id/voznja"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_voznja"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/voznja_kanal"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/voznjaOpis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/voznja_opis"
+                android:textColor="@color/plava_svetla"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/voznjaDugme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="#FFFFFF"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minHeight="40dp"
+            android:text="@string/voznja_pokreni"
+            android:textAllCaps="false"
+            android:textColor="@color/plava_tamna"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <!-- Tri zemlje: Holandija, Belgija, Luksemburg -->
     <ScrollView

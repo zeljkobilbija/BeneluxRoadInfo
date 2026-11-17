@@ -35,4 +35,7 @@
 
     <color name="splash_pozadina">#1B3F73</color>
     <color name="ic_launcher_background">#1B3F73</color>
+    <color name="ovde_pozadina">#FFE6C7</color>
+    <color name="ovde">#F57C00</color>
+    <color name="ovde_tekst">#A84300</color>
 </resources>

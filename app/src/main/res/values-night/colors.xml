@@ -22,4 +22,7 @@
 
     <color name="plava_tekst">#A9C4F5</color>
     <color name="hrana">#F2A39A</color>
+    <color name="ovde_pozadina">#4A2A08</color>
+    <color name="ovde">#FF8F1F</color>
+    <color name="ovde_tekst">#FFC27A</color>
 </resources>

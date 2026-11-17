@@ -1,7 +1,10 @@
 package com.zeljkobilbija001.beneluxroadinfo;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +12,17 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.core.content.ContextCompat;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +35,12 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton dugmePrivatnosti;
+    private MaterialButton voznjaDugme;
+    private TextView voznjaOpis;
+
+    /** Dozvole za režim vožnje: precizna lokacija (obavezno) i obaveštenja (Android 13+). */
+    private final ActivityResultLauncher<String[]> dozvoleVoznje = registerForActivityResult(
+            new ActivityResultContracts.RequestMultiplePermissions(), this::posleDozvola);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +78,84 @@ public class MainActivity extends AppCompatActivity {
         dugmePrivatnosti.setOnClickListener(v ->
                 Reklame.prikaziPodesavanjaPrivatnosti(this, this::posleSaglasnosti));
         Reklame.prikupiSaglasnost(this, this::posleSaglasnosti);
+
+        voznjaDugme = findViewById(R.id.voznjaDugme);
+        voznjaOpis = findViewById(R.id.voznjaOpis);
+        // proba (samo debug verzija): dodir na karticu "Vožnja" otvara dnevnik
+        if (Dnevnik.ukljucen(this)) {
+            findViewById(R.id.voznja).setOnClickListener(v ->
+                    startActivity(new Intent(this, DnevnikActivity.class)));
+        }
+        voznjaDugme.setOnClickListener(v -> {
+            if (VoznjaService.radi) VoznjaService.zaustavi(this);
+            else pokreniVoznju();
+        });
+
+        // Kupovina „Bez reklama“: dugme dok nije kupljeno; promena stanja (kupovina,
+        // vraćanje na novom telefonu) ponovo iscrta ekran, pa baner nestane ili se pojavi
+        View dugmeBezReklama = findViewById(R.id.dugmeBezReklama);
+        dugmeBezReklama.setVisibility(Kupovina.bezReklama(this) ? View.GONE : View.VISIBLE);
+        dugmeBezReklama.setOnClickListener(v -> Kupovina.kupi(this, () -> runOnUiThread(() -> {
+            Toast.makeText(this, R.string.kupovina_hvala, Toast.LENGTH_LONG).show();
+            recreate();
+        })));
+        Kupovina.proveri(this, () -> runOnUiThread(this::recreate));
     }
+
+    // ---------- Režim "Vožnja" ----------
+
+    private boolean ima(String dozvola) {
+        return ContextCompat.checkSelfPermission(this, dozvola) == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void pokreniVoznju() {
+        List<String> traziti = new ArrayList<>();
+        if (!ima(Manifest.permission.ACCESS_FINE_LOCATION)) {
+            traziti.add(Manifest.permission.ACCESS_FINE_LOCATION);
+            traziti.add(Manifest.permission.ACCESS_COARSE_LOCATION);
+        }
+        if (Build.VERSION.SDK_INT >= 33 && !ima(Manifest.permission.POST_NOTIFICATIONS)) {
+            traziti.add(Manifest.permission.POST_NOTIFICATIONS);
+        }
+        if (traziti.isEmpty()) {
+            VoznjaService.pokreni(this);
+            osveziVoznju();
+        } else {
+            dozvoleVoznje.launch(traziti.toArray(new String[0]));
+        }
+    }
+
+    private void posleDozvola(Map<String, Boolean> rezultat) {
+        if (ima(Manifest.permission.ACCESS_FINE_LOCATION)) {
+            VoznjaService.pokreni(this);
+            osveziVoznju();
+        } else {
+            Snackbar.make(findViewById(R.id.main), R.string.voznja_dozvola, Snackbar.LENGTH_LONG).show();
+        }
+    }
+
+    private void osveziVoznju() {
+        boolean radi = VoznjaService.radi;
+        voznjaDugme.setText(radi ? R.string.voznja_zaustavi : R.string.voznja_pokreni);
+        String opis = VoznjaService.opisStanja;
+        String tekst = radi && !opis.isEmpty() ? opis : getString(R.string.voznja_opis);
+        if (Dnevnik.ukljucen(this)) tekst += "\nDNEVNIK › (dodir na karticu)";
+        voznjaOpis.setText(tekst);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        VoznjaService.postaviSlusaoca(this::osveziVoznju);
+        osveziVoznju();
+    }
+
+    @Override
+    protected void onStop() {
+        VoznjaService.postaviSlusaoca(null);
+        super.onStop();
+    }
+
 
     private void posleSaglasnosti() {
         Reklame.prikaziBaner(this, findViewById(R.id.reklamaKontejner));

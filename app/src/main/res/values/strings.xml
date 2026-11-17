@@ -29,7 +29,7 @@
     <string name="cip_0_24">24/7</string>
     <string name="podnaslov_lista">%1$d exits · %2$d fuel stations in this direction</string>
     <string name="nema_stavki">Nothing matches this filter on this section.</string>
-    <string name="izvor">Data: © OpenStreetMap contributors (ODbL). Kilometres are counted from the start of each section.</string>
+    <string name="izvor">Data: © OpenStreetMap contributors (ODbL). Kilometres as on the roadside marker posts (where mapped), otherwise from the start of each section.</string>
     <string name="privatnost">Privacy settings</string>
     <string name="greska_podaci">The data could not be loaded.</string>
     <string name="km">km</string>
@@ -69,4 +69,25 @@
     <string name="cena_vodonik">Hydrogen</string>
     <string name="det_cene_nl_kv">Average in the Netherlands, %s (CBS).</string>
     <string name="det_cene_lu_mes">Official monthly average in Luxembourg, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Driving mode</string>
+    <string name="voznja_opis">Your motorway, kilometre and direction from your location – and what is ahead of you</string>
+    <string name="voznja_pokreni">Start</string>
+    <string name="voznja_zaustavi">Stop</string>
+    <string name="voznja_naslov">Driving mode is on</string>
+    <string name="voznja_trazim">Looking for your motorway…</string>
+    <string name="voznja_van">Not on a motorway in the Benelux</string>
+    <string name="voznja_na">On the %s</string>
+    <string name="voznja_na_smer">%1$s towards %2$s</string>
+    <string name="voznja_dozvola">Driving mode needs access to your precise location.</string>
+    <string name="lokacija_dugme">My position</string>
+    <string name="lokacija_ovde">You are here: km %s</string>
+    <string name="lokacija_ovde_smer">You are here: km %1$s, towards %2$s</string>
+    <string name="lokacija_nije_na">You are not on the %s right now</string>
+    <string name="lokacija_nema">Your location is not available.</string>
+    <string name="lokacija_vi_ste_ovde">You are here</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Remove ads</string>
+    <string name="kupovina_hvala">Thank you! Ads are removed.</string>
+    <string name="kupovina_nedostupna">Purchase is not available right now. Please try again later.</string>
 </resources>

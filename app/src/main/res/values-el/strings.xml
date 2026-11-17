@@ -28,7 +28,7 @@
     <string name="cip_0_24">24/7</string>
     <string name="podnaslov_lista">Έξοδοι: %1$d · πρατήρια σε αυτή την κατεύθυνση: %2$d</string>
     <string name="nema_stavki">Τίποτα για αυτό το φίλτρο σε αυτό το τμήμα.</string>
-    <string name="izvor">Δεδομένα: © συντελεστές OpenStreetMap (ODbL). Τα χιλιόμετρα μετρώνται από την αρχή του τμήματος.</string>
+    <string name="izvor">Δεδομένα: © συντελεστές OpenStreetMap (ODbL). Χιλιόμετρα όπως στις πινακίδες του δρόμου (όπου είναι χαρτογραφημένες), αλλιώς από την αρχή του τμήματος.</string>
     <string name="privatnost">Ρυθμίσεις απορρήτου</string>
     <string name="greska_podaci">Δεν ήταν δυνατή η φόρτωση των δεδομένων.</string>
     <string name="km">χλμ.</string>
@@ -68,4 +68,25 @@
     <string name="cena_vodonik">Υδρογόνο</string>
     <string name="det_cene_nl_kv">Μέσος όρος στην Ολλανδία, %s (CBS).</string>
     <string name="det_cene_lu_mes">Επίσημος μηνιαίος μέσος όρος στο Λουξεμβούργο, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Λειτουργία οδήγησης</string>
+    <string name="voznja_opis">Αυτοκινητόδρομος, χιλιόμετρο και κατεύθυνση από τη θέση σας – και τι έχετε μπροστά σας</string>
+    <string name="voznja_pokreni">Έναρξη</string>
+    <string name="voznja_zaustavi">Διακοπή</string>
+    <string name="voznja_naslov">Η λειτουργία οδήγησης είναι ενεργή</string>
+    <string name="voznja_trazim">Αναζήτηση αυτοκινητόδρομου…</string>
+    <string name="voznja_van">Δεν βρίσκεστε σε αυτοκινητόδρομο της Μπενελούξ</string>
+    <string name="voznja_na">Στον %s</string>
+    <string name="voznja_na_smer">%1$s προς %2$s</string>
+    <string name="voznja_dozvola">Η λειτουργία οδήγησης χρειάζεται την ακριβή τοποθεσία σας.</string>
+    <string name="lokacija_dugme">Η θέση μου</string>
+    <string name="lokacija_ovde">Βρίσκεστε εδώ: χλμ. %s</string>
+    <string name="lokacija_ovde_smer">Βρίσκεστε εδώ: χλμ. %1$s, προς %2$s</string>
+    <string name="lokacija_nije_na">Δεν βρίσκεστε τώρα στον %s</string>
+    <string name="lokacija_nema">Η τοποθεσία δεν είναι διαθέσιμη.</string>
+    <string name="lokacija_vi_ste_ovde">Βρίσκεστε εδώ</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Κατάργηση διαφημίσεων</string>
+    <string name="kupovina_hvala">Ευχαριστούμε! Οι διαφημίσεις καταργήθηκαν.</string>
+    <string name="kupovina_nedostupna">Η αγορά δεν είναι διαθέσιμη αυτή τη στιγμή. Δοκιμάστε ξανά αργότερα.</string>
 </resources>

@@ -30,6 +30,9 @@ public class ZemljaActivity extends AppCompatActivity {
     private View okrenutaKartica;
     private boolean otvaranjeUToku;
     private ImageButton dugmePrivatnosti;
+    private AutoputAdapter adapterAutoputeva;
+    /** Autoput čiji je štit narandžast (Vožnja: vozač je na njemu). */
+    private String obojeniAutoput;
 
     public static Intent namera(Context c, String zemlja) {
         return new Intent(c, ZemljaActivity.class).putExtra(EXTRA_ZEMLJA, zemlja);
@@ -73,7 +76,8 @@ public class ZemljaActivity extends AppCompatActivity {
 
         RecyclerView lista = findViewById(R.id.listaAutoputeva);
         lista.setLayoutManager(new GridLayoutManager(this, 2));
-        lista.setAdapter(new AutoputAdapter(Autoputevi.zaZemlju(zemlja), this::otvori));
+        adapterAutoputeva = new AutoputAdapter(Autoputevi.zaZemlju(zemlja), this::otvori);
+        lista.setAdapter(adapterAutoputeva);
 
         findViewById(R.id.dugmePodeli).setOnClickListener(v -> MainActivity.podeliAplikaciju(this));
 
@@ -90,6 +94,28 @@ public class ZemljaActivity extends AppCompatActivity {
     }
 
     /** Kartica se okrene oko vertikalne ose, pa se otvara ekran autoputa koji se "dookrene". */
+    /** Vožnja: štit autoputa na kom je vozač je narandžast; menja se sam pri prelasku na drugi. */
+    private void osveziStit() {
+        String sad = VoznjaService.sadAutoput;
+        if (!java.util.Objects.equals(sad, obojeniAutoput)) {
+            obojeniAutoput = sad;
+            adapterAutoputeva.notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        VoznjaService.postaviSlusaoca(this::osveziStit);
+        osveziStit();
+    }
+
+    @Override
+    protected void onStop() {
+        VoznjaService.postaviSlusaoca(null);
+        super.onStop();
+    }
+
     private void otvori(Autoput a, View kartica) {
         if (!a.dostupan()) {
             Toast.makeText(this, getString(R.string.uskoro_poruka, a.oznaka()), Toast.LENGTH_SHORT).show();
@@ -105,12 +131,13 @@ public class ZemljaActivity extends AppCompatActivity {
                 .scaleY(1.08f)
                 .setDuration(280)
                 .setInterpolator(new AccelerateInterpolator())
-                .withEndAction(() -> {
+                .withEndAction(() -> Reklame.posleOglasa(this, () -> {
+                    // svako treće otvaranje (najviše jednom u 3 min, ne u Vožnji) prvo interstitial, pa autoput
                     Intent i = AutoputActivity.namera(this, a.id)
                             .addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(i);
                     otvaranjeUToku = false;
-                })
+                }))
                 .start();
     }
 

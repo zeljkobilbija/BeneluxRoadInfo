@@ -28,7 +28,7 @@
     <string name="cip_0_24">7/24</string>
     <string name="podnaslov_lista">Çıkış: %1$d · bu yönde akaryakıt: %2$d</string>
     <string name="nema_stavki">Bu kesimde bu filtre için sonuç yok.</string>
-    <string name="izvor">Veriler: © OpenStreetMap katkıcıları (ODbL). Kilometreler kesimin başından sayılır.</string>
+    <string name="izvor">Veriler: © OpenStreetMap katkıcıları (ODbL). Kilometreler otoyol kenarındaki tabelalardaki gibi (haritada olduğu yerlerde), aksi halde kesimin başından.</string>
     <string name="privatnost">Gizlilik ayarları</string>
     <string name="greska_podaci">Veriler yüklenemedi.</string>
     <string name="km">km</string>
@@ -68,4 +68,25 @@
     <string name="cena_vodonik">Hidrojen</string>
     <string name="det_cene_nl_kv">Hollanda ortalaması, %s (CBS).</string>
     <string name="det_cene_lu_mes">Lüksemburg resmi aylık ortalaması, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Sürüş modu</string>
+    <string name="voznja_opis">Konumunuza göre otoyol, kilometre ve yön – ve önünüzde ne olduğu</string>
+    <string name="voznja_pokreni">Başlat</string>
+    <string name="voznja_zaustavi">Durdur</string>
+    <string name="voznja_naslov">Sürüş modu açık</string>
+    <string name="voznja_trazim">Otoyol aranıyor…</string>
+    <string name="voznja_van">Benelüks otoyolunda değilsiniz</string>
+    <string name="voznja_na">%s üzerinde</string>
+    <string name="voznja_na_smer">%1$s, %2$s yönünde</string>
+    <string name="voznja_dozvola">Sürüş modu için kesin konum gerekir.</string>
+    <string name="lokacija_dugme">Konumum</string>
+    <string name="lokacija_ovde">Buradasınız: km %s</string>
+    <string name="lokacija_ovde_smer">Buradasınız: km %1$s, %2$s yönünde</string>
+    <string name="lokacija_nije_na">Şu anda %s üzerinde değilsiniz</string>
+    <string name="lokacija_nema">Konum kullanılamıyor.</string>
+    <string name="lokacija_vi_ste_ovde">Buradasınız</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Reklamları kaldır</string>
+    <string name="kupovina_hvala">Teşekkürler! Reklamlar kaldırıldı.</string>
+    <string name="kupovina_nedostupna">Satın alma şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin.</string>
 </resources>

@@ -28,7 +28,7 @@
     <string name="cip_0_24">24/7</string>
     <string name="podnaslov_lista">%1$d afritten · %2$d tankstations in deze richting</string>
     <string name="nema_stavki">Niets gevonden voor dit filter op dit traject.</string>
-    <string name="izvor">Gegevens: © OpenStreetMap-bijdragers (ODbL). Kilometers worden geteld vanaf het begin van het traject.</string>
+    <string name="izvor">Gegevens: © OpenStreetMap-bijdragers (ODbL). Kilometers zoals op de hectometerpaaltjes (waar ze in kaart zijn gebracht), anders vanaf het begin van het traject.</string>
     <string name="privatnost">Privacyinstellingen</string>
     <string name="greska_podaci">De gegevens konden niet worden geladen.</string>
     <string name="km">km</string>
@@ -68,4 +68,25 @@
     <string name="cena_vodonik">Waterstof</string>
     <string name="det_cene_nl_kv">Gemiddelde in Nederland, %s (CBS).</string>
     <string name="det_cene_lu_mes">Officieel maandgemiddelde in Luxemburg, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Rijmodus</string>
+    <string name="voznja_opis">Snelweg, kilometer en rijrichting op basis van je locatie – en wat er voor je ligt</string>
+    <string name="voznja_pokreni">Starten</string>
+    <string name="voznja_zaustavi">Stoppen</string>
+    <string name="voznja_naslov">Rijmodus staat aan</string>
+    <string name="voznja_trazim">Snelweg zoeken…</string>
+    <string name="voznja_van">Niet op een snelweg in de Benelux</string>
+    <string name="voznja_na">Op de %s</string>
+    <string name="voznja_na_smer">%1$s richting %2$s</string>
+    <string name="voznja_dozvola">Rijmodus heeft je precieze locatie nodig.</string>
+    <string name="lokacija_dugme">Mijn positie</string>
+    <string name="lokacija_ovde">U bent hier: km %s</string>
+    <string name="lokacija_ovde_smer">U bent hier: km %1$s, richting %2$s</string>
+    <string name="lokacija_nije_na">U bent nu niet op de %s</string>
+    <string name="lokacija_nema">Locatie niet beschikbaar.</string>
+    <string name="lokacija_vi_ste_ovde">U bent hier</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Advertenties verwijderen</string>
+    <string name="kupovina_hvala">Bedankt! De advertenties zijn verwijderd.</string>
+    <string name="kupovina_nedostupna">Aankoop is nu niet beschikbaar. Probeer het later opnieuw.</string>
 </resources>

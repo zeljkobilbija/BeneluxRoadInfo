@@ -28,7 +28,7 @@
     <string name="cip_0_24">Non-stop</string>
     <string name="podnaslov_lista">Ieșiri: %1$d · benzinării în acest sens: %2$d</string>
     <string name="nema_stavki">Nimic pentru acest filtru pe acest tronson.</string>
-    <string name="izvor">Date: © contribuitorii OpenStreetMap (ODbL). Kilometrii se numără de la începutul tronsonului.</string>
+    <string name="izvor">Date: © contribuitorii OpenStreetMap (ODbL). Kilometri ca pe bornele de pe autostradă (unde sunt cartografiate), altfel de la începutul tronsonului.</string>
     <string name="privatnost">Setări de confidențialitate</string>
     <string name="greska_podaci">Datele nu au putut fi încărcate.</string>
     <string name="km">km</string>
@@ -68,4 +68,25 @@
     <string name="cena_vodonik">Hidrogen</string>
     <string name="det_cene_nl_kv">Medie în Țările de Jos, %s (CBS).</string>
     <string name="det_cene_lu_mes">Medie lunară oficială în Luxemburg, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Mod condus</string>
+    <string name="voznja_opis">Autostrada, kilometrul și direcția din locația ta – și ce ai în față</string>
+    <string name="voznja_pokreni">Pornește</string>
+    <string name="voznja_zaustavi">Oprește</string>
+    <string name="voznja_naslov">Modul condus este activ</string>
+    <string name="voznja_trazim">Se caută autostrada…</string>
+    <string name="voznja_van">Nu ești pe o autostradă din Benelux</string>
+    <string name="voznja_na">Pe %s</string>
+    <string name="voznja_na_smer">%1$s spre %2$s</string>
+    <string name="voznja_dozvola">Modul condus are nevoie de locația exactă.</string>
+    <string name="lokacija_dugme">Poziția mea</string>
+    <string name="lokacija_ovde">Sunteți aici: km %s</string>
+    <string name="lokacija_ovde_smer">Sunteți aici: km %1$s, spre %2$s</string>
+    <string name="lokacija_nije_na">Nu sunteți acum pe %s</string>
+    <string name="lokacija_nema">Locația nu este disponibilă.</string>
+    <string name="lokacija_vi_ste_ovde">Sunteți aici</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Elimină reclamele</string>
+    <string name="kupovina_hvala">Mulțumim! Reclamele au fost eliminate.</string>
+    <string name="kupovina_nedostupna">Achiziția nu este disponibilă acum. Încercați din nou mai târziu.</string>
 </resources>

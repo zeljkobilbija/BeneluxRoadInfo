@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Red "Vi ste ovde": kilometar | plavi krug sa strelicom smera na šini | tekst -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ovde_pozadina"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="6dp"
+    android:paddingEnd="16dp">
+
+    <TextView
+        android:id="@+id/ovdeKm"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="end"
+        android:includeFontPadding="false"
+        android:textColor="@color/ovde_tekst"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="29,5" />
+
+    <FrameLayout
+        android:layout_width="40dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/sina" />
+
+        <ImageView
+            android:id="@+id/ovdeStrelica"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_ovde_krug"
+            android:importantForAccessibility="no"
+            android:padding="8dp"
+            android:src="@drawable/ic_strelica_napred" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/ovdeTekst"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/ovde_tekst"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:text="Vi ste ovde · Saarbrücken" />
+</LinearLayout>

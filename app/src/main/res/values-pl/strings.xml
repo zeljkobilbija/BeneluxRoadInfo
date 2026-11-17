@@ -28,7 +28,7 @@
     <string name="cip_0_24">24/7</string>
     <string name="podnaslov_lista">Zjazdy: %1$d · stacje paliw w tym kierunku: %2$d</string>
     <string name="nema_stavki">Brak wyników dla tego filtra na tym odcinku.</string>
-    <string name="izvor">Dane: © współtwórcy OpenStreetMap (ODbL). Kilometry liczone od początku odcinka.</string>
+    <string name="izvor">Dane: © współtwórcy OpenStreetMap (ODbL). Kilometry jak na słupkach przy autostradzie (tam, gdzie są na mapie), inaczej od początku odcinka.</string>
     <string name="privatnost">Ustawienia prywatności</string>
     <string name="greska_podaci">Nie udało się wczytać danych.</string>
     <string name="km">km</string>
@@ -68,4 +68,25 @@
     <string name="cena_vodonik">Wodór</string>
     <string name="det_cene_nl_kv">Średnia w Holandii, %s (CBS).</string>
     <string name="det_cene_lu_mes">Oficjalna średnia miesięczna w Luksemburgu, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Tryb jazdy</string>
+    <string name="voznja_opis">Autostrada, kilometr i kierunek z Twojej lokalizacji – i to, co przed Tobą</string>
+    <string name="voznja_pokreni">Włącz</string>
+    <string name="voznja_zaustavi">Wyłącz</string>
+    <string name="voznja_naslov">Tryb jazdy jest włączony</string>
+    <string name="voznja_trazim">Szukam autostrady…</string>
+    <string name="voznja_van">Nie jesteś na autostradzie w Beneluksie</string>
+    <string name="voznja_na">Na %s</string>
+    <string name="voznja_na_smer">%1$s w kierunku %2$s</string>
+    <string name="voznja_dozvola">Tryb jazdy wymaga dokładnej lokalizacji.</string>
+    <string name="lokacija_dugme">Moja pozycja</string>
+    <string name="lokacija_ovde">Jesteś tutaj: km %s</string>
+    <string name="lokacija_ovde_smer">Jesteś tutaj: km %1$s, w kierunku %2$s</string>
+    <string name="lokacija_nije_na">Nie jesteś teraz na %s</string>
+    <string name="lokacija_nema">Lokalizacja jest niedostępna.</string>
+    <string name="lokacija_vi_ste_ovde">Jesteś tutaj</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Usuń reklamy</string>
+    <string name="kupovina_hvala">Dziękujemy! Reklamy zostały usunięte.</string>
+    <string name="kupovina_nedostupna">Zakup jest teraz niedostępny. Spróbuj ponownie później.</string>
 </resources>

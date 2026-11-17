@@ -28,7 +28,7 @@
     <string name="cip_0_24">Nonstop</string>
     <string name="podnaslov_lista">Sjezdy: %1$d · čerpací stanice v tomto směru: %2$d</string>
     <string name="nema_stavki">Pro tento filtr na tomto úseku nic není.</string>
-    <string name="izvor">Data: © přispěvatelé OpenStreetMap (ODbL). Kilometry se počítají od začátku úseku.</string>
+    <string name="izvor">Data: © přispěvatelé OpenStreetMap (ODbL). Kilometry jako na tabulích u dálnice (kde jsou zmapované), jinak od začátku úseku.</string>
     <string name="privatnost">Nastavení soukromí</string>
     <string name="greska_podaci">Data se nepodařilo načíst.</string>
     <string name="km">km</string>
@@ -68,4 +68,25 @@
     <string name="cena_vodonik">Vodík</string>
     <string name="det_cene_nl_kv">Průměr v Nizozemsku, %s (CBS).</string>
     <string name="det_cene_lu_mes">Oficiální měsíční průměr v Lucembursku, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Režim jízdy</string>
+    <string name="voznja_opis">Dálnice, kilometr a směr podle vaší polohy – a co máte před sebou</string>
+    <string name="voznja_pokreni">Spustit</string>
+    <string name="voznja_zaustavi">Zastavit</string>
+    <string name="voznja_naslov">Režim jízdy je zapnutý</string>
+    <string name="voznja_trazim">Hledám dálnici…</string>
+    <string name="voznja_van">Nejste na dálnici v Beneluxu</string>
+    <string name="voznja_na">Na %s</string>
+    <string name="voznja_na_smer">%1$s směr %2$s</string>
+    <string name="voznja_dozvola">Režim jízdy potřebuje přesnou polohu.</string>
+    <string name="lokacija_dugme">Moje poloha</string>
+    <string name="lokacija_ovde">Jste zde: km %s</string>
+    <string name="lokacija_ovde_smer">Jste zde: km %1$s, směr %2$s</string>
+    <string name="lokacija_nije_na">Nyní nejste na %s</string>
+    <string name="lokacija_nema">Poloha není k dispozici.</string>
+    <string name="lokacija_vi_ste_ovde">Jste zde</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Odstranit reklamy</string>
+    <string name="kupovina_hvala">Děkujeme! Reklamy jsou odstraněny.</string>
+    <string name="kupovina_nedostupna">Nákup teď není dostupný. Zkuste to prosím později.</string>
 </resources>

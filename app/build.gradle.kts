@@ -40,6 +40,8 @@ dependencies {
     implementation(libs.recyclerview)
     implementation(libs.play.services.ads)
     implementation(libs.ump)
+    implementation(libs.play.services.location)
+    implementation(libs.billing)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)

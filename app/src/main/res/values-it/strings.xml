@@ -28,7 +28,7 @@
     <string name="cip_0_24">24 ore</string>
     <string name="podnaslov_lista">%1$d uscite · %2$d distributori in questa direzione</string>
     <string name="nema_stavki">Nessun risultato per questo filtro su questo tratto.</string>
-    <string name="izvor">Dati: © contributori di OpenStreetMap (ODbL). I chilometri partono dall\'inizio del tratto.</string>
+    <string name="izvor">Dati: © contributori di OpenStreetMap (ODbL). Chilometri come sui cippi autostradali (dove mappati), altrimenti dall’inizio del tratto.</string>
     <string name="privatnost">Impostazioni privacy</string>
     <string name="greska_podaci">Impossibile caricare i dati.</string>
     <string name="km">km</string>
@@ -68,4 +68,25 @@
     <string name="cena_vodonik">Idrogeno</string>
     <string name="det_cene_nl_kv">Media nei Paesi Bassi, %s (CBS).</string>
     <string name="det_cene_lu_mes">Media mensile ufficiale in Lussemburgo, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Modalità guida</string>
+    <string name="voznja_opis">Autostrada, chilometro e direzione dalla tua posizione – e ciò che hai davanti</string>
+    <string name="voznja_pokreni">Avvia</string>
+    <string name="voznja_zaustavi">Ferma</string>
+    <string name="voznja_naslov">Modalità guida attiva</string>
+    <string name="voznja_trazim">Ricerca dell’autostrada…</string>
+    <string name="voznja_van">Non sei su un’autostrada del Benelux</string>
+    <string name="voznja_na">Sulla %s</string>
+    <string name="voznja_na_smer">%1$s verso %2$s</string>
+    <string name="voznja_dozvola">La modalità guida richiede la posizione precisa.</string>
+    <string name="lokacija_dugme">La mia posizione</string>
+    <string name="lokacija_ovde">Sei qui: km %s</string>
+    <string name="lokacija_ovde_smer">Sei qui: km %1$s, verso %2$s</string>
+    <string name="lokacija_nije_na">In questo momento non sei sulla %s</string>
+    <string name="lokacija_nema">Posizione non disponibile.</string>
+    <string name="lokacija_vi_ste_ovde">Sei qui</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Rimuovi pubblicità</string>
+    <string name="kupovina_hvala">Grazie! La pubblicità è stata rimossa.</string>
+    <string name="kupovina_nedostupna">L\'acquisto non è disponibile al momento. Riprova più tardi.</string>
 </resources>

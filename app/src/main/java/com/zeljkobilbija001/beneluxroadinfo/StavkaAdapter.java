@@ -21,8 +21,13 @@ import java.util.Locale;
 /** Redovi liste autoputa, a na kraju napomena o izvoru podataka. */
 public class StavkaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private static final int RED = 0, IZVOR = 1;
+    private static final int RED = 0, IZVOR = 1, OVDE = 2;
     private final List<Stavka> stavke = new ArrayList<>();
+    /** Red "Vi ste ovde": pre stavke sa ovim indeksom (-1 = nema ga). */
+    private int ovde = -1;
+    private double ovdeKm;
+    private String ovdeTekst = "";
+    private boolean ovdeSmer, ovdeNagore;
 
     /** Dodir na red (deljenje mesta). */
     public interface Klik {
@@ -91,14 +96,39 @@ public class StavkaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         notifyDataSetChanged();
     }
 
+    /**
+     * Red sa strelicom "Vi ste ovde" ispred stavke {@code indeks} (-1 = bez njega).
+     * {@code sasmerom}: strelica pokazuje napred (niz listu); inače samo tačka.
+     */
+    @SuppressLint("NotifyDataSetChanged")
+    public void postaviOvde(int indeks, double km, String tekst, boolean saSmerom, boolean nagore) {
+        ovdeNagore = nagore;
+        ovde = indeks;
+        ovdeKm = km;
+        ovdeTekst = tekst;
+        ovdeSmer = saSmerom;
+        notifyDataSetChanged();
+    }
+
+    /** Pozicija reda "Vi ste ovde" u listi, ili -1. */
+    public int pozicijaOvde() {
+        return ovde;
+    }
+
+    private boolean imaOvde() {
+        return ovde >= 0 && ovde <= stavke.size() && !stavke.isEmpty();
+    }
+
     @Override
     public int getItemCount() {
-        return stavke.isEmpty() ? 0 : stavke.size() + 1;
+        return stavke.isEmpty() ? 0 : stavke.size() + 1 + (imaOvde() ? 1 : 0);
     }
 
     @Override
     public int getItemViewType(int poz) {
-        return poz < stavke.size() ? RED : IZVOR;
+        if (imaOvde() && poz == ovde) return OVDE;
+        int i = imaOvde() && poz > ovde ? poz - 1 : poz;
+        return i < stavke.size() ? RED : IZVOR;
     }
 
     @NonNull
@@ -108,12 +138,24 @@ public class StavkaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         if (tip == IZVOR) {
             return new RecyclerView.ViewHolder(inf.inflate(R.layout.item_izvor, roditelj, false)) { };
         }
+        if (tip == OVDE) {
+            return new RecyclerView.ViewHolder(inf.inflate(R.layout.item_ovde, roditelj, false)) { };
+        }
         return new Drzac(inf.inflate(R.layout.item_stavka, roditelj, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder h, int poz) {
-        if (h instanceof Drzac) ((Drzac) h).povezi(stavke.get(poz));
+        if (h instanceof Drzac) {
+            ((Drzac) h).povezi(stavke.get(imaOvde() && poz > ovde ? poz - 1 : poz));
+        } else if (getItemViewType(poz) == OVDE) {
+            View v = h.itemView;
+            ((TextView) v.findViewById(R.id.ovdeKm)).setText(String.format(Locale.getDefault(), "%.1f", ovdeKm));
+            ((TextView) v.findViewById(R.id.ovdeTekst)).setText(ovdeTekst);
+            ImageView strelica = v.findViewById(R.id.ovdeStrelica);
+            strelica.setImageResource(ovdeSmer ? R.drawable.ic_strelica_napred : R.drawable.ic_tacka_ovde);
+            strelica.setRotation(ovdeNagore ? 180f : 0f);
+        }
     }
 
     class Drzac extends RecyclerView.ViewHolder {
@@ -135,7 +177,7 @@ public class StavkaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
         void povezi(Stavka s) {
             Context c = itemView.getContext();
-            km.setText(String.format(Locale.getDefault(), "%.1f", s.km));
+            km.setText(String.format(Locale.getDefault(), "%.1f", s.kmPrikaz()));
 
             // Znak na šini: strelica izlaza, oznaka druge autostrade (čvorište), P, pumpa ili pribor za jelo
             boolean pumpa = !s.jeIzlaz() && s.tip != Stavka.PARKING && !s.gorivo.isEmpty();

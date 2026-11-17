@@ -28,7 +28,7 @@
     <string name="cip_0_24">24 h</string>
     <string name="podnaslov_lista">%1$d saídas · %2$d postos neste sentido</string>
     <string name="nema_stavki">Nada corresponde a este filtro neste troço.</string>
-    <string name="izvor">Dados: © contribuidores do OpenStreetMap (ODbL). Os quilómetros contam desde o início do troço.</string>
+    <string name="izvor">Dados: © contribuidores do OpenStreetMap (ODbL). Quilómetros como nos marcos da autoestrada (onde estão mapeados); caso contrário, desde o início do troço.</string>
     <string name="privatnost">Definições de privacidade</string>
     <string name="greska_podaci">Não foi possível carregar os dados.</string>
     <string name="km">km</string>
@@ -68,4 +68,25 @@
     <string name="cena_vodonik">Hidrogénio</string>
     <string name="det_cene_nl_kv">Média nos Países Baixos, %s (CBS).</string>
     <string name="det_cene_lu_mes">Média mensal oficial no Luxemburgo, %s (data.public.lu).</string>
+    <!-- Režim „Vožnja“ i Moja pozicija -->
+    <string name="voznja_kanal">Modo condução</string>
+    <string name="voznja_opis">Autoestrada, quilómetro e sentido a partir da sua localização – e o que tem pela frente</string>
+    <string name="voznja_pokreni">Iniciar</string>
+    <string name="voznja_zaustavi">Parar</string>
+    <string name="voznja_naslov">Modo condução ativado</string>
+    <string name="voznja_trazim">Procurando a autoestrada…</string>
+    <string name="voznja_van">Não está numa autoestrada do Benelux</string>
+    <string name="voznja_na">Na %s</string>
+    <string name="voznja_na_smer">%1$s sentido %2$s</string>
+    <string name="voznja_dozvola">O modo condução precisa da sua localização exata.</string>
+    <string name="lokacija_dugme">Minha posição</string>
+    <string name="lokacija_ovde">Você está aqui: km %s</string>
+    <string name="lokacija_ovde_smer">Você está aqui: km %1$s, sentido %2$s</string>
+    <string name="lokacija_nije_na">Você não está na %s agora</string>
+    <string name="lokacija_nema">Localização indisponível.</string>
+    <string name="lokacija_vi_ste_ovde">Você está aqui</string>
+    <!-- kupovina „Bez reklama“ -->
+    <string name="bez_reklama">Remover anúncios</string>
+    <string name="kupovina_hvala">Obrigado! Os anúncios foram removidos.</string>
+    <string name="kupovina_nedostupna">A compra não está disponível agora. Tente novamente mais tarde.</string>
 </resources>
