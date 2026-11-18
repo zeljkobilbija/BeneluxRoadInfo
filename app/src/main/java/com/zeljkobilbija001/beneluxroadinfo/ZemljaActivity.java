@@ -106,13 +106,13 @@ public class ZemljaActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        VoznjaService.postaviSlusaoca(this::osveziStit);
+        VoznjaService.postaviSlusaoca(this, this::osveziStit);
         osveziStit();
     }
 
     @Override
     protected void onStop() {
-        VoznjaService.postaviSlusaoca(null);
+        VoznjaService.skiniSlusaoca(this);
         super.onStop();
     }
 

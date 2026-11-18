@@ -80,9 +80,22 @@ public class VoznjaService extends Service {
         c.stopService(new Intent(c, VoznjaService.class));
     }
 
-    /** Početni ekran se prijavljuje da osveži dugme kad se stanje promeni (poziva se na glavnoj niti). */
-    public static void postaviSlusaoca(Runnable r) {
+    private static Object vlasnikSlusaoca;
+
+    /**
+     * Ekran se prijavljuje da osveži prikaz kad se stanje promeni (poziva se na glavnoj niti). Svaki ekran
+     * posle skida samo svoje slušanje: ranije je početni ekran pri zaustavljanju brisao slušanje ekrana
+     * zemlje koji je upravo otvoren, pa taj nije saznao autoput dok se ne otvori ponovo.
+     */
+    public static void postaviSlusaoca(Object vlasnik, Runnable r) {
+        vlasnikSlusaoca = vlasnik;
         slusalac = r;
+    }
+
+    public static void skiniSlusaoca(Object vlasnik) {
+        if (vlasnikSlusaoca != vlasnik) return;
+        vlasnikSlusaoca = null;
+        slusalac = null;
     }
 
     private final Handler glavna = new Handler(Looper.getMainLooper());
