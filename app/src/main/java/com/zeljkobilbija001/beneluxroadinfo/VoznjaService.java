@@ -150,6 +150,14 @@ public class VoznjaService extends Service {
         return START_NOT_STICKY;
     }
 
+    /** Aplikacija je sklonjena iz liste otvorenih (skroz zatvorena): gasi se Vožnja i sva obaveštenja. */
+    @Override
+    public void onTaskRemoved(Intent rootIntent) {
+        Dnevnik.upisi(this, "APLIKACIJA ZATVORENA: Vožnja se gasi");
+        stopSelf();
+        super.onTaskRemoved(rootIntent);
+    }
+
     @Override
     public void onDestroy() {
         glavna.removeCallbacksAndMessages(null);
