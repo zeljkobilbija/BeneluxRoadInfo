@@ -61,6 +61,10 @@ public class VoznjaService extends Service {
 
     /** Stanje za početni ekran. */
     public static volatile boolean radi;
+    /** Još se traži autoput ili smer (početni ekran tada vrti kružić). */
+    public static volatile boolean trazi;
+    /** Isključena lokacija ili nema interneta (početni ekran tada piše narandžasto). */
+    public static volatile boolean upozorenje;
     public static volatile String opisStanja = "";
     private static Runnable slusalac;
     /** Gde je vozač sada (za ekran autoputa); null autoput = nepoznato. */
@@ -100,6 +104,34 @@ public class VoznjaService extends Service {
 
     private final Handler glavna = new Handler(Looper.getMainLooper());
     private final ExecutorService nit = Executors.newSingleThreadExecutor();
+    private String poslednjeUpozorenje;
+
+    /** Na 10 s: da li je lokacija isključena ili nema interneta (bez lokacije nema ni poziva iz GPS-a). */
+    private final Runnable proveraVeze = new Runnable() {
+        @Override
+        public void run() {
+            nit.execute(() -> {
+                if (!java.util.Objects.equals(upozorenjeTekst(), poslednjeUpozorenje)) osveziObavestenje();
+            });
+            glavna.postDelayed(this, 10_000L);
+        }
+    };
+
+    /** Tekst upozorenja ili null: lokacija isključena (autoput se ne može naći), nema interneta (vesti ne stižu). */
+    private String upozorenjeTekst() {
+        android.location.LocationManager lm = getSystemService(android.location.LocationManager.class);
+        if (lm != null && !androidx.core.location.LocationManagerCompat.isLocationEnabled(lm)) {
+            return getString(R.string.voznja_bez_lokacije);
+        }
+        android.net.ConnectivityManager cm = getSystemService(android.net.ConnectivityManager.class);
+        if (cm != null) {
+            android.net.NetworkCapabilities nc = cm.getNetworkCapabilities(cm.getActiveNetwork());
+            if (nc == null || !nc.hasCapability(android.net.NetworkCapabilities.NET_CAPABILITY_INTERNET)) {
+                return getString(R.string.voznja_bez_interneta);
+            }
+        }
+        return null;
+    }
     private FusedLocationProviderClient lokacije;
     private final LocationCallback povratni = new LocationCallback() {
         @Override
@@ -147,7 +179,9 @@ public class VoznjaService extends Service {
         instanca = this;
         Dnevnik.upisi(this, "START režim vožnje");
         pocetak = poslednjiPutNaAutoputu = System.currentTimeMillis();
+        trazi = true;
         javiStanje(getString(R.string.voznja_trazim));
+        glavna.postDelayed(proveraVeze, 2_000L);
 
         lokacije = LocationServices.getFusedLocationProviderClient(this);
         LocationRequest zahtev = new LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 15_000L)
@@ -177,6 +211,8 @@ public class VoznjaService extends Service {
         if (lokacije != null) lokacije.removeLocationUpdates(povratni);
         nit.shutdownNow();
         radi = false;
+        trazi = false;
+        upozorenje = false;
         instanca = null;
         sadAutoput = null;
         opisStanja = "";
@@ -312,13 +348,26 @@ public class VoznjaService extends Service {
     private void osveziObavestenje() {
         String tekst;
         if (autoput == null) {
+            trazi = kandidat != null;
             tekst = getString(kandidat != null ? R.string.voznja_trazim : R.string.voznja_van);
         } else {
             Autoput a = Autoputevi.poId(autoput);
             String oznaka = a != null ? a.oznaka() : autoput;
             String kuda = kuda();
-            tekst = kuda == null ? getString(R.string.voznja_na, oznaka)
+            // autoput je nađen, a smer još ne: "tražim vašu lokaciju na autoputu"
+            trazi = kuda == null;
+            tekst = kuda == null ? getString(R.string.voznja_trazim_smer, oznaka)
                     : getString(R.string.voznja_na_smer, oznaka, kuda);
+        }
+        // isključena lokacija: autoput se ne može naći; bez interneta: lokacija radi, vesti ne stižu
+        String u = upozorenjeTekst();
+        poslednjeUpozorenje = u;
+        upozorenje = u != null;
+        if (u != null && u.equals(getString(R.string.voznja_bez_lokacije))) {
+            trazi = false;
+            tekst = u;
+        } else if (u != null) {
+            tekst = tekst + "\n" + u;
         }
         NotificationManager nm = getSystemService(NotificationManager.class);
         if (nm != null) nm.notify(ID_OBAVESTENJA, obavestenje(tekst));
@@ -364,6 +413,7 @@ public class VoznjaService extends Service {
                 .setColor(Izgled.boja(this, R.color.plava))
                 .setContentTitle(getString(R.string.voznja_naslov))
                 .setContentText(tekst)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(tekst)) // i drugi red (upozorenje)
                 .setContentIntent(pi)
                 .addAction(0, getString(R.string.voznja_zaustavi), stop)
                 .setOngoing(true)

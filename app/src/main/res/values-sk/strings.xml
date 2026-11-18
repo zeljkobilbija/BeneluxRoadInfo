@@ -89,4 +89,11 @@
     <string name="bez_reklama">Odstrániť reklamy</string>
     <string name="kupovina_hvala">Ďakujeme! Reklamy sú odstránené.</string>
     <string name="kupovina_nedostupna">Nákup teraz nie je dostupný. Skúste to neskôr.</string>
+    <string name="voznja_trazim_smer">%s: zisťujem vašu polohu na diaľnici…</string>
+    <string name="voznja_bez_lokacije">Poloha je vypnutá – zapnite ju v nastaveniach telefónu</string>
+    <string name="voznja_bez_interneta">Bez internetu – dopravné správy neprichádzajú</string>
+    <string name="voznja_ne_moze_naslov">Režim jazdy sa nedá spustiť</string>
+    <string name="voznja_bez_dozvole_poruka">Režim jazdy potrebuje vašu presnú polohu. Otvorte Nastavenia → Povolenia → Poloha, zvoľte „Povoliť iba pri používaní aplikácie“ a zapnite „Používať presnú polohu“.</string>
+    <string name="voznja_gps_iskljucen_poruka">Poloha je v telefóne vypnutá. Zapnite ju, aby režim jazdy našiel diaľnicu, na ktorej ste.</string>
+    <string name="stanje_podesavanja">Nastavenia</string>
 </resources>

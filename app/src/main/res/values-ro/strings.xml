@@ -89,4 +89,11 @@
     <string name="bez_reklama">Elimină reclamele</string>
     <string name="kupovina_hvala">Mulțumim! Reclamele au fost eliminate.</string>
     <string name="kupovina_nedostupna">Achiziția nu este disponibilă acum. Încercați din nou mai târziu.</string>
+    <string name="voznja_trazim_smer">%s: caut poziția dvs. pe autostradă…</string>
+    <string name="voznja_bez_lokacije">Locația este dezactivată – activați-o în setările telefonului</string>
+    <string name="voznja_bez_interneta">Fără internet – știrile din trafic nu sosesc</string>
+    <string name="voznja_ne_moze_naslov">Modul de condus nu poate porni</string>
+    <string name="voznja_bez_dozvole_poruka">Modul de condus are nevoie de locația dvs. exactă. Deschideți Setări → Permisiuni → Locație, alegeți „Permite doar în timpul utilizării aplicației” și activați „Folosește locația exactă”.</string>
+    <string name="voznja_gps_iskljucen_poruka">Locația este dezactivată pe telefon. Activați-o pentru ca modul de condus să găsească autostrada pe care vă aflați.</string>
+    <string name="stanje_podesavanja">Setări</string>
 </resources>

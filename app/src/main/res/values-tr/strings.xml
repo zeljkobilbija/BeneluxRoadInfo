@@ -89,4 +89,11 @@
     <string name="bez_reklama">Reklamları kaldır</string>
     <string name="kupovina_hvala">Teşekkürler! Reklamlar kaldırıldı.</string>
     <string name="kupovina_nedostupna">Satın alma şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin.</string>
+    <string name="voznja_trazim_smer">%s: otoyoldaki konumunuzu buluyorum…</string>
+    <string name="voznja_bez_lokacije">Konum kapalı – telefon ayarlarından açın</string>
+    <string name="voznja_bez_interneta">İnternet yok – trafik haberleri gelmiyor</string>
+    <string name="voznja_ne_moze_naslov">Sürüş modu başlatılamıyor</string>
+    <string name="voznja_bez_dozvole_poruka">Sürüş modu kesin konumunuza ihtiyaç duyar. Ayarlar → İzinler → Konum\'u açın, „Yalnızca uygulama kullanılırken izin ver“ seçeneğini seçin ve „Kesin konumu kullan“ı açın.</string>
+    <string name="voznja_gps_iskljucen_poruka">Telefonunuzda konum kapalı. Sürüş modunun bulunduğunuz otoyolu bulabilmesi için açın.</string>
+    <string name="stanje_podesavanja">Ayarlar</string>
 </resources>

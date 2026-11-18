@@ -89,4 +89,11 @@
     <string name="bez_reklama">Quitar anuncios</string>
     <string name="kupovina_hvala">¡Gracias! Se han quitado los anuncios.</string>
     <string name="kupovina_nedostupna">La compra no está disponible ahora. Inténtalo de nuevo más tarde.</string>
+    <string name="voznja_trazim_smer">%s: buscando tu posición en la autopista…</string>
+    <string name="voznja_bez_lokacije">La ubicación está desactivada – actívala en los ajustes del teléfono</string>
+    <string name="voznja_bez_interneta">Sin internet – no llegan las noticias de tráfico</string>
+    <string name="voznja_ne_moze_naslov">No se puede iniciar el modo conducción</string>
+    <string name="voznja_bez_dozvole_poruka">El modo conducción necesita tu ubicación exacta. Abre Ajustes → Permisos → Ubicación, elige «Permitir solo mientras se usa la aplicación» y activa «Usar ubicación precisa».</string>
+    <string name="voznja_gps_iskljucen_poruka">La ubicación está desactivada en el teléfono. Actívala para que el modo conducción encuentre la autopista en la que estás.</string>
+    <string name="stanje_podesavanja">Ajustes</string>
 </resources>

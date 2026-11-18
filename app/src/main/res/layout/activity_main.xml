@@ -133,6 +133,15 @@
                 android:textSize="13sp" />
         </LinearLayout>
 
+        <ProgressBar
+            android:id="@+id/voznjaTrazi"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="10dp"
+            android:indeterminate="true"
+            android:indeterminateTint="#FFFFFF"
+            android:visibility="gone" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/voznjaDugme"
             android:layout_width="wrap_content"

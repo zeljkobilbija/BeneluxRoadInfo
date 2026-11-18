@@ -90,4 +90,11 @@
     <string name="bez_reklama">Remove ads</string>
     <string name="kupovina_hvala">Thank you! Ads are removed.</string>
     <string name="kupovina_nedostupna">Purchase is not available right now. Please try again later.</string>
+    <string name="voznja_trazim_smer">%s: finding your position on the motorway…</string>
+    <string name="voznja_bez_lokacije">Location is off – turn it on in your phone settings</string>
+    <string name="voznja_bez_interneta">No internet – traffic news cannot arrive</string>
+    <string name="voznja_ne_moze_naslov">Driving mode cannot start</string>
+    <string name="voznja_bez_dozvole_poruka">Driving mode needs your precise location. Open Settings → Permissions → Location, choose “Allow only while using the app” and turn on “Use precise location”.</string>
+    <string name="voznja_gps_iskljucen_poruka">Location is turned off on your phone. Turn it on so that driving mode can find the motorway you are on.</string>
+    <string name="stanje_podesavanja">Settings</string>
 </resources>

@@ -89,4 +89,11 @@
     <string name="bez_reklama">Remover anúncios</string>
     <string name="kupovina_hvala">Obrigado! Os anúncios foram removidos.</string>
     <string name="kupovina_nedostupna">A compra não está disponível agora. Tente novamente mais tarde.</string>
+    <string name="voznja_trazim_smer">%s: a procurar a sua posição na autoestrada…</string>
+    <string name="voznja_bez_lokacije">A localização está desativada – ative-a nas definições do telemóvel</string>
+    <string name="voznja_bez_interneta">Sem internet – as notícias de trânsito não chegam</string>
+    <string name="voznja_ne_moze_naslov">Não é possível iniciar o modo de condução</string>
+    <string name="voznja_bez_dozvole_poruka">O modo de condução precisa da sua localização exata. Abra Definições → Autorizações → Localização, escolha «Permitir apenas durante a utilização da app» e ative «Utilizar localização exata».</string>
+    <string name="voznja_gps_iskljucen_poruka">A localização está desativada no telemóvel. Ative-a para que o modo de condução encontre a autoestrada em que está.</string>
+    <string name="stanje_podesavanja">Configurações</string>
 </resources>

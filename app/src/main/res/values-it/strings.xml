@@ -89,4 +89,11 @@
     <string name="bez_reklama">Rimuovi pubblicità</string>
     <string name="kupovina_hvala">Grazie! La pubblicità è stata rimossa.</string>
     <string name="kupovina_nedostupna">L\'acquisto non è disponibile al momento. Riprova più tardi.</string>
+    <string name="voznja_trazim_smer">%s: cerco la tua posizione sull\'autostrada…</string>
+    <string name="voznja_bez_lokacije">La posizione è disattivata – attivala nelle impostazioni del telefono</string>
+    <string name="voznja_bez_interneta">Nessuna connessione – le notizie sul traffico non arrivano</string>
+    <string name="voznja_ne_moze_naslov">La modalità guida non può partire</string>
+    <string name="voznja_bez_dozvole_poruka">La modalità guida ha bisogno della tua posizione precisa. Apri Impostazioni → Autorizzazioni → Posizione, scegli «Consenti solo mentre l\'app è in uso» e attiva «Usa posizione precisa».</string>
+    <string name="voznja_gps_iskljucen_poruka">La posizione è disattivata sul telefono. Attivala perché la modalità guida possa trovare l\'autostrada in cui ti trovi.</string>
+    <string name="stanje_podesavanja">Impostazioni</string>
 </resources>

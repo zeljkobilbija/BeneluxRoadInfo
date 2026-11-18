@@ -89,4 +89,11 @@
     <string name="bez_reklama">Hirdetések eltávolítása</string>
     <string name="kupovina_hvala">Köszönjük! A hirdetések eltűntek.</string>
     <string name="kupovina_nedostupna">A vásárlás most nem érhető el. Próbálja újra később.</string>
+    <string name="voznja_trazim_smer">%s: keresem a helyzetét az autópályán…</string>
+    <string name="voznja_bez_lokacije">A helymeghatározás ki van kapcsolva – kapcsolja be a telefon beállításaiban</string>
+    <string name="voznja_bez_interneta">Nincs internet – a forgalmi hírek nem érkeznek meg</string>
+    <string name="voznja_ne_moze_naslov">A vezetési mód nem indítható</string>
+    <string name="voznja_bez_dozvole_poruka">A vezetési módnak szüksége van a pontos helyére. Nyissa meg a Beállítások → Engedélyek → Hely menüt, válassza a „Csak az alkalmazás használata közben” lehetőséget, és kapcsolja be a „Pontos hely használata” opciót.</string>
+    <string name="voznja_gps_iskljucen_poruka">A helymeghatározás ki van kapcsolva a telefonon. Kapcsolja be, hogy a vezetési mód megtalálja az autópályát.</string>
+    <string name="stanje_podesavanja">Beállítások</string>
 </resources>

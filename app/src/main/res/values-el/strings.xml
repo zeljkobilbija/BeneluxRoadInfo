@@ -89,4 +89,11 @@
     <string name="bez_reklama">Κατάργηση διαφημίσεων</string>
     <string name="kupovina_hvala">Ευχαριστούμε! Οι διαφημίσεις καταργήθηκαν.</string>
     <string name="kupovina_nedostupna">Η αγορά δεν είναι διαθέσιμη αυτή τη στιγμή. Δοκιμάστε ξανά αργότερα.</string>
+    <string name="voznja_trazim_smer">%s: εντοπίζω τη θέση σας στον αυτοκινητόδρομο…</string>
+    <string name="voznja_bez_lokacije">Η τοποθεσία είναι απενεργοποιημένη – ενεργοποιήστε τη στις ρυθμίσεις</string>
+    <string name="voznja_bez_interneta">Χωρίς internet – τα νέα κυκλοφορίας δεν φτάνουν</string>
+    <string name="voznja_ne_moze_naslov">Η λειτουργία οδήγησης δεν μπορεί να ξεκινήσει</string>
+    <string name="voznja_bez_dozvole_poruka">Η λειτουργία οδήγησης χρειάζεται την ακριβή τοποθεσία σας. Ανοίξτε Ρυθμίσεις → Άδειες → Τοποθεσία, επιλέξτε «Να επιτρέπεται μόνο κατά τη χρήση της εφαρμογής» και ενεργοποιήστε την «Ακριβή τοποθεσία».</string>
+    <string name="voznja_gps_iskljucen_poruka">Η τοποθεσία είναι απενεργοποιημένη στο τηλέφωνο. Ενεργοποιήστε τη για να βρει η λειτουργία οδήγησης τον αυτοκινητόδρομο.</string>
+    <string name="stanje_podesavanja">Ρυθμίσεις</string>
 </resources>

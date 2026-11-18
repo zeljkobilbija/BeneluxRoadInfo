@@ -89,4 +89,11 @@
     <string name="bez_reklama">Ukloni reklame</string>
     <string name="kupovina_hvala">Hvala! Reklame su uklonjene.</string>
     <string name="kupovina_nedostupna">Kupovina trenutno nije dostupna. Pokušajte ponovo kasnije.</string>
+    <string name="voznja_trazim_smer">%s: tražim vašu lokaciju na autoputu…</string>
+    <string name="voznja_bez_lokacije">Lokacija je isključena – uključite je u podešavanjima telefona</string>
+    <string name="voznja_bez_interneta">Nema interneta – vesti o saobraćaju ne stižu</string>
+    <string name="voznja_ne_moze_naslov">Vožnja ne može da se pokrene</string>
+    <string name="voznja_bez_dozvole_poruka">Za režim Vožnja potrebna je vaša precizna lokacija. Otvorite Podešavanja → Dozvole → Lokacija, izaberite „Dozvoli samo tokom korišćenja aplikacije“ i uključite „Koristi preciznu lokaciju“.</string>
+    <string name="voznja_gps_iskljucen_poruka">Lokacija je na telefonu isključena. Uključite je da bi Vožnja mogla da nađe autoput na kom ste.</string>
+    <string name="stanje_podesavanja">Podešavanja</string>
 </resources>

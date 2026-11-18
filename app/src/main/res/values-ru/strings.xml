@@ -89,4 +89,11 @@
     <string name="bez_reklama">Убрать рекламу</string>
     <string name="kupovina_hvala">Спасибо! Реклама удалена.</string>
     <string name="kupovina_nedostupna">Покупка сейчас недоступна. Попробуйте позже.</string>
+    <string name="voznja_trazim_smer">%s: определяю ваше положение на автобане…</string>
+    <string name="voznja_bez_lokacije">Геолокация выключена – включите её в настройках телефона</string>
+    <string name="voznja_bez_interneta">Нет интернета – дорожные новости не приходят</string>
+    <string name="voznja_ne_moze_naslov">Режим поездки не запускается</string>
+    <string name="voznja_bez_dozvole_poruka">Режиму поездки нужно ваше точное местоположение. Откройте Настройки → Разрешения → Местоположение, выберите «Разрешить только во время использования» и включите «Точное местоположение».</string>
+    <string name="voznja_gps_iskljucen_poruka">Геолокация на телефоне выключена. Включите её, чтобы режим поездки мог найти автобан, по которому вы едете.</string>
+    <string name="stanje_podesavanja">Настройки</string>
 </resources>

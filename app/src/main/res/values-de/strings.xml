@@ -89,4 +89,11 @@
     <string name="bez_reklama">Werbung entfernen</string>
     <string name="kupovina_hvala">Vielen Dank! Die Werbung ist entfernt.</string>
     <string name="kupovina_nedostupna">Der Kauf ist gerade nicht verfügbar. Bitte später erneut versuchen.</string>
+    <string name="voznja_trazim_smer">%s: ermittle Ihre Position auf der Autobahn…</string>
+    <string name="voznja_bez_lokacije">Standort ist aus – bitte in den Telefoneinstellungen einschalten</string>
+    <string name="voznja_bez_interneta">Kein Internet – Verkehrsmeldungen kommen nicht an</string>
+    <string name="voznja_ne_moze_naslov">Fahrmodus kann nicht starten</string>
+    <string name="voznja_bez_dozvole_poruka">Der Fahrmodus braucht Ihren genauen Standort. Öffnen Sie Einstellungen → Berechtigungen → Standort, wählen Sie „Nur während der Nutzung der App zulassen“ und schalten Sie „Genauen Standort verwenden“ ein.</string>
+    <string name="voznja_gps_iskljucen_poruka">Der Standort ist auf Ihrem Telefon ausgeschaltet. Schalten Sie ihn ein, damit der Fahrmodus die Autobahn finden kann.</string>
+    <string name="stanje_podesavanja">Einstellungen</string>
 </resources>
