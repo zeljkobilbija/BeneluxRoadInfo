@@ -49,6 +49,11 @@ public class VoznjaService extends Service {
     private static final long BEZ_AUTOPUTA_MS = 45 * 60_000L;   // toliko van autoputa → samo se gasi
     private static final long NAJDUZE_MS = 12 * 60 * 60_000L;
     private static final float MIN_BRZINA = 8f; // m/s (~30 km/h)
+    /** Sporije od MIN_BRZINA (kolona, stajanje): autoput se prepoznaje samo ovoliko blizu kolovoza (km). */
+    private static final double SPORO_KM = 0.03;
+    /** Smer vožnje se zaključuje (i okretanje prepoznaje) posle ovoliko pređenih km po autoputu (ranije 0,5). */
+    private static final double SMER_KM = 0.2;
+    private int kandidatPotvrda;
     /** Do koliko km od kolovoza je vozač "na autoputu" (plus tačnost GPS-a). */
     private static final double NA_KOLOVOZU_KM = 0.06;
     /** Lokacije lošije od ovoga (m) se ne koriste. */
@@ -204,9 +209,16 @@ public class VoznjaService extends Service {
             t = Polozaj.nadji(this, lat, lon, autoput);
         } else {
             // nije (više) na trenutnom: novi autoput tek posle dve uzastopne lokacije, i samo u vožnji
-            if (g != null && g.udaljenost <= tol && v >= MIN_BRZINA) {
-                if (g.autoput.equals(kandidat)) t = Polozaj.nadji(this, lat, lon, g.autoput);
-                else kandidat = g.autoput;
+            // u koloni ili pri stajanju (Vožnja uključena dok vozač stoji): i bez brzine, ali samo
+            // sasvim blizu kolovoza (do 30 m) i tri lokacije zaredom, da parking pored puta ne zavara
+            boolean sporo = g != null && v < MIN_BRZINA && g.udaljenost <= SPORO_KM;
+            if (g != null && g.udaljenost <= tol && (v >= MIN_BRZINA || sporo)) {
+                if (!g.autoput.equals(kandidat)) {
+                    kandidat = g.autoput;
+                    kandidatPotvrda = 1;
+                } else if (++kandidatPotvrda >= (sporo ? 3 : 2)) {
+                    t = Polozaj.nadji(this, lat, lon, g.autoput);
+                }
             } else {
                 kandidat = null;
             }
@@ -230,7 +242,7 @@ public class VoznjaService extends Service {
                 kmZaSmer = t.kmUkupno;
             } else if (Double.isNaN(kmZaSmer)) {
                 kmZaSmer = t.kmUkupno;
-            } else if (Math.abs(t.kmUkupno - kmZaSmer) >= 0.5) {
+            } else if (Math.abs(t.kmUkupno - kmZaSmer) >= SMER_KM) {
                 smer = t.kmUkupno > kmZaSmer ? '+' : '-';
                 kmZaSmer = t.kmUkupno;
             }

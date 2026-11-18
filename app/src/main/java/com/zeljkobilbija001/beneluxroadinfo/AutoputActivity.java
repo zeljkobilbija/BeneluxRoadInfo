@@ -89,8 +89,11 @@ public class AutoputActivity extends AppCompatActivity {
                 char sadSmer = VoznjaService.sadSmer;
                 if (sadSmer != '?' && sadSmer != mojSmer) {
                     // smer vožnje je tek saznat (ili se vozač okrenuo): lista prikazuje parkinge i pumpe
-                    // samo sa njegove strane kolovoza; redosled (dugme smera) ostaje kako ga je vozač izabrao
+                    // samo sa njegove strane kolovoza; natpis dugmeta je stvarni smer, a strelica gleda
+                    // nagore (mesta ispred su iznad reda "Vi ste ovde", želja korisnika 18.11.2026);
+                    // ako vozač posle sam okrene strelicu, to važi do sledeće stvarne promene smera
                     mojSmer = sadSmer;
+                    smer = sadSmer == '+' ? '-' : '+';
                     mojaDeonica = VoznjaService.sadDeonica;
                     deonica = mojaDeonica;
                     osvezi(false);
@@ -250,7 +253,7 @@ public class AutoputActivity extends AppCompatActivity {
         pozicijaVreme = System.currentTimeMillis();
         mojKm = km;
         if (noviSmer == '+' || noviSmer == '-') {
-            smer = noviSmer;
+            smer = noviSmer == '+' ? '-' : '+'; // strelica nagore: mesta ispred su iznad "Vi ste ovde"
             mojSmer = noviSmer;
         }
         filter = SVE;
@@ -448,7 +451,13 @@ public class AutoputActivity extends AppCompatActivity {
         Deonica d = podaci.deonice.get(deonica);
         MaterialButton smerDugme = (MaterialButton) smeroviRed.getChildAt(0);
         // '+' = od početka deonice ka kraju (minus → plus), '-' = obrnuto; tvrdi razmak drži strelicu uz naziv
-        String odakle = smer == '+' ? d.minus : d.plus, kuda = smer == '+' ? d.plus : d.minus;
+        // Kad se zna stvarni smer vožnje, natpis je uvek on (ne menja se pritiskom), a ikonica je strelica
+        // nagore/nadole kao u redu "Vi ste ovde": pritisak okreće samo nju i redosled liste.
+        boolean znaSmer = mojaDeonica == deonica && (mojSmer == '+' || mojSmer == '-');
+        char natpis = znaSmer ? mojSmer : smer;
+        smerDugme.setIconResource(!znaSmer ? R.drawable.ic_zameni_smer
+                : smer != mojSmer ? R.drawable.ic_strelica_gore : R.drawable.ic_strelica_napred);
+        String odakle = natpis == '+' ? d.minus : d.plus, kuda = natpis == '+' ? d.plus : d.minus;
         smerDugme.setText(odakle + "\u00A0→ " + kuda);
         smerDugme.setContentDescription(getString(R.string.smer_voznje) + ": " + odakle + " → " + kuda);
         smerDugme.setBackgroundTintList(Izgled.jedna(bela));
