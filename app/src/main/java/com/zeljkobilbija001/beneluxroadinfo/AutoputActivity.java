@@ -286,7 +286,8 @@ public class AutoputActivity extends AppCompatActivity {
         Deonica d = podaci.deonice.get(deonica);
         // tekst uvek kazuje kuda vozač stvarno ide; u suprotnom smeru liste strelica gleda nagore
         String tekst = mojSmer == '?' ? getString(R.string.lokacija_vi_ste_ovde)
-                : getString(R.string.lokacija_vi_ste_ovde) + " · " + (mojSmer == '+' ? d.plus : d.minus);
+                : getString(R.string.lokacija_vi_ste_ovde) + " · "
+                + getString(R.string.lokacija_pravac, mojSmer == '+' ? d.plus : d.minus); // "Vi ste ovde · pravac X"
         adapter.postaviOvde(i, d.kmZaPrikaz(mojKm), tekst, mojSmer != '?', mojSmer != '?' && mojSmer != smer);
     }
 

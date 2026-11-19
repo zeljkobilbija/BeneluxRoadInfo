@@ -96,4 +96,5 @@
     <string name="voznja_bez_dozvole_poruka">Sürüş modu kesin konumunuza ihtiyaç duyar. Ayarlar → İzinler → Konum\'u açın, „Yalnızca uygulama kullanılırken izin ver“ seçeneğini seçin ve „Kesin konumu kullan“ı açın.</string>
     <string name="voznja_gps_iskljucen_poruka">Telefonunuzda konum kapalı. Sürüş modunun bulunduğunuz otoyolu bulabilmesi için açın.</string>
     <string name="stanje_podesavanja">Ayarlar</string>
+    <string name="lokacija_pravac">%s yönü</string>
 </resources>

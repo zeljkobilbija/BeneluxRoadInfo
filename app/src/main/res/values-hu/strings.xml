@@ -96,4 +96,5 @@
     <string name="voznja_bez_dozvole_poruka">A vezetési módnak szüksége van a pontos helyére. Nyissa meg a Beállítások → Engedélyek → Hely menüt, válassza a „Csak az alkalmazás használata közben” lehetőséget, és kapcsolja be a „Pontos hely használata” opciót.</string>
     <string name="voznja_gps_iskljucen_poruka">A helymeghatározás ki van kapcsolva a telefonon. Kapcsolja be, hogy a vezetési mód megtalálja az autópályát.</string>
     <string name="stanje_podesavanja">Beállítások</string>
+    <string name="lokacija_pravac">%s irányába</string>
 </resources>

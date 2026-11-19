@@ -96,4 +96,5 @@
     <string name="voznja_bez_dozvole_poruka">De rijmodus heeft uw precieze locatie nodig. Open Instellingen → Rechten → Locatie, kies „Alleen toestaan tijdens gebruik van de app” en zet „Precieze locatie gebruiken” aan.</string>
     <string name="voznja_gps_iskljucen_poruka">Locatie staat uit op uw telefoon. Zet deze aan zodat de rijmodus de snelweg kan vinden waarop u rijdt.</string>
     <string name="stanje_podesavanja">Instellingen</string>
+    <string name="lokacija_pravac">richting %s</string>
 </resources>

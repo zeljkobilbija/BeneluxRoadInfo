@@ -96,4 +96,5 @@
     <string name="voznja_bez_dozvole_poruka">Režim jízdy potřebuje vaši přesnou polohu. Otevřete Nastavení → Oprávnění → Poloha, zvolte „Povolit jen při používání aplikace“ a zapněte „Používat přesnou polohu“.</string>
     <string name="voznja_gps_iskljucen_poruka">Poloha je v telefonu vypnutá. Zapněte ji, aby režim jízdy našel dálnici, na které jste.</string>
     <string name="stanje_podesavanja">Nastavení</string>
+    <string name="lokacija_pravac">směr %s</string>
 </resources>

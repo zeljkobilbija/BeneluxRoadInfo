@@ -96,4 +96,5 @@
     <string name="voznja_bez_dozvole_poruka">O modo de condução precisa da sua localização exata. Abra Definições → Autorizações → Localização, escolha «Permitir apenas durante a utilização da app» e ative «Utilizar localização exata».</string>
     <string name="voznja_gps_iskljucen_poruka">A localização está desativada no telemóvel. Ative-a para que o modo de condução encontre a autoestrada em que está.</string>
     <string name="stanje_podesavanja">Configurações</string>
+    <string name="lokacija_pravac">direção %s</string>
 </resources>

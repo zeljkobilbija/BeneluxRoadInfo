@@ -96,4 +96,5 @@
     <string name="voznja_bez_dozvole_poruka">Tryb jazdy potrzebuje dokładnej lokalizacji. Otwórz Ustawienia → Uprawnienia → Lokalizacja, wybierz „Zezwalaj tylko podczas używania aplikacji” i włącz „Używaj dokładnej lokalizacji”.</string>
     <string name="voznja_gps_iskljucen_poruka">Lokalizacja w telefonie jest wyłączona. Włącz ją, aby tryb jazdy mógł znaleźć autostradę, na której jesteś.</string>
     <string name="stanje_podesavanja">Ustawienia</string>
+    <string name="lokacija_pravac">kierunek %s</string>
 </resources>

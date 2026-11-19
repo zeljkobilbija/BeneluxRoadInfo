@@ -96,4 +96,5 @@
     <string name="voznja_bez_dozvole_poruka">Modul de condus are nevoie de locația dvs. exactă. Deschideți Setări → Permisiuni → Locație, alegeți „Permite doar în timpul utilizării aplicației” și activați „Folosește locația exactă”.</string>
     <string name="voznja_gps_iskljucen_poruka">Locația este dezactivată pe telefon. Activați-o pentru ca modul de condus să găsească autostrada pe care vă aflați.</string>
     <string name="stanje_podesavanja">Setări</string>
+    <string name="lokacija_pravac">direcția %s</string>
 </resources>

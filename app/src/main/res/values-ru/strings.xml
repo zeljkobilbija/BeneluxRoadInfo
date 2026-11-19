@@ -96,4 +96,5 @@
     <string name="voznja_bez_dozvole_poruka">Режиму поездки нужно ваше точное местоположение. Откройте Настройки → Разрешения → Местоположение, выберите «Разрешить только во время использования» и включите «Точное местоположение».</string>
     <string name="voznja_gps_iskljucen_poruka">Геолокация на телефоне выключена. Включите её, чтобы режим поездки мог найти автобан, по которому вы едете.</string>
     <string name="stanje_podesavanja">Настройки</string>
+    <string name="lokacija_pravac">направление %s</string>
 </resources>

@@ -96,4 +96,5 @@
     <string name="voznja_bez_dozvole_poruka">Za režim Vožnja potrebna je vaša precizna lokacija. Otvorite Podešavanja → Dozvole → Lokacija, izaberite „Dozvoli samo tokom korišćenja aplikacije“ i uključite „Koristi preciznu lokaciju“.</string>
     <string name="voznja_gps_iskljucen_poruka">Lokacija je na telefonu isključena. Uključite je da bi Vožnja mogla da nađe autoput na kom ste.</string>
     <string name="stanje_podesavanja">Podešavanja</string>
+    <string name="lokacija_pravac">pravac %s</string>
 </resources>
