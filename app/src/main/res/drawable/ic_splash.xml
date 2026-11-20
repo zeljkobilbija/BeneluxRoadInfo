@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Simbol autoputa: nadvožnjak iznad dve kolovozne trake -->
+<!-- Znak autoputa (NL, BE, LU): plavi pravougaonik sa belim okvirom,
+     u sredini beli put sa nadvožnjakom. Sve unutar kruga prečnika 72 (maska splash ekrana). -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="288dp"
     android:height="288dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <path android:fillColor="#FFFFFF" android:pathData="M27,34h54v7h-54z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M31,41h5v10h-5z M72,41h5v10h-5z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M30,84 L48,84 L51.5,50 L46.5,50 Z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M60,84 L78,84 L61.5,50 L56.5,50 Z" />
+    <!-- tabla -->
+    <path android:fillColor="#1E4FA0"
+        android:pathData="M33,28h42a5,5 0 0 1 5,5v42a5,5 0 0 1 -5,5h-42a5,5 0 0 1 -5,-5v-42a5,5 0 0 1 5,-5z" />
+    <!-- beli okvir -->
+    <path android:fillColor="#00000000" android:strokeColor="#FFFFFF" android:strokeWidth="2"
+        android:pathData="M34,31.5h40a2.5,2.5 0 0 1 2.5,2.5v40a2.5,2.5 0 0 1 -2.5,2.5h-40a2.5,2.5 0 0 1 -2.5,-2.5v-40a2.5,2.5 0 0 1 2.5,-2.5z" />
+    <!-- put sa nadvožnjakom -->
+    <group android:pivotX="54" android:pivotY="59" android:scaleX="0.6" android:scaleY="0.6"
+        android:translateY="-5">
+        <path android:fillColor="#FFFFFF" android:pathData="M27,34h54v7h-54z" />
+        <path android:fillColor="#FFFFFF" android:pathData="M31,41h5v10h-5z M72,41h5v10h-5z" />
+        <path android:fillColor="#FFFFFF" android:pathData="M30,84 L48,84 L51.5,50 L46.5,50 Z" />
+        <path android:fillColor="#FFFFFF" android:pathData="M60,84 L78,84 L61.5,50 L56.5,50 Z" />
+    </group>
 </vector>
