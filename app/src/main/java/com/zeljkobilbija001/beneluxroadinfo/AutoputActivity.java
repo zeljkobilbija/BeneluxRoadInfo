@@ -159,6 +159,14 @@ public class AutoputActivity extends AppCompatActivity {
         filteriRed = findViewById(R.id.filteri);
 
         lista = findViewById(R.id.lista);
+        lista.addOnScrollListener(new androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@androidx.annotation.NonNull androidx.recyclerview.widget.RecyclerView rv, int stanje) {
+                if (stanje == androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_DRAGGING) {
+                    rucnoDo = System.currentTimeMillis() + 20_000L;
+                }
+            }
+        });
         lista.setLayoutManager(new LinearLayoutManager(this));
         adapter = new StavkaAdapter(this::otvoriDetalje);
         lista.setAdapter(adapter);
@@ -289,6 +297,25 @@ public class AutoputActivity extends AppCompatActivity {
                 : getString(R.string.lokacija_vi_ste_ovde) + " · "
                 + getString(R.string.lokacija_pravac, mojSmer == '+' ? d.plus : d.minus); // "Vi ste ovde · pravac X"
         adapter.postaviOvde(i, d.kmZaPrikaz(mojKm), tekst, mojSmer != '?', mojSmer != '?' && mojSmer != smer);
+        pratiListu();
+    }
+
+    /** Do kada vozač sam gleda listu (posle pomeranja prstom praćenje stoji 20 s). */
+    private long rucnoDo;
+
+    /**
+     * Vožnja na ovom autoputu: red „Vi ste ovde“ uvek na ekranu, sa sledeća dva mesta ispred (u obrnutoj
+     * listi su iznad strelice, inače ispod nje).
+     */
+    private void pratiListu() {
+        if (!VoznjaService.radi || System.currentTimeMillis() < rucnoDo) return;
+        int poz = adapter.pozicijaOvde();
+        if (poz < 0) return;
+        boolean ispredIznad = mojSmer != '?' && mojSmer != smer;
+        int cilj = ispredIznad ? Math.max(0, poz - 2) : poz;
+        LinearLayoutManager lm = (LinearLayoutManager) lista.getLayoutManager();
+        if (lm == null || lm.findFirstVisibleItemPosition() == cilj) return;
+        lm.scrollToPositionWithOffset(cilj, Izgled.dp(this, 8));
     }
 
     @Override
