@@ -109,4 +109,7 @@
     <string name="glas_km_naziv">kilometer</string>
     <string name="glas_mi_naziv">milja</string>
     <string name="glas_dugme">Glasovna sporočila</string>
+    <string name="glas_izbor_polozaj">Avtocesta, kilometer in smer</string>
+    <string name="glas_izbor_odmorista">Počivališča in črpalke pred vami</string>
+    <string name="glas_izbor_saobracaj">Prometna opozorila</string>
 </resources>

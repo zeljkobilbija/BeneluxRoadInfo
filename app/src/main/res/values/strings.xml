@@ -110,4 +110,7 @@
     <string name="glas_km_naziv">kilometre</string>
     <string name="glas_mi_naziv">mile</string>
     <string name="glas_dugme">Voice messages</string>
+    <string name="glas_izbor_polozaj">Motorway, kilometre and direction</string>
+    <string name="glas_izbor_odmorista">Service areas and fuel ahead</string>
+    <string name="glas_izbor_saobracaj">Traffic warnings</string>
 </resources>

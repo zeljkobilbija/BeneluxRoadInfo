@@ -109,4 +109,7 @@
     <string name="glas_km_naziv">quilómetro</string>
     <string name="glas_mi_naziv">milha</string>
     <string name="glas_dugme">Mensagens de voz</string>
+    <string name="glas_izbor_polozaj">Autoestrada, quilómetro e direção</string>
+    <string name="glas_izbor_odmorista">Áreas de serviço e bombas à frente</string>
+    <string name="glas_izbor_saobracaj">Avisos de trânsito</string>
 </resources>

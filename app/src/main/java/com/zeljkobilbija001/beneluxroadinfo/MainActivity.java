@@ -97,6 +97,11 @@ public class MainActivity extends AppCompatActivity {
                 Glas.postavi(this, da);
                 glas.setText(da ? "🔊" : "🔇");
             });
+            // dugi pritisak: izbor šta glas javlja
+            glas.setOnLongClickListener(v -> {
+                Glas.izbor(v.getContext());
+                return true;
+            });
         }
         voznjaDugme.setOnClickListener(v -> {
             if (VoznjaService.radi) VoznjaService.zaustavi(this);

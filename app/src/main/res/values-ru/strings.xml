@@ -109,4 +109,7 @@
     <string name="glas_km_naziv">километр</string>
     <string name="glas_mi_naziv">миля</string>
     <string name="glas_dugme">Голосовые сообщения</string>
+    <string name="glas_izbor_polozaj">Автомагистраль, километр и направление</string>
+    <string name="glas_izbor_odmorista">Зоны отдыха и АЗС впереди</string>
+    <string name="glas_izbor_saobracaj">Предупреждения о движении</string>
 </resources>

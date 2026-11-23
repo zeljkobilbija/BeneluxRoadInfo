@@ -109,4 +109,7 @@
     <string name="glas_km_naziv">kilometr</string>
     <string name="glas_mi_naziv">mila</string>
     <string name="glas_dugme">Komunikaty głosowe</string>
+    <string name="glas_izbor_polozaj">Autostrada, kilometr i kierunek</string>
+    <string name="glas_izbor_odmorista">MOP-y i stacje przed tobą</string>
+    <string name="glas_izbor_saobracaj">Ostrzeżenia drogowe</string>
 </resources>

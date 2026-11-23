@@ -109,4 +109,7 @@
     <string name="glas_km_naziv">kilometer</string>
     <string name="glas_mi_naziv">mijl</string>
     <string name="glas_dugme">Spraakberichten</string>
+    <string name="glas_izbor_polozaj">Snelweg, kilometer en richting</string>
+    <string name="glas_izbor_odmorista">Verzorgingsplaatsen en tankstations vooruit</string>
+    <string name="glas_izbor_saobracaj">Verkeerswaarschuwingen</string>
 </resources>

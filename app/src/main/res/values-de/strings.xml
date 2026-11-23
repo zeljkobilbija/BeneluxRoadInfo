@@ -109,4 +109,7 @@
     <string name="glas_km_naziv">Kilometer</string>
     <string name="glas_mi_naziv">Meile</string>
     <string name="glas_dugme">Sprachansagen</string>
+    <string name="glas_izbor_polozaj">Autobahn, Kilometer und Richtung</string>
+    <string name="glas_izbor_odmorista">Raststätten und Tankstellen voraus</string>
+    <string name="glas_izbor_saobracaj">Verkehrswarnungen</string>
 </resources>

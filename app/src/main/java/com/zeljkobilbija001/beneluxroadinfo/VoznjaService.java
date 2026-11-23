@@ -369,7 +369,7 @@ public class VoznjaService extends Service {
             String oznaka = a != null ? a.oznaka() : autoput;
             String kmT = String.valueOf(Math.round(p.deonice.get(deonica).kmZaPrikaz(km)));
             g.reci(getString(R.string.glas_polozaj, oznaka, kmT,
-                    getString(milje() ? R.string.glas_mi_naziv : R.string.glas_km_naziv), kuda));
+                    getString(milje() ? R.string.glas_mi_naziv : R.string.glas_km_naziv), kuda), "polozaj");
         }
         double znak = smer == '+' ? 1 : -1;
         for (Stavka st : p.stavke) {
@@ -381,7 +381,7 @@ public class VoznjaService extends Service {
             String t = getString(R.string.glas_odmoriste, (int) Math.max(1, Math.round(d)),
                     getString(milje() ? R.string.glas_mi_jed : R.string.glas_km_jed), ime);
             if (!st.gorivo.isEmpty()) t += " " + getString(R.string.glas_gorivo, String.join(", ", st.gorivo));
-            g.reci(t);
+            g.reci(t, "odmorista");
         }
     }
 

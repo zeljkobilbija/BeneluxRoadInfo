@@ -109,4 +109,7 @@
     <string name="glas_km_naziv">kilometrul</string>
     <string name="glas_mi_naziv">mila</string>
     <string name="glas_dugme">Mesaje vocale</string>
+    <string name="glas_izbor_polozaj">Autostradă, kilometru și direcție</string>
+    <string name="glas_izbor_odmorista">Zone de servicii și benzinării înainte</string>
+    <string name="glas_izbor_saobracaj">Avertizări de trafic</string>
 </resources>

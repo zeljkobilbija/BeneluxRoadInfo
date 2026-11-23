@@ -109,4 +109,7 @@
     <string name="glas_km_naziv">chilometro</string>
     <string name="glas_mi_naziv">miglio</string>
     <string name="glas_dugme">Messaggi vocali</string>
+    <string name="glas_izbor_polozaj">Autostrada, chilometro e direzione</string>
+    <string name="glas_izbor_odmorista">Aree di servizio e distributori davanti</string>
+    <string name="glas_izbor_saobracaj">Avvisi sul traffico</string>
 </resources>

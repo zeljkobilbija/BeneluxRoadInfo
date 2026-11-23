@@ -40,6 +40,33 @@ public final class Glas {
         e.putBoolean(KLJUC, da).apply();
     }
 
+    /** Vrsta poruke: "polozaj", "odmorista", "saobracaj" (dugi pritisak na 🔊); podrazumevano sve. */
+    public static boolean vrsta(Context c, String vrsta) {
+        return c.getSharedPreferences(PODESAVANJA, Context.MODE_PRIVATE).getBoolean(vrsta, true);
+    }
+
+    public static void postaviVrstu(Context c, String vrsta, boolean da) {
+        c.getSharedPreferences(PODESAVANJA, Context.MODE_PRIVATE).edit().putBoolean(vrsta, da).apply();
+    }
+
+    /** Izgovori poruku date vrste, ako je ta vrsta uključena. */
+    public void reci(String tekst, String vrsta) {
+        if (vrsta(c, vrsta)) reci(tekst);
+    }
+
+    /** Prozor sa izborom šta glas javlja. */
+    public static void izbor(Context c) {
+        String[] k = {"polozaj", "odmorista", "saobracaj"};
+        String[] n = {c.getString(R.string.glas_izbor_polozaj), c.getString(R.string.glas_izbor_odmorista),
+                c.getString(R.string.glas_izbor_saobracaj)};
+        boolean[] da = {vrsta(c, k[0]), vrsta(c, k[1]), vrsta(c, k[2])};
+        new androidx.appcompat.app.AlertDialog.Builder(c)
+                .setTitle(R.string.glas_dugme)
+                .setMultiChoiceItems(n, da, (dlg, i, izabrano) -> postaviVrstu(c, k[i], izabrano))
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
+    }
+
     public Glas(Context c) {
         this.c = c.getApplicationContext();
         am = (AudioManager) this.c.getSystemService(Context.AUDIO_SERVICE);
