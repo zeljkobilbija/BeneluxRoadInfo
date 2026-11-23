@@ -97,4 +97,16 @@
     <string name="voznja_gps_iskljucen_poruka">Lokacija je na telefonu isključena. Uključite je da bi Vožnja mogla da nađe autoput na kom ste.</string>
     <string name="stanje_podesavanja">Podešavanja</string>
     <string name="lokacija_pravac">pravac %s</string>
+    <!-- Glasovne poruke u Vožnji -->
+    <string name="glas_start">Vožnja je pokrenuta. Uskoro ćete čuti na kom ste autoputu.</string>
+    <string name="glas_stop">Vožnja je zaustavljena.</string>
+    <string name="glas_polozaj">Nalazite se na autoputu %1$s, %3$s %2$s, pravac %4$s.</string>
+    <string name="glas_odmoriste">Za %1$d %2$s, odmorište: %3$s.</string>
+    <string name="glas_gorivo">Gorivo: %s.</string>
+    <string name="glas_saobracaj">Upozorenje: za %1$d %2$s, %3$s.</string>
+    <string name="glas_km_jed">kilometara</string>
+    <string name="glas_mi_jed">milja</string>
+    <string name="glas_km_naziv">kilometar</string>
+    <string name="glas_mi_naziv">milja</string>
+    <string name="glas_dugme">Glasovne poruke</string>
 </resources>

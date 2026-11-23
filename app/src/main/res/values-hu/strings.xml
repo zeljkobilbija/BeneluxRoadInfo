@@ -97,4 +97,16 @@
     <string name="voznja_gps_iskljucen_poruka">A helymeghatározás ki van kapcsolva a telefonon. Kapcsolja be, hogy a vezetési mód megtalálja az autópályát.</string>
     <string name="stanje_podesavanja">Beállítások</string>
     <string name="lokacija_pravac">%s irányába</string>
+    <!-- Glasovne poruke u Vožnji -->
+    <string name="glas_start">Vezetés mód elindítva. Hamarosan hallja, melyik autópályán van.</string>
+    <string name="glas_stop">Vezetés mód leállítva.</string>
+    <string name="glas_polozaj">Ön a(z) %1$s autópályán van, %3$s: %2$s, irány: %4$s.</string>
+    <string name="glas_odmoriste">%1$d %2$s múlva pihenőhely: %3$s.</string>
+    <string name="glas_gorivo">Üzemanyag: %s.</string>
+    <string name="glas_saobracaj">Forgalmi figyelmeztetés: %1$d %2$s múlva %3$s.</string>
+    <string name="glas_km_jed">kilométer</string>
+    <string name="glas_mi_jed">mérföld</string>
+    <string name="glas_km_naziv">kilométer</string>
+    <string name="glas_mi_naziv">mérföld</string>
+    <string name="glas_dugme">Hangüzenetek</string>
 </resources>

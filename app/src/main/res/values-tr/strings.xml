@@ -97,4 +97,16 @@
     <string name="voznja_gps_iskljucen_poruka">Telefonunuzda konum kapalı. Sürüş modunun bulunduğunuz otoyolu bulabilmesi için açın.</string>
     <string name="stanje_podesavanja">Ayarlar</string>
     <string name="lokacija_pravac">%s yönü</string>
+    <!-- Glasovne poruke u Vožnji -->
+    <string name="glas_start">Sürüş modu başlatıldı. Yakında hangi otoyolda olduğunuzu duyacaksınız.</string>
+    <string name="glas_stop">Sürüş modu durduruldu.</string>
+    <string name="glas_polozaj">%1$s otoyolundasınız, %3$s %2$s, yön %4$s.</string>
+    <string name="glas_odmoriste">%1$d %2$s sonra dinlenme tesisi: %3$s.</string>
+    <string name="glas_gorivo">Yakıt: %s.</string>
+    <string name="glas_saobracaj">Trafik uyarısı: %1$d %2$s sonra %3$s.</string>
+    <string name="glas_km_jed">kilometre</string>
+    <string name="glas_mi_jed">mil</string>
+    <string name="glas_km_naziv">kilometre</string>
+    <string name="glas_mi_naziv">mil</string>
+    <string name="glas_dugme">Sesli mesajlar</string>
 </resources>

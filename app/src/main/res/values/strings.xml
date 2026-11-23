@@ -98,4 +98,16 @@
     <string name="voznja_gps_iskljucen_poruka">Location is turned off on your phone. Turn it on so that driving mode can find the motorway you are on.</string>
     <string name="stanje_podesavanja">Settings</string>
     <string name="lokacija_pravac">direction %s</string>
+    <!-- Glasovne poruke u Vožnji -->
+    <string name="glas_start">Driving mode started. You will soon hear which motorway you are on.</string>
+    <string name="glas_stop">Driving mode stopped.</string>
+    <string name="glas_polozaj">You are on the %1$s, %3$s %2$s, towards %4$s.</string>
+    <string name="glas_odmoriste">In %1$d %2$s, service area: %3$s.</string>
+    <string name="glas_gorivo">Fuel: %s.</string>
+    <string name="glas_saobracaj">Traffic warning: in %1$d %2$s, %3$s.</string>
+    <string name="glas_km_jed">kilometres</string>
+    <string name="glas_mi_jed">miles</string>
+    <string name="glas_km_naziv">kilometre</string>
+    <string name="glas_mi_naziv">mile</string>
+    <string name="glas_dugme">Voice messages</string>
 </resources>

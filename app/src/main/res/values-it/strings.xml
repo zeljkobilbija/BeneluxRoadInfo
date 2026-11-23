@@ -97,4 +97,16 @@
     <string name="voznja_gps_iskljucen_poruka">La posizione è disattivata sul telefono. Attivala perché la modalità guida possa trovare l\'autostrada in cui ti trovi.</string>
     <string name="stanje_podesavanja">Impostazioni</string>
     <string name="lokacija_pravac">direzione %s</string>
+    <!-- Glasovne poruke u Vožnji -->
+    <string name="glas_start">Modalità guida avviata. Tra poco saprai su quale autostrada ti trovi.</string>
+    <string name="glas_stop">Modalità guida fermata.</string>
+    <string name="glas_polozaj">Sei sulla %1$s, %3$s %2$s, direzione %4$s.</string>
+    <string name="glas_odmoriste">Tra %1$d %2$s, area di servizio: %3$s.</string>
+    <string name="glas_gorivo">Carburante: %s.</string>
+    <string name="glas_saobracaj">Attenzione traffico: tra %1$d %2$s, %3$s.</string>
+    <string name="glas_km_jed">chilometri</string>
+    <string name="glas_mi_jed">miglia</string>
+    <string name="glas_km_naziv">chilometro</string>
+    <string name="glas_mi_naziv">miglio</string>
+    <string name="glas_dugme">Messaggi vocali</string>
 </resources>

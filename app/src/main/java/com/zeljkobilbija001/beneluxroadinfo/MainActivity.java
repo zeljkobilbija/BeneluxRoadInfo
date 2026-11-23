@@ -88,6 +88,16 @@ public class MainActivity extends AppCompatActivity {
             findViewById(R.id.voznja).setOnClickListener(v ->
                     startActivity(new Intent(this, DnevnikActivity.class)));
         }
+        // 🔊/🔇: glasovne poruke u Vožnji (podrazumevano uključene)
+        android.widget.TextView glas = this.findViewById(R.id.voznjaGlas);
+        if (glas != null) {
+            glas.setText(Glas.ukljucen(this) ? "🔊" : "🔇");
+            glas.setOnClickListener(v -> {
+                boolean da = !Glas.ukljucen(this);
+                Glas.postavi(this, da);
+                glas.setText(da ? "🔊" : "🔇");
+            });
+        }
         voznjaDugme.setOnClickListener(v -> {
             if (VoznjaService.radi) VoznjaService.zaustavi(this);
             else pokreniVoznju();

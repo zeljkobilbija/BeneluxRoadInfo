@@ -151,6 +151,10 @@ public class VoznjaService extends Service {
     private double udaljenostOdTrenutnog = Double.NaN;
     private int vanKolovoza;
     private long pocetak, poslednjiPutNaAutoputu;
+    /** Glasovne poruke (start, autoput/km/pravac, odmorište ispred, saobraćaj, stop). */
+    private Glas glas;
+    private String najavljenAutoput;
+    private final java.util.Set<String> najavljeno = new java.util.HashSet<>();
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -177,6 +181,8 @@ public class VoznjaService extends Service {
         }
         radi = true;
         instanca = this;
+        glas = new Glas(this);
+        glas.reci(getString(R.string.glas_start));
         Dnevnik.upisi(this, "START režim vožnje");
         pocetak = poslednjiPutNaAutoputu = System.currentTimeMillis();
         trazi = true;
@@ -208,6 +214,11 @@ public class VoznjaService extends Service {
     @Override
     public void onDestroy() {
         glavna.removeCallbacksAndMessages(null);
+        if (glas != null) {
+            glas.reci(getString(R.string.glas_stop));
+            glas.ugasi();
+            glas = null;
+        }
         if (lokacije != null) lokacije.removeLocationUpdates(povratni);
         nit.shutdownNow();
         radi = false;
@@ -333,6 +344,45 @@ public class VoznjaService extends Service {
         }
 
         osveziObavestenje();
+        najave();
+    }
+
+    // ---------- Glasovne poruke ----------
+
+    private boolean milje() {
+        Podaci p = autoput != null ? Podaci.za(this, Autoputevi.poId(autoput)) : null;
+        return p != null && false;
+    }
+
+    /** Autoput, km i pravac kad se sazna (i pri prelasku na drugi autoput); odmorište ispred (do 5 km/mi). */
+    private void najave() {
+        Glas g = glas;
+        if (g == null) return;
+        if (autoput == null) { najavljenAutoput = null; return; }
+        String kuda = kuda();
+        if (kuda == null) return;
+        Podaci p = Podaci.za(this, Autoputevi.poId(autoput));
+        if (p == null || deonica >= p.deonice.size()) return;
+        if (!autoput.equals(najavljenAutoput)) {
+            najavljenAutoput = autoput;
+            Autoput a = Autoputevi.poId(autoput);
+            String oznaka = a != null ? a.oznaka() : autoput;
+            String kmT = String.valueOf(Math.round(p.deonice.get(deonica).kmZaPrikaz(km)));
+            g.reci(getString(R.string.glas_polozaj, oznaka, kmT,
+                    getString(milje() ? R.string.glas_mi_naziv : R.string.glas_km_naziv), kuda));
+        }
+        double znak = smer == '+' ? 1 : -1;
+        for (Stavka st : p.stavke) {
+            if (st.deonica != deonica || (st.tip != Stavka.ODMORISTE && st.tip != Stavka.AUTOHOF) || !st.uSmeru(smer)) continue;
+            double d = (st.km - km) * znak;
+            if (d < 0.3 || d > 5) continue;
+            if (!najavljeno.add("R" + autoput + ":" + st.deonica + ":" + st.km)) continue;
+            String ime = st.naziv.isEmpty() ? "" : st.naziv;
+            String t = getString(R.string.glas_odmoriste, (int) Math.max(1, Math.round(d)),
+                    getString(milje() ? R.string.glas_mi_jed : R.string.glas_km_jed), ime);
+            if (!st.gorivo.isEmpty()) t += " " + getString(R.string.glas_gorivo, String.join(", ", st.gorivo));
+            g.reci(t);
+        }
     }
 
     /** Brzina u m/s: iz GPS-a, a ako je nema, iz razdaljine od prethodne lokacije. */

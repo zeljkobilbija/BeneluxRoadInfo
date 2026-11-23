@@ -97,4 +97,16 @@
     <string name="voznja_gps_iskljucen_poruka">La localisation est désactivée sur le téléphone. Activez-la pour que le mode conduite trouve l\'autoroute où vous êtes.</string>
     <string name="stanje_podesavanja">Paramètres</string>
     <string name="lokacija_pravac">direction %s</string>
+    <!-- Glasovne poruke u Vožnji -->
+    <string name="glas_start">Mode conduite démarré. Vous saurez bientôt sur quelle autoroute vous êtes.</string>
+    <string name="glas_stop">Mode conduite arrêté.</string>
+    <string name="glas_polozaj">Vous êtes sur l\'autoroute %1$s, %3$s %2$s, direction %4$s.</string>
+    <string name="glas_odmoriste">Dans %1$d %2$s, aire de service : %3$s.</string>
+    <string name="glas_gorivo">Carburant : %s.</string>
+    <string name="glas_saobracaj">Alerte trafic : dans %1$d %2$s, %3$s.</string>
+    <string name="glas_km_jed">kilomètres</string>
+    <string name="glas_mi_jed">miles</string>
+    <string name="glas_km_naziv">kilomètre</string>
+    <string name="glas_mi_naziv">mile</string>
+    <string name="glas_dugme">Messages vocaux</string>
 </resources>

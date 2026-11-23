@@ -97,4 +97,16 @@
     <string name="voznja_gps_iskljucen_poruka">Locația este dezactivată pe telefon. Activați-o pentru ca modul de condus să găsească autostrada pe care vă aflați.</string>
     <string name="stanje_podesavanja">Setări</string>
     <string name="lokacija_pravac">direcția %s</string>
+    <!-- Glasovne poruke u Vožnji -->
+    <string name="glas_start">Modul de conducere pornit. În curând veți afla pe ce autostradă sunteți.</string>
+    <string name="glas_stop">Modul de conducere oprit.</string>
+    <string name="glas_polozaj">Sunteți pe autostrada %1$s, %3$s %2$s, direcția %4$s.</string>
+    <string name="glas_odmoriste">Peste %1$d %2$s, zonă de servicii: %3$s.</string>
+    <string name="glas_gorivo">Carburant: %s.</string>
+    <string name="glas_saobracaj">Avertizare trafic: peste %1$d %2$s, %3$s.</string>
+    <string name="glas_km_jed">kilometri</string>
+    <string name="glas_mi_jed">mile</string>
+    <string name="glas_km_naziv">kilometrul</string>
+    <string name="glas_mi_naziv">mila</string>
+    <string name="glas_dugme">Mesaje vocale</string>
 </resources>

@@ -97,4 +97,16 @@
     <string name="voznja_gps_iskljucen_poruka">Locatie staat uit op uw telefoon. Zet deze aan zodat de rijmodus de snelweg kan vinden waarop u rijdt.</string>
     <string name="stanje_podesavanja">Instellingen</string>
     <string name="lokacija_pravac">richting %s</string>
+    <!-- Glasovne poruke u Vožnji -->
+    <string name="glas_start">Rijmodus gestart. U hoort zo op welke snelweg u bent.</string>
+    <string name="glas_stop">Rijmodus gestopt.</string>
+    <string name="glas_polozaj">U bent op de %1$s, %3$s %2$s, richting %4$s.</string>
+    <string name="glas_odmoriste">Over %1$d %2$s, verzorgingsplaats: %3$s.</string>
+    <string name="glas_gorivo">Brandstof: %s.</string>
+    <string name="glas_saobracaj">Verkeerswaarschuwing: over %1$d %2$s, %3$s.</string>
+    <string name="glas_km_jed">kilometer</string>
+    <string name="glas_mi_jed">mijl</string>
+    <string name="glas_km_naziv">kilometer</string>
+    <string name="glas_mi_naziv">mijl</string>
+    <string name="glas_dugme">Spraakberichten</string>
 </resources>

@@ -97,4 +97,16 @@
     <string name="voznja_gps_iskljucen_poruka">Poloha je v telefonu vypnutá. Zapněte ji, aby režim jízdy našel dálnici, na které jste.</string>
     <string name="stanje_podesavanja">Nastavení</string>
     <string name="lokacija_pravac">směr %s</string>
+    <!-- Glasovne poruke u Vožnji -->
+    <string name="glas_start">Režim jízdy spuštěn. Brzy uslyšíte, na které dálnici jste.</string>
+    <string name="glas_stop">Režim jízdy zastaven.</string>
+    <string name="glas_polozaj">Jste na dálnici %1$s, %3$s %2$s, směr %4$s.</string>
+    <string name="glas_odmoriste">Za %1$d %2$s, odpočívka: %3$s.</string>
+    <string name="glas_gorivo">Palivo: %s.</string>
+    <string name="glas_saobracaj">Dopravní varování: za %1$d %2$s, %3$s.</string>
+    <string name="glas_km_jed">kilometrů</string>
+    <string name="glas_mi_jed">mil</string>
+    <string name="glas_km_naziv">kilometr</string>
+    <string name="glas_mi_naziv">míle</string>
+    <string name="glas_dugme">Hlasové zprávy</string>
 </resources>

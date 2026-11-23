@@ -97,4 +97,16 @@
     <string name="voznja_gps_iskljucen_poruka">Lokacija je na telefonu izklopljena. Vklopite jo, da bo vožnja lahko našla avtocesto, na kateri ste.</string>
     <string name="stanje_podesavanja">Nastavitve</string>
     <string name="lokacija_pravac">smer %s</string>
+    <!-- Glasovne poruke u Vožnji -->
+    <string name="glas_start">Vožnja je zagnana. Kmalu boste slišali, na kateri avtocesti ste.</string>
+    <string name="glas_stop">Vožnja je ustavljena.</string>
+    <string name="glas_polozaj">Ste na avtocesti %1$s, %3$s %2$s, smer %4$s.</string>
+    <string name="glas_odmoriste">Čez %1$d %2$s, počivališče: %3$s.</string>
+    <string name="glas_gorivo">Gorivo: %s.</string>
+    <string name="glas_saobracaj">Opozorilo: čez %1$d %2$s, %3$s.</string>
+    <string name="glas_km_jed">kilometrov</string>
+    <string name="glas_mi_jed">milj</string>
+    <string name="glas_km_naziv">kilometer</string>
+    <string name="glas_mi_naziv">milja</string>
+    <string name="glas_dugme">Glasovna sporočila</string>
 </resources>

@@ -97,4 +97,16 @@
     <string name="voznja_gps_iskljucen_poruka">A localização está desativada no telemóvel. Ative-a para que o modo de condução encontre a autoestrada em que está.</string>
     <string name="stanje_podesavanja">Configurações</string>
     <string name="lokacija_pravac">direção %s</string>
+    <!-- Glasovne poruke u Vožnji -->
+    <string name="glas_start">Modo condução iniciado. Em breve saberá em que autoestrada está.</string>
+    <string name="glas_stop">Modo condução parado.</string>
+    <string name="glas_polozaj">Está na autoestrada %1$s, %3$s %2$s, direção %4$s.</string>
+    <string name="glas_odmoriste">Daqui a %1$d %2$s, área de serviço: %3$s.</string>
+    <string name="glas_gorivo">Combustível: %s.</string>
+    <string name="glas_saobracaj">Aviso de trânsito: daqui a %1$d %2$s, %3$s.</string>
+    <string name="glas_km_jed">quilómetros</string>
+    <string name="glas_mi_jed">milhas</string>
+    <string name="glas_km_naziv">quilómetro</string>
+    <string name="glas_mi_naziv">milha</string>
+    <string name="glas_dugme">Mensagens de voz</string>
 </resources>
