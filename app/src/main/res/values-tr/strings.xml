@@ -98,7 +98,7 @@
     <string name="stanje_podesavanja">Ayarlar</string>
     <string name="lokacija_pravac">%s yönü</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Sürüş modu başlatıldı. Yakında hangi otoyolda olduğunuzu duyacaksınız.</string>
+    <string name="glas_start">Sürüş modu başlatıldı. Yaklaşık 20 saniye içinde otoyoldaki konumunuzu belirleyeceğiz.</string>
     <string name="glas_stop">Sürüş modu durduruldu.</string>
     <string name="glas_polozaj">%1$s otoyolundasınız, %3$s %2$s, yön %4$s.</string>
     <string name="glas_odmoriste">%1$d %2$s sonra dinlenme tesisi: %3$s.</string>

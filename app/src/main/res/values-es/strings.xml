@@ -98,7 +98,7 @@
     <string name="stanje_podesavanja">Ajustes</string>
     <string name="lokacija_pravac">dirección %s</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Modo conducción iniciado. Pronto sabrá en qué autopista está.</string>
+    <string name="glas_start">Modo conducción iniciado. En unos 20 segundos determinaremos su posición en la autopista.</string>
     <string name="glas_stop">Modo conducción detenido.</string>
     <string name="glas_polozaj">Está en la autopista %1$s, %3$s %2$s, dirección %4$s.</string>
     <string name="glas_odmoriste">En %1$d %2$s, área de servicio: %3$s.</string>

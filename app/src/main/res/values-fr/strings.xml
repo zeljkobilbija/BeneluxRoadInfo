@@ -98,7 +98,7 @@
     <string name="stanje_podesavanja">Paramètres</string>
     <string name="lokacija_pravac">direction %s</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Mode conduite démarré. Vous saurez bientôt sur quelle autoroute vous êtes.</string>
+    <string name="glas_start">Mode conduite démarré. Dans environ 20 secondes, nous déterminerons votre position sur l\'autoroute.</string>
     <string name="glas_stop">Mode conduite arrêté.</string>
     <string name="glas_polozaj">Vous êtes sur l\'autoroute %1$s, %3$s %2$s, direction %4$s.</string>
     <string name="glas_odmoriste">Dans %1$d %2$s, aire de service : %3$s.</string>

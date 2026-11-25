@@ -98,7 +98,7 @@
     <string name="stanje_podesavanja">Setări</string>
     <string name="lokacija_pravac">direcția %s</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Modul de conducere pornit. În curând veți afla pe ce autostradă sunteți.</string>
+    <string name="glas_start">Modul de conducere pornit. În aproximativ 20 de secunde vă vom determina poziția pe autostradă.</string>
     <string name="glas_stop">Modul de conducere oprit.</string>
     <string name="glas_polozaj">Sunteți pe autostrada %1$s, %3$s %2$s, direcția %4$s.</string>
     <string name="glas_odmoriste">Peste %1$d %2$s, zonă de servicii: %3$s.</string>

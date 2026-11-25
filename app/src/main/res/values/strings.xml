@@ -99,7 +99,7 @@
     <string name="stanje_podesavanja">Settings</string>
     <string name="lokacija_pravac">direction %s</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Driving mode started. You will soon hear which motorway you are on.</string>
+    <string name="glas_start">Driving mode started. In about 20 seconds we will determine your position on the motorway.</string>
     <string name="glas_stop">Driving mode stopped.</string>
     <string name="glas_polozaj">You are on the %1$s, %3$s %2$s, towards %4$s.</string>
     <string name="glas_odmoriste">In %1$d %2$s, service area: %3$s.</string>

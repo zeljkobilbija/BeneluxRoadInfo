@@ -98,7 +98,7 @@
     <string name="stanje_podesavanja">Podešavanja</string>
     <string name="lokacija_pravac">pravac %s</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Vožnja je pokrenuta. Uskoro ćete čuti na kom ste autoputu.</string>
+    <string name="glas_start">Vožnja je pokrenuta. Za dvadesetak sekundi određujemo vaš položaj na autoputu.</string>
     <string name="glas_stop">Vožnja je zaustavljena.</string>
     <string name="glas_polozaj">Nalazite se na autoputu %1$s, %3$s %2$s, pravac %4$s.</string>
     <string name="glas_odmoriste">Za %1$d %2$s, odmorište: %3$s.</string>

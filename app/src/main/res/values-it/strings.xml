@@ -98,7 +98,7 @@
     <string name="stanje_podesavanja">Impostazioni</string>
     <string name="lokacija_pravac">direzione %s</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Modalità guida avviata. Tra poco saprai su quale autostrada ti trovi.</string>
+    <string name="glas_start">Modalità guida avviata. Tra circa 20 secondi determineremo la tua posizione in autostrada.</string>
     <string name="glas_stop">Modalità guida fermata.</string>
     <string name="glas_polozaj">Sei sulla %1$s, %3$s %2$s, direzione %4$s.</string>
     <string name="glas_odmoriste">Tra %1$d %2$s, area di servizio: %3$s.</string>

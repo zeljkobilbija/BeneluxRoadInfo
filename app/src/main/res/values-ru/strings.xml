@@ -98,7 +98,7 @@
     <string name="stanje_podesavanja">Настройки</string>
     <string name="lokacija_pravac">направление %s</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Режим вождения запущен. Скоро вы услышите, на какой автомагистрали находитесь.</string>
+    <string name="glas_start">Режим вождения запущен. Примерно через 20 секунд мы определим ваше положение на автомагистрали.</string>
     <string name="glas_stop">Режим вождения остановлен.</string>
     <string name="glas_polozaj">Вы на автомагистрали %1$s, %3$s %2$s, направление %4$s.</string>
     <string name="glas_odmoriste">Через %1$d %2$s, зона отдыха: %3$s.</string>

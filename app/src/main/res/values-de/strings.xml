@@ -98,7 +98,7 @@
     <string name="stanje_podesavanja">Einstellungen</string>
     <string name="lokacija_pravac">Richtung %s</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Fahrmodus gestartet. Gleich hören Sie, auf welcher Autobahn Sie sind.</string>
+    <string name="glas_start">Fahrmodus gestartet. In etwa 20 Sekunden bestimmen wir Ihre Position auf der Autobahn.</string>
     <string name="glas_stop">Fahrmodus beendet.</string>
     <string name="glas_polozaj">Sie sind auf der %1$s, %3$s %2$s, Richtung %4$s.</string>
     <string name="glas_odmoriste">In %1$d %2$s, Raststätte: %3$s.</string>

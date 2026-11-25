@@ -98,7 +98,7 @@
     <string name="stanje_podesavanja">Ustawienia</string>
     <string name="lokacija_pravac">kierunek %s</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Tryb jazdy uruchomiony. Wkrótce usłyszysz, na której autostradzie jesteś.</string>
+    <string name="glas_start">Tryb jazdy uruchomiony. Za około 20 sekund ustalimy twoją pozycję na autostradzie.</string>
     <string name="glas_stop">Tryb jazdy zatrzymany.</string>
     <string name="glas_polozaj">Jesteś na autostradzie %1$s, %3$s %2$s, kierunek %4$s.</string>
     <string name="glas_odmoriste">Za %1$d %2$s, MOP: %3$s.</string>

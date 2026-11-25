@@ -98,7 +98,7 @@
     <string name="stanje_podesavanja">Nastavení</string>
     <string name="lokacija_pravac">směr %s</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Režim jízdy spuštěn. Brzy uslyšíte, na které dálnici jste.</string>
+    <string name="glas_start">Režim jízdy spuštěn. Asi za 20 sekund určíme vaši polohu na dálnici.</string>
     <string name="glas_stop">Režim jízdy zastaven.</string>
     <string name="glas_polozaj">Jste na dálnici %1$s, %3$s %2$s, směr %4$s.</string>
     <string name="glas_odmoriste">Za %1$d %2$s, odpočívka: %3$s.</string>

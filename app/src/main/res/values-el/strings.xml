@@ -98,7 +98,7 @@
     <string name="stanje_podesavanja">Ρυθμίσεις</string>
     <string name="lokacija_pravac">κατεύθυνση %s</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Η λειτουργία οδήγησης ξεκίνησε. Σύντομα θα ακούσετε σε ποιον αυτοκινητόδρομο βρίσκεστε.</string>
+    <string name="glas_start">Η λειτουργία οδήγησης ξεκίνησε. Σε περίπου 20 δευτερόλεπτα θα προσδιορίσουμε τη θέση σας στον αυτοκινητόδρομο.</string>
     <string name="glas_stop">Η λειτουργία οδήγησης σταμάτησε.</string>
     <string name="glas_polozaj">Βρίσκεστε στον αυτοκινητόδρομο %1$s, %3$s %2$s, κατεύθυνση %4$s.</string>
     <string name="glas_odmoriste">Σε %1$d %2$s, σταθμός εξυπηρέτησης: %3$s.</string>

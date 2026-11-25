@@ -98,7 +98,7 @@
     <string name="stanje_podesavanja">Beállítások</string>
     <string name="lokacija_pravac">%s irányába</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Vezetés mód elindítva. Hamarosan hallja, melyik autópályán van.</string>
+    <string name="glas_start">Vezetés mód elindítva. Körülbelül 20 másodperc múlva meghatározzuk a helyzetét az autópályán.</string>
     <string name="glas_stop">Vezetés mód leállítva.</string>
     <string name="glas_polozaj">Ön a(z) %1$s autópályán van, %3$s: %2$s, irány: %4$s.</string>
     <string name="glas_odmoriste">%1$d %2$s múlva pihenőhely: %3$s.</string>

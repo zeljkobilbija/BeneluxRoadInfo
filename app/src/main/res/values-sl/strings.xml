@@ -98,7 +98,7 @@
     <string name="stanje_podesavanja">Nastavitve</string>
     <string name="lokacija_pravac">smer %s</string>
     <!-- Glasovne poruke u Vožnji -->
-    <string name="glas_start">Vožnja je zagnana. Kmalu boste slišali, na kateri avtocesti ste.</string>
+    <string name="glas_start">Vožnja je zagnana. Čez približno 20 sekund bomo določili vaš položaj na avtocesti.</string>
     <string name="glas_stop">Vožnja je ustavljena.</string>
     <string name="glas_polozaj">Ste na avtocesti %1$s, %3$s %2$s, smer %4$s.</string>
     <string name="glas_odmoriste">Čez %1$d %2$s, počivališče: %3$s.</string>
