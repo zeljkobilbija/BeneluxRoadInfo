@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--
-      TODO: pre objave napravi aplikaciju u AdMob konzoli (BeneluxRoadInfo) i ovde upiši PRAVE ID-jeve.
-      Dok toga nema, i release verzija koristi Google-ove probne ID-jeve.
-    -->
-    <string name="admob_app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="admob_banner_id" translatable="false">ca-app-pub-3940256099942544/9214589741</string>
-    <!-- interstitial pri otvaranju autoputa: UPISATI pravi ID iz AdMob konzole (prazno = oglas se ne prikazuje) -->
-    <string name="admob_interstitial_id" translatable="false"></string>
+    <!-- Pravi AdMob ID-jevi (aplikacija „Benelux Road Info“ ~2914493741, napravljena 26.11.2026 kao nepovezana).
+         Debug verzija koristi Google-ove probne ID-jeve iz src/debug/res/values/admob.xml. -->
+    <string name="admob_app_id" translatable="false">ca-app-pub-7920431183682527~2914493741</string>
+    <string name="admob_banner_id" translatable="false">ca-app-pub-7920431183682527/8965604613</string>
+    <!-- interstitial pri otvaranju autoputa (od trećeg svako treće, najviše 1 u 3 min, nikad u Vožnji) -->
+    <string name="admob_interstitial_id" translatable="false">ca-app-pub-7920431183682527/3301506558</string>
 </resources>

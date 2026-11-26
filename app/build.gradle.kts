@@ -18,13 +18,29 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // Potpis za Google Play: ključ i lozinka iz C:/Users/porod/.gradle/gradle.properties (van projekta, ne ide na GitHub).
+    // Bez upisane lozinke release ostaje nepotpisan.
+    val potpisKljuc = providers.gradleProperty("POTPIS_BENELUXROADINFO").orNull
+    val potpisLozinka = providers.gradleProperty("POTPIS_LOZINKA").orNull
+    val potpis = potpisKljuc != null && !potpisLozinka.isNullOrEmpty() && file(potpisKljuc).exists()
+    signingConfigs {
+        if (potpis) {
+            create("release") {
+                storeFile = file(potpisKljuc!!)
+                storePassword = potpisLozinka
+                keyAlias = providers.gradleProperty("POTPIS_BENELUXROADINFO_ALIAS").orNull ?: "key0"
+                keyPassword = potpisLozinka
+            }
+        }
+    }
+
     buildTypes {
         release {
-            // R8 isključen: skraćivanje androidx.** izbacuje WorkDatabase_Impl (WorkManager iz AdMob-a,
-            // Room ga traži po imenu) → pad pri pokretanju release verzije (otkriveno u InterstateInfo 16.11.2026)
-            optimization {
-                enable = false
-            }
+            if (potpis) signingConfig = signingConfigs.getByName("release")
+            // R8 (skraćivanje i maskiranje) – Google traži maskiranje; mapping ide u .aab.
+            // Pravila u proguard-rules.pro čuvaju WorkDatabase_Impl (WorkManager iz AdMob-a; Room ga traži po imenu).
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {

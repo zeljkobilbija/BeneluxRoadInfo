@@ -1,0 +1,50 @@
+NASLOV:
+Benelux Road Info: snelwegen
+
+KRATAK OPIS:
+Afritten, verzorgingsplaatsen, brandstofprijzen, verkeer op NL-, BE-, LU-wegen.
+
+PUN OPIS:
+⚠️ Niet-officiële app: Benelux Road Info is een onafhankelijke app. Ze wordt niet uitgegeven door een overheid, wegbeheerder of snelwegexploitant en vertegenwoordigt geen overheidsinstantie.
+
+Onderweg in Nederland, België of Luxemburg en op zoek naar brandstof, koffie, een toilet of een rustplek? Benelux Road Info toont wat er voor u ligt op elke snelweg – afrit na afrit, gesorteerd op kilometer, in uw rijrichting.
+
+Kies een snelweg en uw richting en u ziet:
+• alle afritten en knooppunten met hun kilometer
+• verzorgingsplaatsen en parkeerplaatsen aan uw kant van de weg
+• tankstations met merklogo, restaurants en voorzieningen (toilet, douches, winkel, hotel)
+• gemiddelde brandstofprijzen per land (benzine, diesel, lpg, cng, elektrisch laden)
+• laadpalen en parkeerplaatsen voor vrachtwagens
+• telefoonnummer en website waar beschikbaar
+
+RIJMODUS
+Start de Rijmodus en de app herkent de snelweg, de kilometer en uw richting en toont de volgende afritten, verzorgingsplaatsen en tankstations voor u. Gesproken meldingen noemen de snelweg, de volgende verzorgingsplaats en het verkeer voor u. Wisselt u van snelweg, dan volgt de lijst vanzelf. Stoppen met één tik of door de app te sluiten.
+
+VERKEERSINFORMATIE
+Ongevallen, files, afsluitingen en werkzaamheden in Nederland (NDW), Vlaanderen (Verkeerscentrum Vlaanderen) en Luxemburg (CITA). Een verkeersbalk naast de lijst toont waar de meldingen liggen. Met meldingen aan wordt u gewaarschuwd voor de gekozen snelweg of de snelweg waarop u rijdt. Wallonië is nog niet opgenomen.
+
+DEKKING
+56 snelwegen: 30 in Nederland (A1, A2, A4, A12, A15, A16, A20, A27, A28, A58…), 20 in België (A1/E19, A3/E40, A4/E411, A12, A14/E17…) en 6 in Luxemburg (A1, A3, A4, A6, A7, A13).
+
+WERKT OFFLINE
+Alle snelweggegevens zitten in de app, dus de lijst werkt ook zonder bereik. Alleen verkeersinformatie en brandstofprijzen hebben een verbinding nodig.
+
+GEMAAKT VOOR AUTOMOBILISTEN
+• één tik start de navigatie naar de plek
+• deel een verzorgingsplaats of afrit
+• filters: tanken, eten, parkeren, afritten, laden
+• geen account, geen registratie; uw locatie blijft op uw telefoon
+• eenmalige aankoop om advertenties te verwijderen
+• 18 talen
+
+GEGEVENSBRONNEN
+Snelweggegevens © OpenStreetMap-bijdragers (ODbL). Verkeersinformatie: NDW (CC0), Verkeerscentrum Vlaanderen – Agentschap Wegen en Verkeer (CC BY), CITA – Administration des ponts et chaussées (CC0). Brandstofprijzen: CBS, Statbel, data.public.lu.
+
+OFFICIËLE BRONNEN (links)
+• Verkeer Nederland: NDW – https://www.ndw.nu – open data: https://opendata.ndw.nu
+• Verkeer Vlaanderen: Verkeerscentrum Vlaanderen – https://www.verkeerscentrum.be
+• Verkeer Luxemburg: CITA – https://www.cita.lu – open data: https://data.public.lu
+• Brandstofprijzen: CBS – https://www.cbs.nl · Statbel – https://statbel.fgov.be · https://data.public.lu
+• Snelweggegevens: OpenStreetMap – https://www.openstreetmap.org/copyright
+
+Onafhankelijke app, niet verbonden aan NDW, Rijkswaterstaat, Agentschap Wegen en Verkeer, CITA of een andere overheidsinstantie. Volg altijd de verkeersborden en verkeersregels; gebruik uw telefoon niet tijdens het rijden.

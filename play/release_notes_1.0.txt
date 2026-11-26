@@ -1,0 +1,12 @@
+<en-US>
+First release: exits, service areas, fuel stations and EV chargers on 56 motorways in the Netherlands, Belgium and Luxembourg, sorted by kilometre. Fuel prices, Driving mode with voice announcements, traffic news with notifications. Works offline.
+</en-US>
+<nl-NL>
+Eerste versie: afritten, verzorgingsplaatsen, tankstations en laadpalen op 56 snelwegen in Nederland, België en Luxemburg, gesorteerd op kilometer. Brandstofprijzen, Rijmodus met gesproken meldingen, verkeersinformatie met meldingen. Werkt offline.
+</nl-NL>
+<fr-FR>
+Première version : sorties, aires de service, stations et bornes de recharge sur 56 autoroutes aux Pays-Bas, en Belgique et au Luxembourg, classées par kilomètre. Prix des carburants, mode conduite avec annonces vocales, infos trafic avec notifications. Fonctionne hors ligne.
+</fr-FR>
+<de-DE>
+Erste Version: Ausfahrten, Raststätten, Tankstellen und Ladestationen auf 56 Autobahnen in den Niederlanden, Belgien und Luxemburg, nach Kilometer sortiert. Kraftstoffpreise, Fahrmodus mit Sprachansagen, Verkehrsmeldungen mit Benachrichtigungen. Funktioniert offline.
+</de-DE>

@@ -1,0 +1,50 @@
+NASLOV:
+Benelux Road Info : autoroutes
+
+KRATAK OPIS:
+Sorties, aires de service, prix des carburants et trafic aux Pays-Bas, BE et LU.
+
+PUN OPIS:
+⚠️ Application non officielle : Benelux Road Info est une application indépendante. Elle n'est publiée par aucune autorité, aucun gestionnaire routier ni aucun exploitant d'autoroute, et ne représente aucune entité publique.
+
+En route aux Pays-Bas, en Belgique ou au Luxembourg et besoin de carburant, d'un café, de toilettes ou d'une pause ? Benelux Road Info montre ce qui vous attend sur chaque autoroute – sortie par sortie, classé par kilomètre, dans votre sens de circulation.
+
+Choisissez une autoroute et votre sens, et vous obtenez :
+• toutes les sorties et échangeurs avec leur kilomètre
+• les aires de service et de repos de votre côté de la chaussée
+• les stations avec le logo de l'enseigne, restaurants et services (WC, douches, boutique, hôtel)
+• les prix moyens des carburants par pays (essence, diesel, GPL, GNC, recharge)
+• les bornes de recharge et les places pour camions
+• téléphone et site web quand ils sont disponibles
+
+MODE CONDUITE
+Lancez le Mode conduite : l'application reconnaît l'autoroute, le kilomètre et votre sens, et affiche les prochaines sorties, aires et stations devant vous. Des annonces vocales indiquent l'autoroute, la prochaine aire et le trafic à venir. Quand vous changez d'autoroute, la liste suit. Arrêt d'un simple toucher ou en fermant l'application.
+
+INFOS TRAFIC
+Accidents, bouchons, fermetures et chantiers aux Pays-Bas (NDW), en Flandre (Verkeerscentrum Vlaanderen) et au Luxembourg (CITA). Une ligne d'état du trafic à côté de la liste montre où se trouvent les événements. Avec les notifications activées, vous êtes prévenu pour l'autoroute choisie ou celle où vous roulez. La Wallonie n'est pas encore couverte.
+
+COUVERTURE
+56 autoroutes : 30 aux Pays-Bas (A1, A2, A4, A12, A15, A16, A20, A27, A28, A58…), 20 en Belgique (A1/E19, A3/E40, A4/E411, A12, A14/E17…) et 6 au Luxembourg (A1, A3, A4, A6, A7, A13).
+
+FONCTIONNE HORS LIGNE
+Les données autoroutières sont intégrées à l'application : la liste fonctionne même sans réseau. Seuls les infos trafic et les prix des carburants nécessitent une connexion.
+
+PENSÉE POUR LES CONDUCTEURS
+• un toucher lance l'itinéraire vers le lieu choisi
+• partagez une aire ou une sortie
+• filtres : carburant, repas, parkings, sorties, recharge
+• aucun compte, aucune inscription ; votre position reste sur le téléphone
+• achat unique pour supprimer la publicité
+• 18 langues
+
+SOURCES DES DONNÉES
+Données autoroutières © contributeurs OpenStreetMap (ODbL). Infos trafic : NDW (CC0), Verkeerscentrum Vlaanderen – Agentschap Wegen en Verkeer (CC BY), CITA – Administration des ponts et chaussées (CC0). Prix des carburants : CBS, Statbel, data.public.lu.
+
+SOURCES OFFICIELLES (liens)
+• Trafic Pays-Bas : NDW – https://www.ndw.nu – données ouvertes : https://opendata.ndw.nu
+• Trafic Flandre : Verkeerscentrum Vlaanderen – https://www.verkeerscentrum.be
+• Trafic Luxembourg : CITA – https://www.cita.lu – données ouvertes : https://data.public.lu
+• Prix des carburants : CBS – https://www.cbs.nl · Statbel – https://statbel.fgov.be · https://data.public.lu
+• Données autoroutières : OpenStreetMap – https://www.openstreetmap.org/copyright
+
+Application indépendante, sans lien avec NDW, Rijkswaterstaat, l'Agentschap Wegen en Verkeer, le CITA ni aucun organisme public. Respectez toujours la signalisation et le code de la route ; n'utilisez pas le téléphone en conduisant.

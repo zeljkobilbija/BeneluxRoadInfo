@@ -1,0 +1,50 @@
+NASLOV:
+Benelux Road Info: Autobahnen
+
+KRATAK OPIS:
+Ausfahrten, Raststätten, Spritpreise, Verkehr auf Autobahnen in NL, BE und LU.
+
+PUN OPIS:
+⚠️ Inoffizielle App: Benelux Road Info ist eine unabhängige App. Sie wird von keiner Behörde, keinem Straßenbetreiber und keinem Autobahnbetreiber herausgegeben und vertritt keine staatliche Stelle.
+
+Unterwegs in den Niederlanden, Belgien oder Luxemburg und auf der Suche nach Kraftstoff, Kaffee, WC oder einem Rastplatz? Benelux Road Info zeigt, was auf jeder Autobahn vor Ihnen liegt – Ausfahrt für Ausfahrt, nach Kilometer sortiert, in Ihrer Fahrtrichtung.
+
+Autobahn und Richtung wählen, und Sie sehen:
+• alle Ausfahrten und Autobahnkreuze mit Kilometer
+• Raststätten und Rastplätze auf Ihrer Fahrbahnseite
+• Tankstellen mit Markenlogo, Restaurants und Ausstattung (WC, Duschen, Shop, Hotel)
+• durchschnittliche Kraftstoffpreise je Land (Benzin, Diesel, LPG, CNG, Laden)
+• Ladestationen für E-Autos und Lkw-Parkplätze
+• Telefonnummer und Website, sofern vorhanden
+
+FAHRMODUS
+Im Fahrmodus erkennt die App Ihre Autobahn, den Kilometer und die Fahrtrichtung und zeigt die nächsten Ausfahrten, Raststätten und Tankstellen vor Ihnen. Sprachansagen nennen Autobahn, nächste Raststätte und Verkehr voraus. Beim Wechsel der Autobahn folgt die Liste automatisch. Beenden mit einem Tippen oder durch Schließen der App.
+
+VERKEHRSMELDUNGEN
+Unfälle, Staus, Sperrungen und Baustellen in den Niederlanden (NDW), Flandern (Verkeerscentrum Vlaanderen) und Luxemburg (CITA). Eine Verkehrsleiste neben der Liste zeigt, wo die Meldungen liegen. Mit Benachrichtigungen werden Sie für die gewählte oder befahrene Autobahn informiert. Wallonien ist noch nicht enthalten.
+
+ABDECKUNG
+56 Autobahnen: 30 in den Niederlanden (A1, A2, A4, A12, A15, A16, A20, A27, A28, A58…), 20 in Belgien (A1/E19, A3/E40, A4/E411, A12, A14/E17…) und 6 in Luxemburg (A1, A3, A4, A6, A7, A13).
+
+FUNKTIONIERT OFFLINE
+Alle Autobahndaten sind in der App gespeichert – die Liste funktioniert auch ohne Empfang. Nur Verkehrsmeldungen und Kraftstoffpreise brauchen eine Verbindung.
+
+FÜR AUTOFAHRER GEMACHT
+• ein Tippen startet die Navigation zum Ort
+• Raststätten und Ausfahrten teilen
+• Filter: Tanken, Essen, Parken, Ausfahrten, Laden
+• kein Konto, keine Anmeldung; Ihr Standort bleibt auf dem Telefon
+• einmaliger Kauf zum Entfernen der Werbung
+• 18 Sprachen
+
+DATENQUELLEN
+Autobahndaten © OpenStreetMap-Mitwirkende (ODbL). Verkehrsmeldungen: NDW (CC0), Verkeerscentrum Vlaanderen – Agentschap Wegen en Verkeer (CC BY), CITA – Administration des ponts et chaussées (CC0). Kraftstoffpreise: CBS, Statbel, data.public.lu.
+
+OFFIZIELLE QUELLEN (Links)
+• Verkehr Niederlande: NDW – https://www.ndw.nu – offene Daten: https://opendata.ndw.nu
+• Verkehr Flandern: Verkeerscentrum Vlaanderen – https://www.verkeerscentrum.be
+• Verkehr Luxemburg: CITA – https://www.cita.lu – offene Daten: https://data.public.lu
+• Kraftstoffpreise: CBS – https://www.cbs.nl · Statbel – https://statbel.fgov.be · https://data.public.lu
+• Autobahndaten: OpenStreetMap – https://www.openstreetmap.org/copyright
+
+Unabhängige App, nicht verbunden mit NDW, Rijkswaterstaat, Agentschap Wegen en Verkeer, CITA oder einer anderen Behörde. Beachten Sie stets Verkehrszeichen und Verkehrsregeln; bedienen Sie das Telefon nicht während der Fahrt.

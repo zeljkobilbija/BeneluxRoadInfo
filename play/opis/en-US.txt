@@ -1,0 +1,50 @@
+NASLOV:
+Benelux Road Info: Motorways
+
+KRATAK OPIS:
+Exits, service areas, fuel prices and traffic news on NL, BE and LU motorways.
+
+PUN OPIS:
+⚠️ Unofficial app: Benelux Road Info is an independent app. It is not published by any government, road authority or motorway operator, and does not represent any government entity.
+
+On the road in the Netherlands, Belgium or Luxembourg and need fuel, a coffee, a restroom or a place to rest? Benelux Road Info shows what's ahead on every motorway – exit by exit, sorted by kilometre, in your direction of travel.
+
+Pick a motorway and your direction, and you get:
+• every exit and interchange with its kilometre
+• service areas and rest areas on your side of the road
+• fuel stations with brand logos, restaurants and facilities (WC, showers, shop, hotel)
+• average fuel prices for each country (petrol, diesel, LPG, CNG, EV charging)
+• EV chargers and truck parking spaces
+• phone number and website where available
+
+DRIVING MODE
+Start Driving mode and the app finds the motorway you are on, the kilometre and your direction, and shows the next exits, service areas and fuel stations ahead. Voice announcements tell you the motorway, the next service area and traffic ahead. When you change motorway, the list follows you. Stop it with one tap or by closing the app.
+
+TRAFFIC NEWS
+Accidents, queues, closures and roadworks in the Netherlands (NDW), Flanders (Verkeerscentrum Vlaanderen) and Luxembourg (CITA). A traffic status line next to the list shows where the incidents are. With notifications on, you get alerts for the motorway you selected or the one you are driving on. Wallonia is not covered yet.
+
+COVERAGE
+56 motorways: 30 in the Netherlands (A1, A2, A4, A12, A15, A16, A20, A27, A28, A58…), 20 in Belgium (A1/E19, A3/E40, A4/E411, A12, A14/E17…) and 6 in Luxembourg (A1, A3, A4, A6, A7, A13).
+
+WORKS OFFLINE
+All motorway data is built into the app, so the list works without signal. Only traffic news and fuel prices need a connection.
+
+MADE FOR DRIVERS
+• one tap opens navigation to the place
+• share any service area or exit
+• filters: fuel, food, parking, exits, EV charging
+• no account, no sign-up; your location stays on your phone
+• one-time purchase to remove ads
+• 18 languages
+
+DATA SOURCES
+Motorway data © OpenStreetMap contributors (ODbL). Traffic news: NDW (CC0), Verkeerscentrum Vlaanderen – Agentschap Wegen en Verkeer (CC BY), CITA – Administration des ponts et chaussées (CC0). Fuel prices: CBS, Statbel, data.public.lu.
+
+OFFICIAL SOURCES (links)
+• Traffic Netherlands: NDW – https://www.ndw.nu – open data: https://opendata.ndw.nu
+• Traffic Flanders: Verkeerscentrum Vlaanderen – https://www.verkeerscentrum.be
+• Traffic Luxembourg: CITA – https://www.cita.lu – open data: https://data.public.lu
+• Fuel prices: CBS – https://www.cbs.nl · Statbel – https://statbel.fgov.be · https://data.public.lu
+• Motorway data: OpenStreetMap – https://www.openstreetmap.org/copyright
+
+Independent app, not affiliated with NDW, Rijkswaterstaat, Agentschap Wegen en Verkeer, CITA or any government agency. Always follow road signs and traffic rules; do not use your phone while driving.
