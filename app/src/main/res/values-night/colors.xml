@@ -8,6 +8,7 @@
     <color name="tekst_sekundarni">#B4BAC5</color>
     <color name="linija">#2C3038</color>
     <color name="sina">#3A404B</color>
+    <color name="vest_sina">#343943</color>
     <color name="ivica_filtera">#454B57</color>
     <color name="siva_stit">#5A6476</color>
 
@@ -25,4 +26,5 @@
     <color name="ovde_pozadina">#4A2A08</color>
     <color name="ovde">#FF8F1F</color>
     <color name="ovde_tekst">#FFC27A</color>
+    <color name="kasnjenje">#FF8A80</color>
 </resources>

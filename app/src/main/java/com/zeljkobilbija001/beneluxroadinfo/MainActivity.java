@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         dugmePrivatnosti.setOnClickListener(v ->
                 Reklame.prikaziPodesavanjaPrivatnosti(this, this::posleSaglasnosti));
         Reklame.prikupiSaglasnost(this, this::posleSaglasnosti);
+        Obavestenja.otvorena(this, savedInstanceState == null); // i posle potpunog zatvaranja: aktuelne vesti nazad
 
         voznjaDugme = findViewById(R.id.voznjaDugme);
         voznjaTrazi = findViewById(R.id.voznjaTrazi);

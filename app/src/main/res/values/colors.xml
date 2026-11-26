@@ -17,6 +17,7 @@
     <color name="tekst_sekundarni">#4B5566</color>
     <color name="linija">#E1E6EE</color>
     <color name="sina">#CBD3E0</color>
+    <color name="vest_sina">#DCE2EB</color>
     <color name="ivica_filtera">#C5CEDC</color>
 
     <!-- Oznake (čipovi) -->
@@ -38,4 +39,5 @@
     <color name="ovde_pozadina">#FFE6C7</color>
     <color name="ovde">#F57C00</color>
     <color name="ovde_tekst">#A84300</color>
+    <color name="kasnjenje">#C62828</color>
 </resources>

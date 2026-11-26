@@ -38,7 +38,8 @@ import java.util.concurrent.Executors;
 /**
  * Režim „Vožnja“: korisnik ga sam uključi; dok traje, u traci stoji stalno obaveštenje.
  * Iz lokacije se određuje autostrada, kilometar i smer (za red „Vi ste ovde“ i ekran autostrade).
- * Za Beneluks zasad nema izvora podataka o saobraćaju, pa nema ni poruka o udesima i kolonama.
+ * Na autoputevima Holandije, Flandrije i Luksemburga (posrednik /bnl) na svakih 15 minuta i čim se pređe
+ * na drugi javlja nove važne poruke ispred vozača.
  * Lokacija ostaje na telefonu.
  */
 public class VoznjaService extends Service {
@@ -49,6 +50,9 @@ public class VoznjaService extends Service {
     private static final long BEZ_AUTOPUTA_MS = 45 * 60_000L;   // toliko van autoputa → samo se gasi
     private static final long NAJDUZE_MS = 12 * 60 * 60_000L;
     private static final float MIN_BRZINA = 8f; // m/s (~30 km/h)
+    private static final long PROVERA_MS = Obavestenja.MINUTA * 60_000L;
+    private static final double NA_AUTOPUTU_KM = 2.5, OSTAJE_KM = 3.5;
+    private static final int ISPRED_KM = 100;
     /** Sporije od MIN_BRZINA (kolona, stajanje): autoput se prepoznaje samo ovoliko blizu kolovoza (km). */
     private static final double SPORO_KM = 0.03;
     /** Smer vožnje se zaključuje (i okretanje prepoznaje) posle ovoliko pređenih km po autoputu (ranije 0,5). */
@@ -75,6 +79,20 @@ public class VoznjaService extends Service {
     /** Poslednji red o lokaciji (za ekran Dnevnik). */
     public static volatile String uzivo = "";
     private static VoznjaService instanca;
+
+    /** Provera odmah (dugme na ekranu Dnevnik). */
+    public static boolean proveriSada() {
+        VoznjaService s = instanca;
+        if (s == null) return false;
+        s.nit.execute(() -> {
+            if (s.autoput == null || s.smer == '?') {
+                Dnevnik.upisi(s, "PROVERA: preskočeno, autoput ili smer još nisu poznati");
+            } else {
+                s.proveri();
+            }
+        });
+        return true;
+    }
 
     public static void pokreni(Context c) {
         ContextCompat.startForegroundService(c, new Intent(c, VoznjaService.class));
@@ -150,7 +168,16 @@ public class VoznjaService extends Service {
     private Location prethodna;
     private double udaljenostOdTrenutnog = Double.NaN;
     private int vanKolovoza;
-    private long pocetak, poslednjiPutNaAutoputu;
+    private long pocetak, poslednjiPutNaAutoputu, poslednjaProvera;
+    private String poslednjaProveraAutoput;
+
+    private final Runnable periodicno = new Runnable() {
+        @Override
+        public void run() {
+            nit.execute(VoznjaService.this::proveri);
+            glavna.postDelayed(this, PROVERA_MS);
+        }
+    };
     /** Glasovne poruke (start, autoput/km/pravac, odmorište ispred, saobraćaj, stop). */
     private Glas glas;
     private String najavljenAutoput;
@@ -200,6 +227,7 @@ public class VoznjaService extends Service {
             stopSelf();
             return START_NOT_STICKY;
         }
+        glavna.postDelayed(periodicno, PROVERA_MS);
         return START_NOT_STICKY;
     }
 
@@ -207,6 +235,7 @@ public class VoznjaService extends Service {
     @Override
     public void onTaskRemoved(Intent rootIntent) {
         Dnevnik.upisi(this, "APLIKACIJA ZATVORENA: Vožnja se gasi");
+        Obavestenja.ugasiSve(this);
         stopSelf();
         super.onTaskRemoved(rootIntent);
     }
@@ -306,6 +335,7 @@ public class VoznjaService extends Service {
             if (!t.autoput.equals(autoput) || t.grupa != grupa) {
                 autoput = t.autoput;
                 grupa = t.grupa;
+                Obavestenja.naAutoputu(this, autoput); // provera u pozadini prati autoput gde je vozač
                 smer = '?';
                 kmZaSmer = t.kmUkupno;
             } else if (Double.isNaN(kmZaSmer)) {
@@ -344,6 +374,10 @@ public class VoznjaService extends Service {
         }
 
         osveziObavestenje();
+        // novi autoput ili upravo saznat smer: odmah provera (samo gde postoji izvor)
+        boolean promena = autoput != null && smer != '?' && (!autoput.equals(stari) || stariSmer != smer);
+        // novi autoput: uvek (i ako je stari upravo proveren na petlji); isti autoput, novi smer: najviše jednom u minuti
+        if (promena && (!autoput.equals(poslednjaProveraAutoput) || sad - poslednjaProvera > 60_000L)) proveri();
         najave();
     }
 
@@ -447,6 +481,69 @@ public class VoznjaService extends Service {
             Runnable r = slusalac;
             if (r != null) r.run();
         });
+    }
+
+    // ---------- Provera poruka ispred vozača ----------
+
+    private void proveri() {
+        if (autoput == null || smer == '?' || !StanjeNaPutu.podrzan(autoput)) return; // izvor zasad samo za Nemačku
+        poslednjaProvera = System.currentTimeMillis();
+        poslednjaProveraAutoput = autoput;
+        String id = autoput;
+        List<Dogadjaj> svi;
+        try {
+            svi = StanjeNaPutu.preuzmi(this, id);
+        } catch (Exception e) {
+            Dnevnik.upisi(this, "PROVERA " + id + ": greška " + e.getMessage());
+            return;
+        }
+        Dnevnik.upisi(this, String.format(Locale.US, "PROVERA %s (vozač d%d km %.1f smer %s): %d poruka",
+                id, deonica, km, smer, svi.size()));
+        List<Dogadjaj> ispred = new ArrayList<>();
+        Map<String, Integer> udaljenosti = new HashMap<>();
+        for (Dogadjaj d : svi) {
+            int[] u = new int[1];
+            String razlog = ocena(d, id, u);
+            boolean vazna = d.zaObavestenje();
+            if (razlog == null && vazna) {
+                ispred.add(d);
+                udaljenosti.put(d.id, u[0]);
+            }
+            Dnevnik.upisi(this, "   " + (razlog == null ? (vazna ? "ISPRED " + u[0] + " km" : "ispred " + u[0] + " km, nevažno")
+                    : razlog + (vazna ? "" : ", nevažno")) + " · " + getString(DogadjajAdapter.naziv(d.vrsta))
+                    + (d.kasnjenjeMin > 0 ? " +" + d.kasnjenjeMin + "min" : "") + " · " + d.smer + " · " + d.deonica);
+        }
+        Obavestenja.obradi(this, id, svi, ispred, udaljenosti);
+    }
+
+    /**
+     * null ako je poruka ispred vozača u njegovom smeru (km do nje upisuje u {@code kmDo[0]}),
+     * inače razlog zašto se ne javlja.
+     */
+    private String ocena(Dogadjaj d, String id, int[] kmDo) {
+        if (!d.imaKoordinate()) return "bez koordinata";
+        Polozaj.Tacka p1 = Polozaj.nadji(this, d.lat, d.lon, id);
+        if (p1 == null || p1.udaljenost > OSTAJE_KM) return "ne leži na autoputu";
+        if (p1.grupa != grupa) return "nepovezan deo autoputa (d" + p1.deonica + ")";
+        double k1 = p1.kmUkupno, k2 = p1.kmUkupno;
+        if (!Double.isNaN(d.lat2) && !Double.isNaN(d.lon2)) {
+            Polozaj.Tacka p2 = Polozaj.nadji(this, d.lat2, d.lon2, id);
+            if (p2 != null && p2.grupa == grupa && p2.udaljenost <= OSTAJE_KM) {
+                k2 = p2.kmUkupno;
+                // poruka je za suprotan smer
+                if (Math.abs(k2 - k1) >= 0.3 && (k2 > k1) != (smer == '+')) {
+                    return String.format(Locale.US, "suprotan smer (km %.1f→%.1f)", k1, k2);
+                }
+            }
+        }
+        double znak = smer == '+' ? 1 : -1;
+        double odPocetka = (k1 - kmUkupno) * znak, doKraja = (k2 - kmUkupno) * znak;
+        if (Math.max(odPocetka, doKraja) < -1) return String.format(Locale.US, "iza (km %.1f)", k1);
+        if (Math.min(odPocetka, doKraja) > ISPRED_KM) {
+            return String.format(Locale.US, "predaleko (%.0f km)", Math.min(odPocetka, doKraja));
+        }
+        kmDo[0] = (int) Math.round(Math.max(0, Math.min(odPocetka, doKraja)));
+        return null;
     }
 
     // ---------- Stalno obaveštenje ----------

@@ -110,6 +110,7 @@ public class AutoputActivity extends AppCompatActivity {
                 mojSmer = '?';
                 postaviStrelicu();
             }
+            if (System.currentTimeMillis() - vestiVreme > VESTI_MS) ucitajVesti();
             glavna.postDelayed(this, 5_000);
         }
     };
@@ -122,6 +123,7 @@ public class AutoputActivity extends AppCompatActivity {
 
         Autoput a = Autoputevi.poId(getIntent().getStringExtra(EXTRA_ID));
         autoput = a;
+        if (a != null) Obavestenja.izabran(this, a.id); // obaveštenja prate i autoput izabran u aplikaciji
         podaci = Podaci.za(this, a);
         if (podaci == null || podaci.deonice.isEmpty()) {
             android.widget.Toast.makeText(this, R.string.greska_podaci, android.widget.Toast.LENGTH_SHORT).show();
@@ -168,10 +170,16 @@ public class AutoputActivity extends AppCompatActivity {
             }
         });
         lista.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new StavkaAdapter(this::otvoriDetalje);
+        adapter = new StavkaAdapter(this::otvoriDetalje, this::otvoriVest);
         lista.setAdapter(adapter);
 
         findViewById(R.id.nazad).setOnClickListener(v -> zatvori());
+        // stanje na putu (udesi, kolone, obaveštenja): zasad samo nemački autoputevi (Autobahn GmbH)
+        if (StanjeNaPutu.podrzan(autoput.id)) {
+            View stanje = findViewById(R.id.stanje);
+            stanje.setVisibility(View.VISIBLE);
+            stanje.setOnClickListener(v -> startActivity(StanjeActivity.namera(this, autoput.id)));
+        }
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
@@ -286,7 +294,7 @@ public class AutoputActivity extends AppCompatActivity {
      */
     private void postaviStrelicu() {
         if (mojaDeonica != deonica || prikazano.isEmpty()) {
-            if (adapter.pozicijaOvde() >= 0) adapter.postaviOvde(-1, 0, "", false, false);
+            if (adapter.pozicijaOvde() >= 0) adapter.postaviOvde(-1, 0, 0, "", false, false);
             return;
         }
         int i = 0;
@@ -296,7 +304,7 @@ public class AutoputActivity extends AppCompatActivity {
         String tekst = mojSmer == '?' ? getString(R.string.lokacija_vi_ste_ovde)
                 : getString(R.string.lokacija_vi_ste_ovde) + " · "
                 + getString(R.string.lokacija_pravac, mojSmer == '+' ? d.plus : d.minus); // "Vi ste ovde · pravac X"
-        adapter.postaviOvde(i, d.kmZaPrikaz(mojKm), tekst, mojSmer != '?', mojSmer != '?' && mojSmer != smer);
+        adapter.postaviOvde(i, d.kmZaPrikaz(mojKm), mojKm, tekst, mojSmer != '?', mojSmer != '?' && mojSmer != smer);
         pratiListu();
     }
 
@@ -321,7 +329,126 @@ public class AutoputActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        if (System.currentTimeMillis() - vestiVreme > VESTI_MS) ucitajVesti();
         glavna.postDelayed(pracenje, 5_000);
+    }
+
+    // ---------- Desna linija: stanje na putu ----------
+
+    /** Vesti se osvežavaju na 2 minuta dok je ekran otvoren. */
+    private static final long VESTI_MS = 120_000L;
+    /** Vest do ovoliko km od linije autoputa još leži na njemu (kao u Vožnji). */
+    private static final double VEST_NA_PUTU_KM = 3.5;
+    private long vestiVreme;
+    private boolean vestiUcitavanje;
+
+    /** Vest postavljena na autoput: deonica, km početka i kraja i smer ('?' = oba). */
+    private static final class VestNaPutu {
+        final Dogadjaj d;
+        final int deonica;
+        final double k1, k2;
+        final char smer;
+
+        VestNaPutu(Dogadjaj d, int deonica, double k1, double k2, char smer) {
+            this.d = d;
+            this.deonica = deonica;
+            this.k1 = k1;
+            this.k2 = k2;
+            this.smer = smer;
+        }
+    }
+
+    private List<VestNaPutu> vestiNaPutu = new ArrayList<>();
+
+    private void ucitajVesti() {
+        if (vestiUcitavanje) return;
+        vestiUcitavanje = true;
+        vestiVreme = System.currentTimeMillis();
+        Context app = getApplicationContext();
+        String id = autoput.id;
+        StanjeNaPutu.ucitaj(app, id, l -> {
+            if (l == null) {
+                vestiUcitavanje = false;
+                vestiVreme = System.currentTimeMillis() - VESTI_MS + 30_000L; // bez mreže: ponovo za 30 s
+                return;
+            }
+            new Thread(() -> {
+                List<VestNaPutu> r = new ArrayList<>();
+                for (Dogadjaj d : l) {
+                    if (!d.imaKoordinate()) continue;
+                    Polozaj.Tacka p1 = Polozaj.nadji(app, d.lat, d.lon, id);
+                    if (p1 == null || p1.udaljenost > VEST_NA_PUTU_KM) continue;
+                    double k2 = p1.km;
+                    char s = '?';
+                    if (!Double.isNaN(d.lat2) && !Double.isNaN(d.lon2)) {
+                        Polozaj.Tacka p2 = Polozaj.nadji(app, d.lat2, d.lon2, id);
+                        if (p2 != null && p2.deonica == p1.deonica && p2.udaljenost <= VEST_NA_PUTU_KM) {
+                            k2 = p2.km;
+                            // smer kao u Vožnji: poruka ide od početka ka kraju
+                            if (Math.abs(k2 - p1.km) >= 0.3) s = k2 > p1.km ? '+' : '-';
+                        }
+                    }
+                    r.add(new VestNaPutu(d, p1.deonica, p1.km, k2, s));
+                }
+                glavna.post(() -> {
+                    vestiUcitavanje = false;
+                    if (isFinishing() || isDestroyed()) return;
+                    vestiNaPutu = r;
+                    primeniVesti();
+                });
+            }).start();
+        });
+    }
+
+    /** Strana kolovoza čija mesta lista prikazuje (kad se zna smer vožnje, uvek vozačeva). */
+    private char strana() {
+        return mojaDeonica == deonica && (mojSmer == '+' || mojSmer == '-') ? mojSmer : smer;
+    }
+
+    /** Na desnu liniju samo vesti izabrane deonice i strane (vest bez smera: obe strane). */
+    private void primeniVesti() {
+        char strana = strana();
+        List<StavkaAdapter.Vest> l = new ArrayList<>();
+        for (VestNaPutu v : vestiNaPutu) {
+            if (v.deonica != deonica || (v.smer != '?' && v.smer != strana)) continue;
+            l.add(new StavkaAdapter.Vest(v.d, v.k1, v.k2));
+        }
+        adapter.postaviVesti(l);
+    }
+
+    /** Dodir na obojeni deo desne linije: cela vest u prozoru. */
+    private void otvoriVest(Dogadjaj d) {
+        StringBuilder t = new StringBuilder();
+        if (!d.deonica.isEmpty()) t.append(d.deonica).append('\n');
+        if (!d.smer.isEmpty()) t.append(d.smer).append('\n');
+        if (d.pocetak > 0) {
+            int f = android.text.format.DateUtils.FORMAT_SHOW_TIME;
+            if (!android.text.format.DateUtils.isToday(d.pocetak)) {
+                f |= android.text.format.DateUtils.FORMAT_SHOW_DATE | android.text.format.DateUtils.FORMAT_ABBREV_MONTH;
+            }
+            t.append(getString(R.string.stanje_od, android.text.format.DateUtils.formatDateTime(this, d.pocetak, f)));
+            if (d.kasnjenjeMin > 0) t.append(" · ");
+        }
+        if (d.kasnjenjeMin > 0) t.append(getString(R.string.stanje_kasnjenje, d.kasnjenjeMin));
+        if (!d.opis.isEmpty()) t.append("\n\n").append(d.opis);
+        com.google.android.material.dialog.MaterialAlertDialogBuilder b =
+                new com.google.android.material.dialog.MaterialAlertDialogBuilder(this)
+                        .setTitle(DogadjajAdapter.naziv(d.vrsta))
+                        .setMessage(t.toString().trim())
+                        .setPositiveButton(android.R.string.ok, null);
+        if (d.imaKoordinate()) {
+            b.setNeutralButton(R.string.stanje_na_mapi, (x, w) -> {
+                android.net.Uri u = android.net.Uri.parse(String.format(Locale.US,
+                        "geo:%.6f,%.6f?q=%.6f,%.6f", d.lat, d.lon, d.lat, d.lon));
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, u));
+                } catch (Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, android.net.Uri.parse(String.format(Locale.US,
+                            "https://www.google.com/maps/search/?api=1&query=%.6f,%.6f", d.lat, d.lon))));
+                }
+            });
+        }
+        b.show();
     }
 
     @Override
@@ -506,7 +633,7 @@ public class AutoputActivity extends AppCompatActivity {
 
         // Lista: samo tačke ove deonice sa strane kolovoza kojom se vozi. Kad se zna stvarni smer vožnje,
         // strana je uvek njegova, a dugme smera menja samo redosled (strelica nagore ili nadole).
-        char strana = mojaDeonica == deonica && (mojSmer == '+' || mojSmer == '-') ? mojSmer : smer;
+        char strana = strana();
         List<Stavka> rezultat = new ArrayList<>();
         int izlaza = 0, pumpi = 0;
         for (Stavka s : podaci.stavke) {
@@ -520,6 +647,7 @@ public class AutoputActivity extends AppCompatActivity {
         podnaslov.setText(getString(R.string.podnaslov_lista, izlaza, pumpi));
         adapter.postavi(rezultat);
         prikazano = rezultat;
+        primeniVesti();
         postaviStrelicu();
         prazno.setVisibility(rezultat.isEmpty() ? View.VISIBLE : View.GONE);
         if (naVrh) lista.scrollToPosition(0);

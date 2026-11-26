@@ -10,7 +10,7 @@
     android:focusable="true"
     android:orientation="horizontal"
     android:paddingStart="6dp"
-    android:paddingEnd="16dp">
+    android:paddingEnd="2dp">
 
     <LinearLayout
         android:layout_width="58dp"
@@ -128,4 +128,19 @@
             android:layout_height="1dp"
             android:background="@color/linija" />
     </LinearLayout>
+
+    <!-- Desna linija stanja na putu: siva, a deo pod vešću u boji vrste (dodir otvara vest) -->
+    <FrameLayout
+        android:id="@+id/vestTraka"
+        android:layout_width="22dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="6dp">
+
+        <View
+            android:id="@+id/vestLinija"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/vest_sina" />
+    </FrameLayout>
 </LinearLayout>

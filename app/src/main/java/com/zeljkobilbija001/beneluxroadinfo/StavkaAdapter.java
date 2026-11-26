@@ -25,7 +25,7 @@ public class StavkaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private final List<Stavka> stavke = new ArrayList<>();
     /** Red "Vi ste ovde": pre stavke sa ovim indeksom (-1 = nema ga). */
     private int ovde = -1;
-    private double ovdeKm;
+    private double ovdeKm, ovdeKmTacan;
     private String ovdeTekst = "";
     private boolean ovdeSmer, ovdeNagore;
 
@@ -34,10 +34,89 @@ public class StavkaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         void izabrana(Stavka s);
     }
 
-    private final Klik klik;
+    /** Dodir na obojeni deo desne linije. */
+    public interface KlikVest {
+        void otvori(Dogadjaj d);
+    }
 
-    public StavkaAdapter(Klik klik) {
+    /** Vest postavljena na kilometre deonice: od {@code od} do {@code ka} (od ≤ ka). */
+    public static final class Vest {
+        public final Dogadjaj d;
+        public final double od, ka;
+
+        public Vest(Dogadjaj d, double od, double ka) {
+            this.d = d;
+            this.od = Math.min(od, ka);
+            this.ka = Math.max(od, ka);
+        }
+    }
+
+    private final Klik klik;
+    private final KlikVest klikVest;
+    private final List<Vest> vesti = new ArrayList<>();
+
+    public StavkaAdapter(Klik klik, KlikVest klikVest) {
         this.klik = klik;
+        this.klikVest = klikVest;
+    }
+
+    /** Vesti za desnu liniju (već samo za prikazanu deonicu i stranu). */
+    @SuppressLint("NotifyDataSetChanged")
+    public void postaviVesti(List<Vest> nove) {
+        vesti.clear();
+        vesti.addAll(nove);
+        notifyDataSetChanged();
+    }
+
+    /**
+     * Najvažnija vest na delu autoputa koji pokriva red sa kilometrom {@code km}: red pokriva put do
+     * polovine razmaka do susednih redova, pa linija teče bez prekida, a vest u jednoj tački (udes)
+     * oboji tačno jedan red.
+     */
+    private Dogadjaj vestZa(int i, double km) {
+        if (vesti.isEmpty()) return null;
+        double pre = i > 0 ? (stavke.get(i - 1).km + km) / 2 : km - 0.5;
+        double posle = i + 1 < stavke.size() ? (stavke.get(i + 1).km + km) / 2 : km + 0.5;
+        double lo = Math.min(pre, posle), hi = Math.max(pre, posle);
+        Dogadjaj naj = null;
+        for (Vest v : vesti) {
+            if (v.ka < lo || v.od > hi) continue;
+            if (naj == null || v.d.vrsta < naj.vrsta) naj = v.d;
+        }
+        return naj;
+    }
+
+    /** Najvažnija vest koja pokriva tačno ovaj kilometar (red "Vi ste ovde"). */
+    private Dogadjaj vestNaKm(double km) {
+        Dogadjaj naj = null;
+        for (Vest v : vesti) {
+            if (km < v.od || km > v.ka) continue;
+            if (naj == null || v.d.vrsta < naj.vrsta) naj = v.d;
+        }
+        return naj;
+    }
+
+    /** Desna linija jednog reda: siva ili u boji vesti; dodir na obojenu otvara vest. */
+    private void linija(View red, Dogadjaj d) {
+        View traka = red.findViewById(R.id.vestTraka), linija = red.findViewById(R.id.vestLinija);
+        if (traka == null) return;
+        Context c = red.getContext();
+        ViewGroup.LayoutParams lp = linija.getLayoutParams();
+        if (d == null) {
+            linija.setBackgroundColor(Izgled.boja(c, R.color.vest_sina));
+            lp.width = Izgled.dp(c, 3);
+            traka.setOnClickListener(null);
+            traka.setClickable(false);
+            traka.setContentDescription(null);
+        } else {
+            linija.setBackgroundColor(DogadjajAdapter.boja(d.vrsta));
+            lp.width = Izgled.dp(c, 6);
+            traka.setOnClickListener(v -> {
+                if (klikVest != null) klikVest.otvori(d);
+            });
+            traka.setContentDescription(c.getString(DogadjajAdapter.naziv(d.vrsta)));
+        }
+        linija.setLayoutParams(lp);
     }
 
     /** Jedna oznaka (čip) ispod naziva. */
@@ -101,10 +180,11 @@ public class StavkaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
      * {@code sasmerom}: strelica pokazuje napred (niz listu); inače samo tačka.
      */
     @SuppressLint("NotifyDataSetChanged")
-    public void postaviOvde(int indeks, double km, String tekst, boolean saSmerom, boolean nagore) {
+    public void postaviOvde(int indeks, double km, double kmTacan, String tekst, boolean saSmerom, boolean nagore) {
         ovdeNagore = nagore;
         ovde = indeks;
         ovdeKm = km;
+        ovdeKmTacan = kmTacan;
         ovdeTekst = tekst;
         ovdeSmer = saSmerom;
         notifyDataSetChanged();
@@ -147,9 +227,13 @@ public class StavkaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder h, int poz) {
         if (h instanceof Drzac) {
-            ((Drzac) h).povezi(stavke.get(imaOvde() && poz > ovde ? poz - 1 : poz));
+            int i = imaOvde() && poz > ovde ? poz - 1 : poz;
+            Stavka s = stavke.get(i);
+            ((Drzac) h).povezi(s);
+            linija(h.itemView, vestZa(i, s.km));
         } else if (getItemViewType(poz) == OVDE) {
             View v = h.itemView;
+            linija(v, vestNaKm(ovdeKmTacan));
             ((TextView) v.findViewById(R.id.ovdeKm)).setText(String.format(Locale.getDefault(), "%.1f", ovdeKm));
             ((TextView) v.findViewById(R.id.ovdeTekst)).setText(ovdeTekst);
             ImageView strelica = v.findViewById(R.id.ovdeStrelica);

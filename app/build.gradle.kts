@@ -41,6 +41,7 @@ dependencies {
     implementation(libs.play.services.ads)
     implementation(libs.ump)
     implementation(libs.play.services.location)
+    implementation(libs.work.runtime)
     implementation(libs.billing)
     implementation(libs.material)
     testImplementation(libs.junit)

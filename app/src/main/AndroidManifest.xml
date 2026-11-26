@@ -26,6 +26,10 @@
             android:value="@string/admob_app_id" />
 
         <activity
+            android:name=".StanjeActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:exported="true"
