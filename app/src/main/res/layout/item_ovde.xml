@@ -23,6 +23,7 @@
         tools:text="29,5" />
 
     <FrameLayout
+        android:id="@+id/ovdeSina"
         android:layout_width="40dp"
         android:layout_height="56dp"
         android:layout_marginStart="8dp"
@@ -43,6 +44,25 @@
             android:importantForAccessibility="no"
             android:padding="8dp"
             android:src="@drawable/ic_strelica_napred" />
+
+        <!-- Vožnja: udaljenost do sledećeg mesta, na šini između strelice i tog mesta -->
+        <TextView
+            android:id="@+id/ovdeDo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/ovde_pozadina"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:lineSpacingMultiplier="0.9"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textColor="@color/ovde_tekst"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="3,4 km" />
     </FrameLayout>
 
     <TextView
@@ -58,7 +78,7 @@
     <FrameLayout
         android:id="@+id/vestTraka"
         android:layout_width="22dp"
-        android:layout_height="56dp"
+        android:layout_height="match_parent"
         android:layout_marginStart="6dp">
 
         <View

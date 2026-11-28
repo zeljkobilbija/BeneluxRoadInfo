@@ -2,9 +2,11 @@ package com.zeljkobilbija001.beneluxroadinfo;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -239,7 +241,48 @@ public class StavkaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             ImageView strelica = v.findViewById(R.id.ovdeStrelica);
             strelica.setImageResource(ovdeSmer ? R.drawable.ic_strelica_napred : R.drawable.ic_tacka_ovde);
             strelica.setRotation(ovdeNagore ? 180f : 0f);
+            udaljenost(v, strelica);
         }
+    }
+
+    /**
+     * Vožnja: na šini između strelice i sledećeg mesta ispred piše koliko je do njega (po kilometraži
+     * autoputa); smanjuje se sa svakim novim položajem. Bez Vožnje ili bez poznatog smera – ništa.
+     */
+    private void udaljenost(View v, ImageView strelica) {
+        Context c = v.getContext();
+        View sina = v.findViewById(R.id.ovdeSina);
+        TextView doTekst = v.findViewById(R.id.ovdeDo);
+        int sled = ovdeNagore ? ovde - 1 : ovde;   // strelica nagore: mesta ispred su iznad reda
+        boolean prikazi = VoznjaService.radi && ovdeSmer && sled >= 0 && sled < stavke.size();
+        ViewGroup.LayoutParams lp = sina.getLayoutParams();
+        FrameLayout.LayoutParams sp = (FrameLayout.LayoutParams) strelica.getLayoutParams();
+        FrameLayout.LayoutParams dp = (FrameLayout.LayoutParams) doTekst.getLayoutParams();
+        if (!prikazi) {
+            doTekst.setVisibility(View.GONE);
+            lp.height = Izgled.dp(c, 56);
+            sp.gravity = Gravity.CENTER;
+            sp.topMargin = sp.bottomMargin = 0;
+        } else {
+            double d = Math.abs(stavke.get(sled).km - ovdeKmTacan);
+            String t;
+            if (d < 1) t = Math.max(50, Math.round(d * 1000 / 50.0) * 50) + "\nm";
+            else t = String.format(Locale.getDefault(), d < 10 ? "%.1f" : "%.0f", d) + "\n" + c.getString(R.string.km);
+            doTekst.setText(t);
+            doTekst.setVisibility(View.VISIBLE);
+            lp.height = Izgled.dp(c, 92);
+            int m = Izgled.dp(c, 6);
+            // natpis je na strani sledećeg mesta: ispod strelice (niz listu) ili iznad nje (nagore)
+            sp.gravity = Gravity.CENTER_HORIZONTAL | (ovdeNagore ? Gravity.BOTTOM : Gravity.TOP);
+            sp.topMargin = ovdeNagore ? 0 : m;
+            sp.bottomMargin = ovdeNagore ? m : 0;
+            dp.gravity = Gravity.CENTER_HORIZONTAL | (ovdeNagore ? Gravity.TOP : Gravity.BOTTOM);
+            dp.topMargin = ovdeNagore ? m : 0;
+            dp.bottomMargin = ovdeNagore ? 0 : m;
+        }
+        sina.setLayoutParams(lp);
+        strelica.setLayoutParams(sp);
+        doTekst.setLayoutParams(dp);
     }
 
     class Drzac extends RecyclerView.ViewHolder {
